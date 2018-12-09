@@ -1,0 +1,457 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset=utf-8>
+		<meta content="IE=edge" http-equiv=X-UA-Compatible>
+
+    <!--
+     * load 3rd party stylesheets
+     *-->
+    <link rel="stylesheet" href="3rd/css/bootstrap.min.css">
+    <link rel="stylesheet" href="3rd/css/bootstrap-datetimepicker.css" />
+    <link rel="stylesheet" href="3rd/css/nprogress.css" />
+    <link rel="stylesheet" href="3rd/css/autocomplete.css" />
+
+    <!--
+     * load 3rd party javascript libraries
+     *-->
+    <script type="text/javascript" src="3rd/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="3rd/js/jquery.loadTemplate.min.js"></script>
+    <script type="text/javascript" src="3rd/js/moment.js"></script>
+    <script type="text/javascript" src="3rd/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="3rd/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="3rd/js/defiant.min.js"></script>
+    <script type="text/javascript" src="3rd/js/nprogress.js"></script>
+    <script type="text/javascript" src='3rd/js/ics.deps.min.js'></script>
+    <script type="text/javascript" src='3rd/js/isotope.pkgd.min.js'></script>
+    <script type="text/javascript" src='3rd/js/tz.js'></script>
+    <script type="text/javascript" src="3rd/js/autocomplete.js"></script>
+
+    <!--
+     * load SUBLUNAR ALMANAC libraries and sheets
+     *-->
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="js/SL.Astro.js"></script>
+    <script type="text/javascript" src="js/SL.Calendar.js"></script>
+
+    <!--
+     * load SUBLUNAR ALMANAC plugin modules
+     *-->
+    <script type="text/javascript" src="js/modules/planetary.js"></script>
+    <script type="text/javascript" src="js/modules/moon.js"></script>
+    <script type="text/javascript" src="js/modules/astrology.js"></script>
+    <script type="text/javascript" src="js/modules/lunarmansions.js"></script>
+    <script type="text/javascript" src="js/modules/hygromanteia.js"></script>
+    <script type="text/javascript" src="js/modules/keyofsolomon.js"></script>
+    <script type="text/javascript" src="js/modules/pgm.js"></script>
+
+  </head>
+
+  <body>
+
+    <!--
+     * Bootstrap Navigation Bar
+     *-->
+    <div id="custom-bootstrap-menu" class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="nav navbar-nav navbar-left">
+            <li><p class="navbar-btn"><a class="btn btn-default" data-toggle="modal" data-target="#settings" href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a></p></li>
+            <li><p class="navbar-btn"><a class="btn btn-default" id="about" data-toggle="modal" data-target="#aboutSLC" href="#"><span class="glyphicon glyphicon-info-sign"></span> About</a></p></li>
+            <li><p class="navbar-btn"><a class="btn btn-default" id="filterreset" href="#"><span class="glyphicon glyphicon-remove-circle"></span> Reset</a></p></li>
+          </ul>
+          <ul id="filterList" class="nav navbar-nav navbar-right">
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+
+          <!--
+           * SUBLUNAR ALMANAC
+           *-->
+          <div id="calendar">
+            <div id="grid">
+                <center><h3 class="stoke">What is this? <a href="http://sublunar.space/drafts/sublunar-almanac.html#doc">Read!</a></h3></center>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <a id="downloadAnchorElem" style="display:none"></a>
+
+    <!--
+     * DOM object with all modal templates
+     *-->
+    <div id="modals">
+
+      <!--
+       * Settings Modal
+       *-->
+      <div class="modal fade" id="settings" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title"><span class="glyphicon glyphicon-globe"></span> Settings</h4>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="form-group col-md-12">
+                  <label for="lon">Your Location</label>
+                  <input type="text" autocomplete="off" id="search" class="address form-control args" placeholder="City"/>
+
+                  <!--
+                   * OSMnames autocomplete
+                   *-->
+                  <script>
+                    var autocomplete = new kt.OsmNamesAutocomplete(
+                        'search', 'https://geocoder.tilehosting.com/', 'kqIwOXlhKKgBoR5zVAnm');
+                    autocomplete.registerCallback(function(item) {
+                      SL.Calendar.getGeoCode(item);
+                    });
+                  </script>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="datetime">Date and Time</label>
+                  <input type="text" class="form-control" id="datetime" />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="offset">UTC Offset</label>
+                  <input type="text" class="coords form-control args" id="offset" placeholder="3"/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="lat">Latitude</label>
+                  <input type="text" class="coords form-control args" id="lat" placeholder="37.2204674515" />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="lon">Longitude</label>
+                  <input type="text" class="coords form-control args" id="lon" placeholder="38.9200813197"/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-4">
+                  <label for="lon">Generate Days</label>
+                  <input type="text" id="days" class="form-control" value="7">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="lon">Filter Hours</label>
+                  <div class="checkbox">
+                    <label>
+                      <input id="future" type="checkbox"> Hide Past
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="lon">Zodiac System</label>
+                  <div class="checkbox">
+                    <label>
+                      <input id="zodiac" type="checkbox"> Sidereal
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group col-md-12">
+                  <label for="lon">Modules to Use</label>
+                  <div id="moduleSelect" class="checkbox form-check form-check-inline">
+                  </div>
+                </div>
+              </div>
+
+            <div class="modal-footer">
+              <label class="btn btn-default pull-left" id="fileInputLabel" for="fileInput">
+                  <input id="fileInput" type="file" style="display:none"
+                  onchange="$('#fileInputLabel').removeClass('btn-default').addClass('btn-success').find('span').html(this.files[0].name)">
+                <span>Select File</span>
+              </label>
+              <button type="button" class="btn btn-primary" id="generate" >Generate</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!--
+ * jQuery.loadTemplate templates
+ *-->
+
+     <!--
+      * template for planetary hour
+      *-->
+    <script type="text/html" id="tpl-planetaryhour">
+        <table>
+          <tr>
+            <td data-content="ruler"></td>
+            <td data-content="date"></td>
+            <td data-content="hournumber"></td>
+          </tr>
+          <tr>
+            <td data-content="hourstart"></td>
+            <td data-content="hourruler"></td>
+            <td data-content="hourend"></td>
+          </tr>
+        </table>
+    </script>
+
+    <!--
+     * template for bootstrap modal
+     *-->
+    <script type="text/html" id="tpl-modal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" data-content="title"></h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-sm-4" data-content="left">
+              </div>
+              <div class="col-sm-8" data-content="right">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </script>
+
+<!--
+ * main SUBLUNAR ALMANAC Javascript
+ *-->
+
+    <script type="text/javascript">
+
+         /*--
+         * Array of plugin modules to be loaded
+         */
+        SL.Calendar.modules([
+          'planetary_day_ruler',
+          'planetary_hour_ruler',
+          'lunarphase', 'lunarday',
+          'sun', 'moon', 'mercury', 'venus', 'mars', 'jupiter', 'saturn',
+          'aspects', 'motion',
+          'lunarmansion',
+          'pgm_lsign',
+          'hygromanteia_hours',
+          'hygromanteia_lunarday',
+          'hygromanteia_lunarsign',
+          'kos_pday', 'kos_phour', 'kos_astro'
+        ]);
+
+        /*--
+         * init bootstrap DateTimePicker
+         */
+        $(function () {
+            $('#datetime').datetimepicker({ minDate: new moment("7 Jan 1970 20:35 UT") });
+            $('#datetime').data("DateTimePicker").toggle().hide();
+        });
+
+        /*--
+         * init event listeners
+         */
+
+        // set timestamp when DateTimePicker changes
+        $('#datetime').on("dp.change", function() {
+          timestamp = $(this).data("DateTimePicker").date().utc().unix();
+        });
+
+        // "About" modal
+        $('#about').on('click', SL.Calendar.about);
+
+        // "Generate" button in Settings
+        $('#generate').on("click", function(e) {
+          var files = document.getElementById('fileInput').files;
+          if (files.length <= 0) {
+            if ( $("#lat").val() != '' && $("#lon").val() != '' && $("#offset").val() != '' ) {
+              setTimeout( SL.Calendar.make, 100, $('#days').val(), timestamp, $('#lat').val(), $('#lon').val());
+              $('#settings').modal('hide');
+              NProgress.start();
+            }
+          } else {
+            setTimeout( SL.Calendar.make, 100, 0, 0, 0, 0);
+            $('#settings').modal('hide');
+            NProgress.start();
+          }
+        });
+
+        // when modal is opened, simulate window reset
+        $('.modal').on('shown.bs.modal', function (e) {
+          SL.Calendar.reset();
+        });
+
+        // "Reset" button in navbar menu bar
+        $('#filterreset').on('click', function() {
+          $('.filteroptions input').prop('checked', false);
+          filters = {};
+          $('#calendar').isotope({ filter: '*' });
+        });
+
+        /*--
+         * init Isotope filtering
+         */
+        // store filter per group
+        var filters = {};
+
+        // do stuff when checkbox change
+        // from https://codepen.io/desandro/pen/JGKyrY
+        $(document).on("change", ".actionlistfilter", function( event ) {
+          var checkbox = event.target;
+          var $checkbox = $( checkbox );
+          var group = $checkbox.parents('.option-set').attr('data-group');
+          var inclusives = [];
+          $checkboxes = $("#"+group+"-tags input");
+          // inclusive filters from checkboxes
+          $checkboxes.each( function( i, elem ) {
+            // if checkbox, use value if checked
+            if ( elem.checked ) {
+              inclusives.push( elem.value );
+            }
+          });
+          // combine inclusive filters
+          var filterValue = inclusives.length ? inclusives.join(', ') : '*';
+          $("#"+group+"-actions").isotope({
+            layoutMode: 'vertical',
+            itemSelector: '.operation',
+            filter: filterValue })
+        });
+
+        // from https://codepen.io/desandro/pen/MebyMR
+        $(document).on("change", ".filteroptions", function( event ) {
+          var checkbox = event.target;
+          var $checkbox = $( checkbox );
+          var group = $checkbox.parents('.option-set').attr('data-group');
+          // create array for filter group, if not there yet
+          var filterGroup = filters[ group ];
+          if ( !filterGroup ) {
+            filterGroup = filters[ group ] = [];
+          }
+          // add/remove filter
+          if ( checkbox.checked ) {
+            // add filter
+            filterGroup.push( checkbox.value );
+          } else {
+            // remove filter
+            var index = filterGroup.indexOf( checkbox.value );
+            filterGroup.splice( index, 1 );
+          }
+
+          $('#calendar').isotope({
+            transitionDuration: 0,
+            itemSelector: '.planetaryhour',
+            filter: SL.Calendar.comboFilter()
+          });
+        });
+
+    </script>
+  </body>
+</html>
+
+<!-- chupchik helped...
+
+                             .,..
+                            .,::,,:,
+                            :;;::::::,..
+                           .;;;;;::::,:,,.
+                           ,iiiii;;;:::,,...
+                          .ii11i;;;;;:;:::,.
+                          ,iiiii;i;;;;;;;:,,.
+                          :i11;;;:;;;;::::::,.
+                         .;1iii;;;;;;;;;::;;::.                                                                                                            ...
+                         .iii;;;;;;;;;;;;;;;;:,,                                                                                                       .... ..
+                         ::::::::;::::::;;;:;;::,                                                                                                  .,...........
+                         :;::::::::::::::;:;;;;;:,                                                                                               .,.,,..  ..,,,.
+                         :;::::::::;::::::::;;;i;:,.                                                                                          .,,,,,.   ...,:::.
+                        .;;;:::;;:::::::::::;::;i;:.                                                                                        ,,,,..  ....,,::;;,.
+                        ,::::::::::::::;:::::::;;;;:,                                                                                     ..,,........,,,,,:::,
+                        ,::::::;::::;;:::::::::::;;i;,                                                                                  ..,,,... .......,,::::,
+                        :;:;;;;;;;;;;;:::::::;;::;;;;:.                                                                               .,.,...   .. ...,,,,,::,.
+                       :;;;;:;;::;;::::::;:::;:::;:;;;:,                                                                            .,:,,,.      ...,.....,,,.
+                      .::::,::::::::::::::;:::;:;:;;ii;:...                                                                       .,,,,.      ... .  . ....,.
+                      .,,,::::::::::::::::;::;;;::::;;ii;;:.                                                                    .:::,,.             .........
+                      .,::,:::::;:::::,,:::;::::::::;;i;ii::,                                                                 ..:::,. .  ......     .. ......
+                      .:;:;::;::::;:::::::::::;;;;ii;;;ii;;;1;,                                                            .:;:;;,...  .             ... .,,.
+                      :;;iii;;iiii;;;;;;;;;:;;;;;;iiii;i1iiiitt1;,.                                                      :1i:;;:,,.  ...     .......,...,,,,
+                      :i1111ii1iiiiiiiiii;;i;;;;;iii1i11t1iii1ffftii11ii1:i;;,..:;:,.,..,,. .                         .;t1;:;;:,,.  ................,,.,,,,,.
+                      :i1i11111111t111i1iii1iiii1iiii1ttftfi1ttLLLLffffffftttt1tt111tt1ttt111;;:::,...,........  ..,;tt1i:;;:::,........     ....,,.,,,,,,,.
+                      ,;i11111111tt11111111iiii1111ii11ttt11t1fffLfLLLLtffttLttfL11fLLfffLCLffftt1;i1t1fffttft11fttLft1ii1i;:,,,....... .........,,:,,,,,,.
+                      ,;;ii111111111111111i1i11111iiii11111ttttttLfLfLtiftfffLCGLfLLLLLLLLLCLLLLftfLLftfLLffffffffftt11i1ii;;:.......,,,,,,,,,.,,,,,,,,,,.
+                      :ii;;iii111iiiiiiiii111111111ii11t111ttttttfLfLf1tfCGG0@8G8GCLCCLfLLLLCLCLtLCCLLLfCCCLffft11t1t1i111ii:,:,,.,,,,:,,.,,,,,,,,.......
+                      :ii;;;i111111iiiiiiii111111111i1tfft11ftffLfLfftLfLG8@@@@@@GCLLLLfffLCCLLfLGGGLLLLCCCLLff1it111i1iii;::::,,,,,,,.,,,,,,,,,,........
+                     .;iii;1tt1tttt1t11t1111111t111t11ffffttffLLLffLfffLL888@800GGCLLLLLtfCGCftfLGLfLLCGGGCGGLttftii;i1ti:::;,,,,,,,::,:,,,::::,,,,,,....
+                     .i1;i1ffffffttt1tf1ttttt11t1ttttttttfLffLLLLLLfLLff00CGGGfLLCLtfLLfftLGffffLCftfCCGCG@0GGCf1t1ii1ti;;::,::::,:;,,,:,,:::::,,,:,,:,,,,
+                     :i;;ittfLfftttttffftffttttt1tttftttfLffffLffffftffLCfffCfLLGft1fCCCCCCCLtfCCLt1tLLLC8800GCLft1tt1i;i;;;:;;:;:::::,,,::,,::,::::::,.,
+                     :;;ii11fffftfftttttttffffftttttfttLLLffLftff1tttLLffffCG8CLtt11C0CLCLCCCCLCCtiitfLCGG@@@88CLfft1t11i;;;:i;;,,:,,,:::::::,:;::;;;:,,.
+                    .:;ii11ttttttft111ttfffftffttffLfffCLftffffff1ttLfLCLLC88C1tfft8CCftfL8G0GCCtii11CGCC8@GCG0Lft11i111iiii;;;::,,:,,:,::;;:i;1iiii:,,.
+                  .:;i1tfffttt1t1t11111tttttftfffLLffLCLfftLLfLLffLCCLCLL00Cf1fLG8@@Cfttf@CG0@8C11ttL0GCLCCLLftt111;;1iiiii:i;:::::,:ii;;i;;ii1i;;:..,:
+                 :;111tLLLCLLft1111111t1tffffffffLfffffffLLGCCLCffCCCLCGGGCLttfG@@@08L1t@0G8@@8ftffCCCCLttftti111ti1t1i1iiii;i:::;::ii;;i;;i1ii:;:..,;.
+                :;11fffffGGCLCLft1111ttfLfLffffffLLftfffLC08CLLttfCGLC0@@@0CftffGLL@0t1G88@@@@Gt1LC0CCt111tt1tfLti1t1itii11i1;;;i;;ii;;ii;i1:i::::,,::
+               :i11tttttfGGGGGCLffftffLffffffffLLffft1tLCCG00CLftttLCC@@@@@Cft1ttt08CffCC0@888LfftG0L1i;;1tfLfGCttit1t1i;ii1iii;;iii;ii;i1i,:;;;i;,:,.
+               :;ii11ttttfLLLCCCCCLLffffLftffffffLftLLLffCCC00Cft1tfG@@@@@@L11i;1L88LfGfC@@0@8ftffCL1;:,;if@C@GLf;1111i;;1ii11i;i;i:;i;;1;,:;:111;, ..
+               .:;ii1tttffffLLLLLLLfffffftfLLffLfffLffttLLL0G8CLf1tG@@@@@@Lii;;itf0tfftL00008LfftLf1i;,,:iL0@8GL11i;;1i11iii1i;;;:;i;;;;,:;:;ii1i,. .
+               ,:;i1ttttffffLLLfLCLffftttfLffffftttt1tttftfLCGLf11fG@@@@0fiiii;1tttt11tLCCLCCftf11iii,,,,;10@8GLt;::;111111iiiii:;;:::;;i;:;i1t1i;,,.
+              .:;11ttfffffffffLLCLfttttffffffftttft111ttttfffftt1tfC@@@@L1i;i1111111111tftfCLft1i1ii;:,:,,iC0@8Lt:,:ittftf1iit;;;;::::;ii;i11ft11i;,....
+              ,;i1tfttttffffffLfft11tfffffffftttft1111ttffLLffLCffLG@@@8L1i11tt1ttttii1LttLLft111;ii;:;:,:ifC@@Ci::;1LLftti1ii;:;,:;:::;;;itfffttti::,,,
+              ,;11ttfftttffLLLffft1ttttffffffffftttt1tfLCCG80080CCC008@0Lttttftfftti11tt1ttt1iiiiiii;;;;;;tf@@0t;;itf1i1i;;iii;;;:;i:::;i111ttttt1;;;:,.
+              :ittttfttLCCCLLLfLft1tt1tffLLLLLffLffLfLC8@@@@@@@@@@@888CLttt1t1tttfttt111t1t111iii;;i:;;:;tL8@Ctii1t1ii;;;;;;;;:;;ii;;;iiiiii;iiii;;::,
+             .;11tttttfLCCGCCCLLfffftfLLCCCLfLCLCGCLG8@@@@@@@@@@@@@@@@0ft111i1tftft1tiiiit111i;;;;;::::;itfftii1tttf111i;:::;;;;ii;;;i;;i;iiiii;;;:::.
+             .;1111tfffLLCGGCLLLLLLLG08@@@00@@888LtC8@@0CGLC8@@@@@@@@@@Gfi;;ii11tt1ttt1itii1i;;::;;::,,,:;;;1tfLCCCGCCf1;;::;;;i;;i;;;;;:;ii1i;:;i;::,.
+             .;i111tfLLLLLLLGGCCCC08@@@@@880CCCf1itG@8Lffft8@@@@8@0G8@@@C1;;:;;1ttfttf11iii;i;:::,;, ,.,,ifL0@@@@@@88@GLtiiii;iiiiiii1;:;;;i1ii:;;i;::..
+              ,i1tttfffffLL080@@@@@@@@0CLffftt1i;;t8@0Lfft8@@@@@@8GCGG8@8fi;::;itttt1tfiii1i;;;:,:.    ,C@88088@8GGGG088Cft1111t11iii;::,:;iiiii;;:;;:,,.
+              .;11tfffffCLG8@@@@@@@@@GLfttft111i;;t0@GLCCC0@@@@@@@GCGG@@@Lt;;;;i11111tt1111ii;:,:.    ;80LLCG@@@0CLffLfC0LLftftfft1;:;:,:::;ii1;::ii:::,.
+              ,;ittfLffLL08@@@@@@8CGCCfttfttfft1;;if@8GCCC0@@@@@@0GGCC8@@Gfi;:::1111t11111ii;:,,,    ,0CfLLG@@@8GCLti;iL08LtfLCGCf1ii;::,,:i111i1ii;;::,.
+              ,i11tttfLCG@@@@@8GGGLLLCLftffLfLLt1iitf08GCCG@@@@8G8GCC0@@@8f1::,;i11i1ttt11ii;:,,.   ,fGtLLL8@@@@000f;:;t00f11tG0@0Lfti;;::;ii1111i;;:;:.
+              ,i11ffLCG0G0GCLLLLLLtttffLCGCCGGGGGLt11fC088GGGG8GGGCC8@@@@8fi;::;iiii111iii1;;,..   .:LLLfLC8@@@@@@8t;::t@0t;:11LL08CLL1i;;iiiiiiii;;:,.
+              :i1ttfC0GGCCLffLLLLff1ttfLC8LG008@8GCftttffC0@8@0CG08@@@@@8CLfi;i1;;iii1i;ii;;:,..   ,iCGffLC08@@@@8t1t;108Ci,:;ii1ffCCLft111t1iiiii;;:.
+              ,;i1fLLCLfffLffLLLLLfttftLLfCCCG08@0@CLLft111tffLLLfttfC0G0@@C1t1;iii111iiii;:::,. ..:LCGLLLLG0@80Lfffff08G1,::;;iiii1fCLCLLLf1i;i;;::,
+              .;11tftttttttffffLftt11tfffLfLLCG0808G8Gft1111ii;;;:;;1C8@@@@00fi11t1i111iii;;;::,,,;t0CLLCL8CCG0CCLLLG88Gi::ii1i;iiii1tLCGGCLt1i;;::,.
+              ,;i1tt1111i1111ttttt11111fffLfLLCG00G0GGCCLfftt1i;:;:iLC0@@@@8f1ttffttt111ii;i;;;:::1G000GLttL08000GG0CL1;;itffttft11111tfCCCLt1i;;:::.
+              ,;iiiiiii;;iiitffffLLf111tfLCCCCCCGGGC0000CCCCffttiitfCG@@@@0ffffLCLfff1t11i11i1ii;i1C@8Gf1;:;;11t1tt111i1fLLLCCLfLt1t1111ffftt1ii;;;:.
+              .;iiiii;;;iii1tLCC8@GGLft1tfLLLCCLLLLCCG088@8CCLCf1tfLC0008CLLCLGGCLLfft11111111t11i1fG0Cti:,,,::;;it1tLCfLLLCCLLLLttti1tt1tftfftii;;.
+               ;i1iiiiiii1tffCG0GG88GCLfffttfffLCCCL000GGGCCLLLtfffCC8GCLC@80G8GGLLfftt11111tttft11ffCLf1i;:;i1111fffLCCLCCLffft1t1ii11111ttfft1i:
+               ,1ttt11111tfLGGLLLLffLLLLfLLLCCC0800G0GLLftttffftffLLCfffG88@@GC0GCLCftttt11tttffttfLL1ffttiiittfftffCCLLLf1t11iiiii;;i1iiiiiiiii;.
+                ,tfLLLfftfLCLCCLLftttttffttfttLfffCLLfttttffffftfffftttLLC080GGGG0GLLf1t11ttfffttL0Lft1tf1ii11tfLLLLLLLLftf1iiiiiiiiiiiii;:::,::,
+                  ,tLffLLCLLCCLffffttt111t1111iiiii11111ttfffttt1ttt11t1tLC0800@@@80CCCffLfCLfttfLfLt1i11t1i1iittftfLLfftf1t1ttttii;;;ii;;:,.....
+                     ,tLLGCCCCCCLLLffffft1111i;;;;;;;;i;ttLCLLffft1i11ii1tf0@@@8@@@800GCCCGGCft1fftttiiii1i1i;1ii11ffLfft11iii1i;:::;iii;:,,.....
+                       :fLLLCGGCCCLffffft1ii;;;:;::;;iiffC00@@@0LLfft11iiii1L0@@@@@@0GGCCG008CffLLtii;;;;;;;ii;i::ii1fLftti;;:,,,,:;iii;;:,.......
+                         :fLLLLCLffLffttt11ii;;;::;;i111LGLfLLfLCGLffti:,,:;i1C8@@@@@@8@08@@@8GCL1:::::::;ii;ii;:::;iii1tft1i;;;;i1iii;i;::,...,,.
+                            :fLLffLLfttt11ii;;;::,:;;;:;ii;;ii1tt111i;:,,::::;i1L8@@@@@@80@@8Gt;:,...::;;iii1tf1;,,:::::;;i1i;;iiiii1i;i;;:,::,,,.
+                              .iLLfffftt1iii;;;::::;;;;i11tffLCCLLLftii;:,::,::;1f8@@@@@@@0fi;,..    :i1ttLff0Gfi;:,.. ..,:,,:::;ii;;iii;;;;::,,.
+                                 .iLLLtt1iiii;;;;:;;;iii1ttttfLLfLLfff11;::,,::,:;t0@@@@@Ci:,...    .,:i11i;ii111i,.    .,,,,,:;;:;iiiiiiii;;,,..
+                                    :ttt1111ii;;:;;:;;;;iiiii1111tt11ii;::::::,,,,it0@@Gi:,.....  .,,:::;;;i;::::,,.  .,,:;;iiii;iiiii1iiii;;,,.
+                                      ;Lfft11ii;;;;;:;iii1tfftfLLft1iii;:::;;:;;;;itG8f;:::,,.. ..,:;ii1tttti;::,...  ,::;;1t1111111iiiii;:.
+                                        ,tt111i;;::::;;iii11111t111ii1i;;;;iiiiii11C@Gt1i;:::,....,,,:;iiii1iti:,,....,,::;;;ii11iiii;;:,
+                                          :1tti;;;::;:::;;;i;i1ii1iiii;;;;;;;;;1fC@@@8Cti;;::::,,,,:::;i;;;:;::,,...,,,::;;;;:::::::,..
+                                            .;11iii;:::::;i;ii;11;ii;;;ii;;ii1tfLLGG00Cft1;;::::,,::::;;;:;;:,:,,..,,,:;;i;;:;;:,.
+                                              ,ff11;;;:;:;;;i::;;;;;;;ii1it11tft1tttt1111ii;::::::::::,::,,....   .,::;;;i;;:,
+                                                .ii11i1i;;;i;,;::;:;iiii;;i;it;:1;i;;;;;;;;;;::::::,,.,,,..     ..,::;:.
+                                                  :1tftt;i;;::,::::;;;;:::;ii:;i:::,::,,:,,.,,,,...            ..
+                                                    :LLi11;:::::::,::::::::;::;:,,:,:,,...
+                                                      .i1i;;;;::::,,::,,::::,,,.,::,...
+                                                           :iii;::::,:::::,,....,,...
+                                                              ,;;;;::,,,,,,,........
+                                                                .;1i;:,,,,,... ...
+                                                                .,;:;i:...........  .
+                                                                    ...........
+-->
