@@ -1,0 +1,197 @@
+/* noto-sans-regular - greek_greek-ext_latin_latin-ext */
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Noto Sans'), local('NotoSans'),
+       url('3rd/fonts/noto-sans-v6-greek_greek-ext_latin_latin-ext-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('3rd/fonts/noto-sans-v6-greek_greek-ext_latin_latin-ext-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* noto-sans-italic - greek_greek-ext_latin_latin-ext */
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Noto Sans Italic'), local('NotoSans-Italic'),
+       url('3rd/fonts/noto-sans-v6-greek_greek-ext_latin_latin-ext-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('3rd/fonts/noto-sans-v6-greek_greek-ext_latin_latin-ext-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* noto-sans-700italic - greek_greek-ext_latin_latin-ext */
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Noto Sans Bold Italic'), local('NotoSans-BoldItalic'),
+       url('3rd/fonts/noto-sans-v6-greek_greek-ext_latin_latin-ext-700italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('3rd/fonts/noto-sans-v6-greek_greek-ext_latin_latin-ext-700italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* noto-sans-700 - greek_greek-ext_latin_latin-ext */
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Noto Sans Bold'), local('NotoSans-Bold'),
+       url('3rd/fonts/noto-sans-v6-greek_greek-ext_latin_latin-ext-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('3rd/fonts/noto-sans-v6-greek_greek-ext_latin_latin-ext-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* stoke-300 - latin */
+@font-face {
+  font-family: 'Stoke';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Stoke Light'), local('Stoke-Light'),
+       url('3rd/fonts/stoke-v6-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('3rd/fonts/stoke-v6-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* stoke-regular - latin */
+@font-face {
+  font-family: 'Stoke';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Stoke Regular'), local('Stoke-Regular'),
+       url('3rd/fonts/stoke-v6-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('3rd/fonts/stoke-v6-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+body {
+  color: #9A8961;
+  background-color: #090A0E;
+  font-family: 'Noto Sans';
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type:none;
+}
+
+.nav-pills > li, .nav-pills > li+li {
+  margin-left: 0;
+  padding-left: 0;
+  text-align: center;
+}
+
+.noto {
+  font-family: 'Noto Sans'
+}
+
+.stoke {
+  font-family: 'Stoke'
+}
+
+#grid {
+}
+
+.loading {
+    background-color: #ffffff;
+    background-image: url("http://loadinggif.com/images/image-selection/3.gif");
+    background-size: 15px 15px;
+    background-position:right center;
+    background-repeat: no-repeat;
+}
+
+.dayrow {
+  margin: 0;
+  clear: both;
+}
+
+.centered {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.now {
+  border: 1px solid #f00;
+}
+
+.planetaryhour {
+  margin: 5px;
+  padding: 5px;
+  width: 15%;
+  float: left;
+  border: 1px solid #9A8961;
+}
+
+.night-hour {
+  color: #626FAC;
+  border: 1px solid #626FAC;
+}
+
+.planetaryhour table {
+  width: 100%;
+}
+
+.planetaryhour table td {
+  font-family: 'Noto Sans';
+  padding-bottom: 5px;
+  width: 33%;
+}
+
+.planetaryhour table td:nth-child(1) {
+  text-align:left;
+}
+
+.planetaryhour table td:nth-child(3) {
+  text-align:right;
+}
+
+.planetaryhour table tr:nth-child(1) td:nth-child(1), .planetaryhour table tr:nth-child(1) td:nth-child(3) {
+  font-size: 1.4em;
+}
+
+.planetaryhour table tr:nth-child(1) td:nth-child(2) {
+  font-weight: bolder;
+}
+
+.planetaryhour table tr:nth-child(2) td {
+  border-top: 1px solid #9A8961;
+  vertical-align: middle;
+}
+
+.night-hour table tr:nth-child(2) td {
+  border-top: 1px solid #626FAC;
+}
+
+.planetaryhour table tr:nth-child(2) td, .planetaryhour table tr:nth-child(3) td {
+  padding-top: 5px;
+}
+
+.planetaryhour table tr:nth-child(2) td:nth-child(2) {
+  font-size: 1.6em;
+  font-family: 'Stoke';
+  font-weight: bolder;
+}
+
+.planetaryhour table tr:nth-child(3) td:nth-child(3) {
+  font-style: italic;
+}
+
+.ac-renderer { z-index:1240; }
+
+[hidden] {
+  display: none !important;
+}
+
+@media screen and (max-width:991px){
+  .col-md-2{
+     width:30%;
+   }
+}
+
+@media screen and (max-width:420px){
+  .col-md-2{
+     width:45%;
+   }
+}
+
+@media screen and (max-width:280px){
+  .col-md-2{
+     width:90%;
+   }
+}
