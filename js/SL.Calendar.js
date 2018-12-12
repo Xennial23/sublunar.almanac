@@ -225,6 +225,7 @@ SL.Calendar = (function() {
         }
         SL.Calendar.resetFileInput();
         $('.planetaryhour').on('click', SL.Calendar.hourInfo);
+        $('#calendar').isotope('destroy');
         NProgress.done();
         clearTimeout(timeout);
       }
