@@ -122,7 +122,8 @@ SL.Astro = (function() {
       if ( sidereal == 1 ) {
         deg -= 24.11722222222; // degrees difference between tropical and sidereal
       }
-      if ( deg >= 360.0 ) deg = Math.abs(deg - 360.0);
+      if ( deg >= 360.0 ) deg -= 360.0;
+      if ( deg < 0 ) deg += 360.0;
       var zod = getZodiac(deg, 0);
       var diff = ( zod.sign - 1 ) * 30.0;
       var degrees = deg - diff;
@@ -142,7 +143,8 @@ SL.Astro = (function() {
       if ( sidereal == 1 ) {
         deg -= 24.11722222222; // degrees difference between tropical and sidereal
       }
-      if ( deg >= 360.0 ) deg = Math.abs(deg - 360.0);
+      if ( deg >= 360.0 ) deg -= 360.0;
+      if ( deg < 0 ) deg += 360.0;
       deg += 0.0001; // added to compensate rounding, resulting in 0° to 29.99° being Aries instead of 0° to 30°
       var obj = {
         sign: Math.ceil(deg / 30),
