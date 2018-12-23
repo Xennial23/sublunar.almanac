@@ -18,14 +18,14 @@ var module_planetary_hour_ruler = {
       [
         {
           "id": "4",
-          "action": "Sun / Sol / Helios / Apollo",
+          "action": "Sun / Sol / Helios",
           "tags": "sun sol helios success promotion fame wealth prosperity music athleticism ego self power pride authority leadership creativity spontaneity health vitality"
         }
       ],
       [
         {
           "id": "7",
-          "action": "Moon / Luna / Selene / Artemis",
+          "action": "Moon / Luna / Selene",
           "tags": "moon luna selene illusion glamour sleep peace beauty prophesy dreams magic emotions travel fertility insight wisdom tenderness unconscious habit rhythm memory mood nurture home melancholy"
         }
       ],
