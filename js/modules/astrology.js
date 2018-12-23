@@ -557,6 +557,78 @@ var module_saturn = {
 };
 
 //Defines Calendar Objects and Methods
+var module_ascendant = {
+
+  definitions: {
+    core: true,
+    name: "Rising Sign",
+    group: {
+      id: "astrology",
+      text: "Astrology",
+      info: "true"
+    },
+    actions: [
+      [0],
+      [{
+        "id": "1",
+        "action": "Aries Rising",
+        "tags": "aries"
+      }], [{
+        "id": "2",
+        "action": "Taurus Rising",
+        "tags": "taurus"
+      }], [{
+        "id": "3",
+        "action": "Gemini Rising",
+        "tags": "gemini"
+      }], [{
+        "id": "4",
+        "action": "Cancer Rising",
+        "tags": "cancer"
+      }], [{
+        "id": "5",
+        "action": "Leo Rising",
+        "tags": "leo"
+      }], [{
+        "id": "6",
+        "action": "Virgo Rising",
+        "tags": "virgo"
+      }], [{
+        "id": "7",
+        "action": "Libra Rising",
+        "tags": "libra"
+      }], [{
+        "id": "8",
+        "action": "Scorpio Rising",
+        "tags": "scorpio"
+      }], [{
+        "id": "9",
+        "action": "Sagittarius Rising",
+        "tags": "sagittarius"
+      }], [{
+        "id": "10",
+        "action": "Capricorn Rising",
+        "tags": "capricorn"
+      }], [{
+        "id": "11",
+        "action": "Aquarius Rising",
+        "tags": "aquarius"
+      }], [{
+        "id": "12",
+        "action": "Pisces Rising",
+        "tags": "pisces"
+      }]
+    ]
+  },
+  property: function(m) {
+    return SL.Astro.Logy.getZodiac(m.ephemeris.asc.deg).sign;
+  },
+  calculate: function(definitions, property) {
+    return definitions.actions[property];
+  }
+};
+
+//Defines Calendar Objects and Methods
 var module_aspects = {
 
   definitions: {

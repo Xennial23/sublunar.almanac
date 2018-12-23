@@ -28,7 +28,7 @@ SL.Calendar = (function() {
   function about() {
     $('<div/>').loadTemplate($("#tpl-modal"), {
         title : '<center><h1 class="stoke">SUBLUNAR ALMANAC</h1></center>',
-        right : '<center><p><style>.bmc-button img{width: 27px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{line-height: 36px !important;height:37px !important;text-decoration: none !important;display:inline-flex !important;color:#000000 !important;background-color:#FFFFFF !important;border-radius: 3px !important;border: 1px solid transparent !important;padding: 1px 9px !important;font-size: 22px !important;letter-spacing: 0.6px !important;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 auto !important;font-family:\'Cookie\', cursive !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;-o-transition: 0.3s all linear !important;-webkit-transition: 0.3s all linear !important;-moz-transition: 0.3s all linear !important;-ms-transition: 0.3s all linear !important;transition: 0.3s all linear !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#000000 !important;}</style><link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/sublunar"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px">Buy me a coffee</span></a>&nbsp;<a class="github-button" href="https://github.com/sublunarspace/sublunar.almanac" data-size="large" aria-label="Star sublunarspace/sublunar.almanac on GitHub">GitHub</a></p><p><a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a> © 2018 T. F. Raaion / <a href="http://sublunar.space">sublunar space</a></p></center><hr /><center><p>Astronomical calculations are based on <br /><a href="http://www.astro.com/swisseph/swephinfo_e.htm" target="_blank">Swiss Ephemeris API</a>, © 1997-2016 Astrodienst AG, <a href="https://opensource.org/licenses/GPL-2.0" target="_blank">(GPLv2.0+)</a><br />and the <a href="http://www.moshier.net/#Astronomy" target="_blank">Table of New Moon Dates</a> by Steve Moshier.</p><p>The front-end relies on the following Javascript Libraries:<br /><a href="https://jquery.com/" target="_blank">jQuery 3.2.1</a>, © JS Foundation, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /><a href="https://getbootstrap.com/" target="_blank">Bootstrap 3.3.7</a>, © Twitter, Inc., <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /><a href="https://github.com/codepb/jquery-template/" target="_blank">jQuery.loadTemplate</a>, © 2013 Paul Burgess and other contributors, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /><a href="http://momentjs.com" target="_blank">MomentJS 2.18.1</a>, © Tim Wood, Iskren Chernev, Moment.js contributors, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /><a href="http://isotope.metafizzy.co" target="_blank">Isotope 3.0.4</a>, © 2017 Metafizzy, <a href="https://opensource.org/licenses/GPL-3.0" target="_blank">(GPLv3)</a><br /><a href="http://defiantjs.com" target="_blank">DefiantJS 1.4.1</a>, © 2013-2017, Hakan Bilgin, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /><a href="http://ricostacruz.com/nprogress" target="_blank">NProgress</a>, © 2013, 2014 Rico Sta. Cruz, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /><a href="https://github.com/klokantech/javascript" target="_blank">OsmNamesAutocomplete</a>, © 2016 Klokan Technologies GmbH, <a href="https://opensource.org/licenses/GPL-3.0" target="_blank">(GPLv3)</a><br /><a href="https://github.com/darkskyapp/tz-lookup" target="_blank">tzlookup</a>, by The Dark Sky, LLC, <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">(CC0 1.0 Universal)</a><br /><a href="https://github.com/nwcell/ics.js/" target="_blank">ics.js</a>, © 2018 Travis Krause, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a></p><p>The design is based on<br /><a href="http://bootswatch.com" target="_blank">bootswatch v3.3.7</a>, © 2012-2017 Thomas Park, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a>.</center><script async defer src="https://buttons.github.io/buttons.js"></script>'
+        right : '<center><p><a href="https://ko-fi.com/U7U4NQ0Q" target="_blank"><img height="30" src="https://az743702.vo.msecnd.net/cdn/kofi3.png?v=0" border="0" alt="Buy Me a Coffee at ko-fi.com" /></a><br /><br /><a class="github-button" href="https://github.com/sublunarspace/sublunar.almanac" data-size="large" aria-label="Star sublunarspace/sublunar.almanac on GitHub">GitHub</a></p><p><a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a> © 2018 T. F. Raaion / <a href="http://sublunar.space">sublunar space</a><br />contact: <a href=\'mailto:&#105;&#110;&#102;&#111;&#64;&#115;&#117;&#98;&#108;&#117;&#110;&#97;&#114;&#46;&#115;&#112;&#97;&#99;&#101;\'>&#105;&#110;&#102;&#111;&#64;&#115;&#117;&#98;&#108;&#117;&#110;&#97;&#114;&#46;&#115;&#112;&#97;&#99;&#101;</a></p></center><hr /><center><p>Astronomical calculations are based on <br /><a href="http://www.astro.com/swisseph/swephinfo_e.htm" target="_blank">Swiss Ephemeris API</a>, © 1997-2016 Astrodienst AG, <a href="https://opensource.org/licenses/GPL-2.0" target="_blank">(GPLv2.0+)</a><br />and the <a href="http://www.moshier.net/#Astronomy" target="_blank">Table of New Moon Dates</a> by Steve Moshier.</p><p>The front-end relies on the following Javascript Libraries:<br /><a href="https://jquery.com/" target="_blank">jQuery 3.2.1</a>, © JS Foundation, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /><a href="https://getbootstrap.com/" target="_blank">Bootstrap 3.3.7</a>, © Twitter, Inc., <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /><a href="https://github.com/codepb/jquery-template/" target="_blank">jQuery.loadTemplate</a>, © 2013 Paul Burgess and other contributors, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /><a href="http://momentjs.com" target="_blank">MomentJS 2.18.1</a>, © Tim Wood, Iskren Chernev, Moment.js contributors, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /><a href="http://isotope.metafizzy.co" target="_blank">Isotope 3.0.4</a>, © 2017 Metafizzy, <a href="https://opensource.org/licenses/GPL-3.0" target="_blank">(GPLv3)</a><br /><a href="http://defiantjs.com" target="_blank">DefiantJS 1.4.1</a>, © 2013-2017, Hakan Bilgin, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /><a href="http://ricostacruz.com/nprogress" target="_blank">NProgress</a>, © 2013, 2014 Rico Sta. Cruz, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /><a href="https://github.com/klokantech/javascript" target="_blank">OsmNamesAutocomplete</a>, © 2016 Klokan Technologies GmbH, <a href="https://opensource.org/licenses/GPL-3.0" target="_blank">(GPLv3)</a><br /><a href="https://github.com/darkskyapp/tz-lookup" target="_blank">tzlookup</a>, by The Dark Sky, LLC, <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">(CC0 1.0 Universal)</a><br /><a href="https://github.com/nwcell/ics.js/" target="_blank">ics.js</a>, © 2018 Travis Krause, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a></p><p>The design is based on<br /><a href="http://bootswatch.com" target="_blank">bootswatch v3.3.7</a>, © 2012-2017 Thomas Park, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a>.</center><script async defer src="https://buttons.github.io/buttons.js"></script>'
     })
     .appendTo('#modals')
     .attr('id', 'aboutSLC')
@@ -104,6 +104,12 @@ SL.Calendar = (function() {
     });
   }
 
+  function unik(array){
+    return array.filter(function(el, index, arr) {
+        return index === arr.indexOf(el);
+    });
+  }
+
   /**
    * Hours object with variable and function to generate the grid of planetary hours
    * @public {Object} moments - JSON object holding all the data returned from the swiss ephemeris calculations done by pmom.c
@@ -128,7 +134,7 @@ SL.Calendar = (function() {
         alert("Sorry, the calculation is limited to 60 days at the moment! Calculating the first 60 out of your desired "+days+" days!");
         days = 60;
       }
-      $('#grid').empty();
+      $('#grid .stoke').html('calculating...please wait');
       $('#download').remove();
       Filter.load();
       var files = document.getElementById('fileInput').files;
@@ -228,6 +234,7 @@ SL.Calendar = (function() {
         $('#calendar').isotope('destroy');
         NProgress.done();
         clearTimeout(timeout);
+        $('#grid .stoke').empty();
       }
     }
 
@@ -298,7 +305,7 @@ SL.Calendar = (function() {
         });
       });
       var tagcloud = tags.join(" ").split(' ').sort();
-      $('#houractions').append( '<br /><b>Tags</b><br />\n'+$.unique( tagcloud ).join(" "));
+      $('#houractions').append( '<br /><b>Tags</b><br />\n'+unik( tagcloud ).join(" "));
       var title = SL.Astro.Logy.planet.day[mom.planetary.day.no+1]+"+Hour+"+(mom.planetary.hour.no+1);
       var desc = $('#hourinfos').html()+'\n\n'+$('#houractions').text();
       $('<a/>').attr('role', 'button').attr('target', '_blank').attr('href',
@@ -384,7 +391,7 @@ SL.Calendar = (function() {
           }
         });
       });
-      var uniqtags = $.unique(tags);
+      var uniqtags = unik(tags);
       // create DOM objects
       uniqtags.sort().forEach(function(tag) {
         tagline += '<li><input type="checkbox" class="actiontag" value=".'+tag+'" id="'+id+'-'+tag+'" />&nbsp;'+tag+'</li>\n';
@@ -519,7 +526,7 @@ SL.Calendar = (function() {
               if (actionArray[i].hasOwnProperty('action') && actionArray[i].action) actions.push(actionArray[i]);
             }
           }
-          if (tags) tagstring = $.unique(tags.join(" ").split(' ')).sort().join(" ");
+          if (tags) tagstring = unik(tags.join(" ").split(' ')).sort().join(" ");
           actionstring = actionArray.map(function(el) { return idstring + el.id; }).join(" ");
           actions.sort();
         }

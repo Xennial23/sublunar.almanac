@@ -112,7 +112,7 @@ int * planetary_moment(double lat, double lon, unsigned long unixtime, double *l
     int32         year, month, day, hour, minute, second, iflag, iflgret;
     int           pl, ipl, rsmi, return_code, dl, lhour, nm;
     double        hours, tjd_ts, te, lastnew;
-    double        x2[6], datm[2], geopos[3], moon[20], llp[20], lunarday[31];
+    double        x2[6], datm[2], geopos[3], moon[20], llp[20], lunarday[31], data[13], datb[10];
     char          serr[AS_MAXCH], starname[255];
 
     datm[0] = 1013.25; // atmospheric pressure
@@ -154,6 +154,11 @@ int * planetary_moment(double lat, double lon, unsigned long unixtime, double *l
       planets[pl] = x2[0];
       planets[pl+7] = x2[3];
     }
+
+    // calculate house cusps, ascendant and mc
+    swe_houses_ex(tjd_ts, 0, latitude, longitude, 'P', data, datb);
+    planets[14] = datb[0]; // asc
+    planets[15] = datb[1]; // mc
 
     // calculate moon phase
     return_code = swe_pheno(te, SE_MOON, iflag, &moon, serr);
@@ -259,7 +264,7 @@ int main(int argc,char* argv[]) // days, timestamp, latitude, longitude
     int32         year, month, day, hour, minute, second, j, h, m, interval, start, days = 1, hm;
     double        hours;
     unsigned long solar[9] = {0};
-    double        lunar[3] = {0.0}, planet[14] = {0.0};
+    double        lunar[3] = {0.0}, planet[16] = {0.0};
 
     // read and assign commandline arguments
     if ( argc > 1 ) {
@@ -312,8 +317,8 @@ int main(int argc,char* argv[]) // days, timestamp, latitude, longitude
         planetary_moment(latitude, longitude, hm, lunar, planet);
 
         printf(
-          "{ \"ts\": %d, \"lunar\": { \"day\": %d, \"angle\": %f, \"phase\": %f }, \"planetary\": { \"day\": { \"no\": %d, \"start\": %d, \"end\": %d }, \"night\": { \"start\": %d, \"end\": %d }, \"hour\": { \"no\": %d, \"start\": %d, \"end\": %d, \"length\": { \"day\": %d, \"night\": %d } } }, \"ephemeris\": { \"sun\": { \"deg\": %f, \"speed\": %f }, \"moon\": { \"deg\": %f, \"speed\": %f }, \"mercury\": { \"deg\": %f, \"speed\": %f }, \"venus\": { \"deg\": %f, \"speed\": %f }, \"mars\": { \"deg\": %f, \"speed\": %f }, \"jupiter\": { \"deg\": %f, \"speed\": %f }, \"saturn\": { \"deg\": %f, \"speed\": %f } } }",
-              hm, (int) lunar[0], lunar[1], lunar[2], solar[7], solar[1], solar[2]-1, solar[2], solar[3]-1, h, hm, hm+interval-1, solar[5], solar[6], planet[0], planet[7], planet[1], planet[8], planet[2], planet[9], planet[3], planet[10], planet[4], planet[11], planet[5], planet[12], planet[6], planet[13]
+          "{ \"ts\": %d, \"lunar\": { \"day\": %d, \"angle\": %f, \"phase\": %f }, \"planetary\": { \"day\": { \"no\": %d, \"start\": %d, \"end\": %d }, \"night\": { \"start\": %d, \"end\": %d }, \"hour\": { \"no\": %d, \"start\": %d, \"end\": %d, \"length\": { \"day\": %d, \"night\": %d } } }, \"ephemeris\": { \"sun\": { \"deg\": %f, \"speed\": %f }, \"moon\": { \"deg\": %f, \"speed\": %f }, \"mercury\": { \"deg\": %f, \"speed\": %f }, \"venus\": { \"deg\": %f, \"speed\": %f }, \"mars\": { \"deg\": %f, \"speed\": %f }, \"jupiter\": { \"deg\": %f, \"speed\": %f }, \"saturn\": { \"deg\": %f, \"speed\": %f }, \"asc\": { \"deg\": %f }, \"mc\": { \"deg\": %f } } }",
+              hm, (int) lunar[0], lunar[1], lunar[2], solar[7], solar[1], solar[2]-1, solar[2], solar[3]-1, h, hm, hm+interval-1, solar[5], solar[6], planet[0], planet[7], planet[1], planet[8], planet[2], planet[9], planet[3], planet[10], planet[4], planet[11], planet[5], planet[12], planet[6], planet[13], planet[14], planet[15]
         );
 
         if(j == days && h == 23) printf("");
