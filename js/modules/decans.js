@@ -7,7 +7,7 @@
 var module_decans_solar = {
 
   definitions: {
-    name: "Greek + Latin Names",
+    name: "Solar Decade",
     group: {
       id: "decans",
       text: "Decans",
