@@ -134,7 +134,8 @@ SL.Calendar = (function() {
         alert("Sorry, the calculation is limited to 60 days at the moment! Calculating the first 60 out of your desired "+days+" days!");
         days = 60;
       }
-      $('#grid .stoke').html('calculating...please wait');
+      $('#caption .stoke').html('calculating...please wait');
+      $("#grid").empty();
       $('#download').remove();
       Filter.load();
       var files = document.getElementById('fileInput').files;
@@ -234,7 +235,7 @@ SL.Calendar = (function() {
         $('#calendar').isotope('destroy');
         NProgress.done();
         clearTimeout(timeout);
-        $('#grid .stoke').empty();
+        $('#caption .stoke').empty();
       }
     }
 
