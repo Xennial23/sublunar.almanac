@@ -280,6 +280,7 @@
          */
 
         // set timestamp when DateTimePicker changes
+        timestamp = new moment().unix();
         $('#datetime').on("dp.change", function() {
           timestamp = $(this).data("DateTimePicker").date().utc().unix();
         });
