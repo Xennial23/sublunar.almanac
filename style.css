@@ -87,7 +87,7 @@ li {
 
 .loading {
     background-color: #ffffff;
-    background-image: url("http://loadinggif.com/images/image-selection/3.gif");
+    background-image: url("lib/loading.gif");
     background-size: 15px 15px;
     background-position:right center;
     background-repeat: no-repeat;

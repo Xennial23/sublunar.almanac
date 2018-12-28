@@ -121,21 +121,13 @@
             </div>
             <div class="modal-body">
               <div class="row">
-                <div class="form-group col-md-12">
-                  <label for="lon">Your Location</label>
+                <div class="form-group col-md-6">
+                    <label for="offset">Automatic Geolocation</label><br />
+                    <button id="locate" class="btn btn-default"><span class="glyphicon glyphicon-map-marker"></span> Locate Me</button>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="lon">Manual Geolocation</label>
                   <input type="text" autocomplete="off" id="search" class="address form-control args" placeholder="City"/>
-
-                  <!--
-                   * OSMnames autocomplete
-                   *-->
-                  <script>
-                    var autocomplete = new kt.OsmNamesAutocomplete(
-                        'search', 'https://geocoder.tilehosting.com/', 'kqIwOXlhKKgBoR5zVAnm');
-                    autocomplete.registerCallback(function(item) {
-                      SL.Calendar.getGeoCode(item);
-                    });
-                  </script>
-
                 </div>
               </div>
               <div class="row">
@@ -287,6 +279,27 @@
         timestamp = new moment().unix();
         $('#datetime').on("dp.change", function() {
           timestamp = $(this).data("DateTimePicker").date().utc().unix();
+        });
+
+        // get browser location when button "locate" is clicked
+        $("#locate").on("click", function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var item = {
+                        lat: position.coords.latitude,
+                        lon: position.coords.longitude
+                    }
+                    SL.Calendar.getGeoCode(item);
+                });
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        });
+
+        // OSMNAmes OsmNamesAutocomplete
+        var autocomplete = new kt.OsmNamesAutocomplete('search', 'https://geocoder.tilehosting.com/', 'kqIwOXlhKKgBoR5zVAnm');
+        autocomplete.registerCallback(function(item) {
+          SL.Calendar.getGeoCode(item);
         });
 
         // "About" modal
