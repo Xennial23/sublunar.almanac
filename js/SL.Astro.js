@@ -4,6 +4,7 @@
  *
  * SUBLUNAR ALMANAC
  */
+ 
 var SL = SL || {};
 
 /**
