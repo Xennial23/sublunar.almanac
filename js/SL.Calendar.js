@@ -332,6 +332,7 @@ SL.Calendar = (function() {
         iCal.download('planetary-'+title);
       });
       $('#hourinfo').modal('show');
+      $('[data-toggle="tooltip"]').tooltip();
     }
 
     return {
