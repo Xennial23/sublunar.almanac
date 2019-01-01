@@ -12,7 +12,6 @@ var module_decans_solar = {
     group: {
       id: "decans",
       text: "Decans",
-      info: "true"
     },
     actions: [
        [0],
@@ -287,7 +286,6 @@ var module_decans_rising = {
     group: {
       id: "decans",
       text: "Decans",
-      info: "true"
     },
     actions: module_decans_solar.definitions.actions
   },
@@ -295,9 +293,7 @@ var module_decans_rising = {
     return SL.Astro.Logy.getZodiac(m.ephemeris.asc.deg).decan;
   },
   calculate: function(definitions, property) {
-    var a = definitions.actions[property];
-    a[0].action += " rising";
-    return a;
+    return definitions.actions[property];
   }
 };
 
@@ -310,7 +306,6 @@ var module_decans_fulldegrees = {
     group: {
       id: "decans",
       text: "Decans",
-      info: "true"
     },
     actions: [
        [0],
@@ -669,7 +664,6 @@ var module_decans_fulldegrees_rising = {
     group: {
       id: "decans",
       text: "Decans",
-      info: "true"
     },
     actions: module_decans_fulldegrees.definitions.actions
   },
@@ -677,13 +671,13 @@ var module_decans_fulldegrees_rising = {
     return m.ephemeris.asc.deg;
   },
   calculate: function(definitions, property) {
-    var a = definitions.actions[getFullDegrees(property)];
-    a[0].action += " rising";
-    return a;
+    return definitions.actions[getFullDegrees(property)];
   }
 };
 
-function getFullDegrees(property) {
+function getFullDegrees(input) {
+
+  var property = SL.Astro.Logy.zodToDeg(SL.Astro.Logy.degToZod(input));
 
   // Aries
   if ( property <    3 )                   return 37;
