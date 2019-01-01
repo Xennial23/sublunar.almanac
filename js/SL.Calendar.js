@@ -297,22 +297,23 @@ SL.Calendar = (function() {
           appender = '#houractions .'+Module.modules[key].definitions.group.id+'-actions';
         }
         else {
-          var tooltip = '';
-          if ( Module.modules[key].definitions.hasOwnProperty("description") ) {
-            tooltip = ' <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="'+Module.modules[key].definitions.description+'"></span">';
-          }
           $('#houractions').append(
             $('<ul/>').append(
               '<li>&nbsp;</li>\n'+
-              '<li><b>'+Module.modules[key].definitions.name+'</b>'+tooltip+'</li>\n'+
+              '<li><b>'+Module.modules[key].definitions.name+'</b></li>\n'+
               '<li><ul class="'+key+'-actions"></ul>\n</li>\n'
             )
           );
         }
 
         if (extData[key].data) extData[key].data.forEach(function(el) {
-          if (!el.hasOwnProperty("hide") || (el.hasOwnProperty("hide") && el.hide != "info"))
-            $(appender).append('<li>'+el.action+'</li>\n');
+          if (!el.hasOwnProperty("hide") || (el.hasOwnProperty("hide") && el.hide != "info")) {
+            var tooltip = '';
+            if ( Module.modules[key].definitions.hasOwnProperty("description") ) {
+              tooltip = ' <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="'+Module.modules[key].definitions.description+'"></span">';
+            }
+            $(appender).append('<li>'+el.action++tooltip+'</li>\n');
+          }
         });
       });
       //var tagcloud = tags.join(" ").split(' ').sort();
