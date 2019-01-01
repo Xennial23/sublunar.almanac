@@ -312,7 +312,7 @@ SL.Calendar = (function() {
             if ( Module.modules[key].definitions.hasOwnProperty("description") ) {
               tooltip = ' <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="'+Module.modules[key].definitions.description+'"></span">';
             }
-            $(appender).append('<li>'+el.action++tooltip+'</li>\n');
+            $(appender).append('<li>'+el.action+tooltip+'</li>\n');
           }
         });
       });

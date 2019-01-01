@@ -663,7 +663,7 @@ var module_decans_fulldegrees_rising = {
     description: "Full and empty rising degrees of the Decans, according to Firmicus Maternus 'Ancient Astrology', Book 4, XXII",
     group: {
       id: "decans",
-      text: "Decans",
+      text: "Decans"
     },
     actions: module_decans_fulldegrees.definitions.actions
   },
