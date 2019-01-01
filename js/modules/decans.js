@@ -8,6 +8,7 @@ var module_decans_solar = {
 
   definitions: {
     name: "Solar Decade",
+    description: "The Decade is the Sun's position in a third of a Zodiac sign, also known as Decan, derived from Egyptian astrology.",
     group: {
       id: "decans",
       text: "Decans",
@@ -18,253 +19,253 @@ var module_decans_solar = {
        [
           {
              "id":28,
-             "action":"Aries 1: Chontare / Senator",
-             "tags":"chontare senator aries1"
+             "action":"Aries 1: Chontare",
+             "tags":"chontare senator aries1 aries"
           }
        ],
        [
           {
              "id":29,
-             "action":"Aries 2: Chontachre / Senacher",
-             "tags":"chontachre senacher aries2"
+             "action":"Aries 2: Chontachre",
+             "tags":"chontachre senacher aries2 aries"
           }
        ],
        [
           {
              "id":30,
-             "action":"Aries 3: Siket / Sentacher",
-             "tags":"siket sentacher aries3"
+             "action":"Aries 3: Siket",
+             "tags":"siket sentacher aries3 aries"
           }
        ],
        [
           {
              "id":31,
-             "action":"Taurus 1: Chôou / Suo",
-             "tags":"choou suo taurus1"
+             "action":"Taurus 1: Chôou",
+             "tags":"choou suo taurus1 taurus"
           }
        ],
        [
           {
              "id":32,
-             "action":"Taurus 2: Erô / Aryo",
-             "tags":"ero aryo taurus2"
+             "action":"Taurus 2: Erô",
+             "tags":"ero aryo taurus2 taurus"
           }
        ],
        [
           {
              "id":33,
-             "action":"Taurus 3: Hrombromare / Romanae",
-             "tags":"hrombromare romanae taurus3"
+             "action":"Taurus 3: Hrombromare",
+             "tags":"hrombromare romanae taurus3 taurus"
           }
        ],
        [
           {
              "id":34,
-             "action":"Gemini 1: Thosolk / Thesogar",
-             "tags":"thosolk thesogar gemini1"
+             "action":"Gemini 1: Thosolk",
+             "tags":"thosolk thesogar gemini1 gemini"
           }
        ],
        [
           {
              "id":35,
-             "action":"Gemini 2: Ouare / Ver",
-             "tags":"ouare ver gemini2"
+             "action":"Gemini 2: Ouare",
+             "tags":"ouare ver gemini2 gemini"
           }
        ],
        [
           {
              "id":36,
-             "action":"Gemini 3: Phouori / Tepis",
-             "tags":"phouori tepis gemini3"
+             "action":"Gemini 3: Phouori",
+             "tags":"phouori tepis gemini3 gemini"
           }
        ],
        [
           {
              "id":1,
-             "action":"Cancer 1: Sôthis / Sothis",
-             "tags":"sothis sothis cancer1"
+             "action":"Cancer 1: Sôthis",
+             "tags":"sothis sothis cancer1 cancer"
           }
        ],
        [
           {
              "id":2,
-             "action":"Cancer 2: Sit / Sith",
-             "tags":"sit sith cancer2"
+             "action":"Cancer 2: Sit",
+             "tags":"sit sith cancer2 cancer"
           }
        ],
        [
           {
              "id":3,
-             "action":"Cancer 3: Chnoumis / Thiumis",
-             "tags":"chnoumis thiumis cancer3"
+             "action":"Cancer 3: Chnoumis",
+             "tags":"chnoumis thiumis cancer3 cancer"
           }
        ],
        [
           {
              "id":4,
-             "action":"Leo 1: Charchnoumis / Craumonis",
-             "tags":"charchnoumis craumonis leo1"
+             "action":"Leo 1: Charchnoumis",
+             "tags":"charchnoumis craumonis leo1 leo"
           }
        ],
        [
           {
              "id":5,
-             "action":"Leo 2: Êpê / Sic",
-             "tags":"epe sic leo2"
+             "action":"Leo 2: Êpê",
+             "tags":"epe sic leo2 leo"
           }
        ],
        [
           {
              "id":6,
-             "action":"Leo 3: Phoupê / Futile",
-             "tags":"phoupe futile leo3"
+             "action":"Leo 3: Phoupê",
+             "tags":"phoupe futile leo3 leo"
           }
        ],
        [
           {
              "id":7,
-             "action":"Virgo 1: Tôm / Thumis",
-             "tags":"tom thumis virgo1"
+             "action":"Virgo 1: Tôm",
+             "tags":"tom thumis virgo1 virgo"
           }
        ],
        [
           {
              "id":8,
-             "action":"Virgo 2: Ouestebkôt / Tophicus",
-             "tags":"ouestebkot tophicus virgo2"
+             "action":"Virgo 2: Ouestebkôt",
+             "tags":"ouestebkot tophicus virgo2 virgo"
           }
        ],
        [
           {
              "id":9,
-             "action":"Virgo 3: Aphoso / Afut",
-             "tags":"aphoso afut virgo3"
+             "action":"Virgo 3: Aphoso",
+             "tags":"aphoso afut virgo3 virgo"
           }
        ],
        [
           {
              "id":10,
-             "action":"Libra 1: Souchôe / Seuichut",
-             "tags":"souchoe seuichut libra1"
+             "action":"Libra 1: Souchôe",
+             "tags":"souchoe seuichut libra1 libra"
           }
        ],
        [
           {
              "id":11,
-             "action":"Libra 2: Ptêchout / Sepisent",
-             "tags":"ptechout sepisent libra2"
+             "action":"Libra 2: Ptêchout",
+             "tags":"ptechout sepisent libra2 libra"
           }
        ],
        [
           {
              "id":12,
-             "action":"Libra 3: Chontare / Senta",
-             "tags":"chontare senta libra3"
+             "action":"Libra 3: Chontare",
+             "tags":"chontare senta libra3 libra"
           }
        ],
        [
           {
              "id":13,
-             "action":"Scorpio 1: Stôchnêne / Sentacer",
-             "tags":"stochnene sentacer scorpio1"
+             "action":"Scorpio 1: Stôchnêne",
+             "tags":"stochnene sentacer scorpio1 scorpio"
           }
        ],
        [
           {
              "id":14,
-             "action":"Scorpio 2: Sesme / Tepsisen",
-             "tags":"sesme tepsisen scorpio2"
+             "action":"Scorpio 2: Sesme",
+             "tags":"sesme tepsisen scorpio2 scorpio"
           }
        ],
        [
           {
              "id":15,
-             "action":"Scorpio 3: Sisieme / Sentineu",
-             "tags":"sisieme sentineu scorpio3"
+             "action":"Scorpio 3: Sisieme",
+             "tags":"sisieme sentineu scorpio3 scorpio"
           }
        ],
        [
           {
              "id":16,
-             "action":"Sagittarius 1: Hrêouô / Eregbuo",
-             "tags":"hreouo eregbuo sagittarius1"
+             "action":"Sagittarius 1: Hrêouô",
+             "tags":"hreouo eregbuo sagittarius1 sagittarius"
           }
        ],
        [
           {
              "id":17,
-             "action":"Sagittarius 2: Sesme / Sagon",
-             "tags":"sesme sagon sagittarius2"
+             "action":"Sagittarius 2: Sesme",
+             "tags":"sesme sagon sagittarius2 sagittarius"
           }
        ],
        [
           {
              "id":18,
-             "action":"Sagittarius 3: Komme / Chenene",
-             "tags":"komme chenene sagittarius3"
+             "action":"Sagittarius 3: Komme",
+             "tags":"komme chenene sagittarius3 sagittarius"
           }
        ],
        [
           {
              "id":19,
-             "action":"Capricorn 1: Smat / Themeso",
-             "tags":"smat themeso capricorn1"
+             "action":"Capricorn 1: Smat",
+             "tags":"smat themeso capricorn1 capricorn"
           }
        ],
        [
           {
              "id":20,
-             "action":"Capricorn 2: Srô / Epiemu",
-             "tags":"sro epiemu capricorn2"
+             "action":"Capricorn 2: Srô",
+             "tags":"sro epiemu capricorn2 capricorn"
           }
        ],
        [
           {
              "id":21,
-             "action":"Capricorn 3: Isrô / Omot",
-             "tags":"isro omot capricorn3"
+             "action":"Capricorn 3: Isrô",
+             "tags":"isro omot capricorn3 capricorn"
           }
        ],
        [
           {
              "id":22,
-             "action":"Aquarius 1: Ptiau / Oro",
-             "tags":"ptiau oro aquarius1"
+             "action":"Aquarius 1: Ptiau",
+             "tags":"ptiau oro aquarius1 aquarius"
           }
        ],
        [
           {
              "id":23,
-             "action":"Aquarius 2: Aue / Cratero",
-             "tags":"aue cratero aquarius2"
+             "action":"Aquarius 2: Aue",
+             "tags":"aue cratero aquarius2 aquarius"
           }
        ],
        [
           {
              "id":24,
-             "action":"Aquarius 3: Ptêbuou / Tepis",
-             "tags":"ptebuou tepis aquarius3"
+             "action":"Aquarius 3: Ptêbuou",
+             "tags":"ptebuou tepis aquarius3 aquarius"
           }
        ],
        [
           {
              "id":25,
-             "action":"Pisces 1: Biou / Acha",
-             "tags":"biou acha pisces1"
+             "action":"Pisces 1: Biou",
+             "tags":"biou acha pisces1 pisces"
           }
        ],
        [
           {
              "id":26,
-             "action":"Pisces 2: Chontare / Tepibui",
-             "tags":"chontare tepibui pisces2"
+             "action":"Pisces 2: Chontare",
+             "tags":"chontare tepibui pisces2 pisces"
           }
        ],
        [
           {
              "id":27,
-             "action":"Pisces 3: Ptibiou / Uiu",
-             "tags":"ptibiou uiu pisces3"
+             "action":"Pisces 3: Ptibiou",
+             "tags":"ptibiou uiu pisces3 pisces"
           }
        ]
     ]
@@ -282,6 +283,30 @@ var module_decans_rising = {
 
   definitions: {
     name: "Rising Decan",
+    description: "The Decan (third of a Zodiac sign, derived from Egyptian astrology) that is rising.",
+    group: {
+      id: "decans",
+      text: "Decans",
+      info: "true"
+    },
+    actions: module_decans_solar.definitions.actions
+  },
+  property: function(m) {
+    return SL.Astro.Logy.getZodiac(m.ephemeris.asc.deg).decan;
+  },
+  calculate: function(definitions, property) {
+    var a = definitions.actions[property];
+    a[0].action += " rising";
+    return a;
+  }
+};
+
+//Defines Calendar Objects and Methods
+var module_decans_fulldegrees = {
+
+  definitions: {
+    name: "Full + Empty",
+    description: "Full and empty degrees of the Decans, according to Firmicus Maternus 'Ancient Astrology', Book 4, XXII",
     group: {
       id: "decans",
       text: "Decans",
@@ -292,261 +317,469 @@ var module_decans_rising = {
        [
           {
              "id":28,
-             "action":"Aries 1 rising: Chontare / Senator",
-             "tags":"chontare senator aries1"
+             "action":"Aries 1: full (Senator)",
+             "tags":"full senator aries"
           }
        ],
        [
           {
              "id":29,
-             "action":"Aries 2 rising: Chontachre / Senacher",
-             "tags":"chontachre senacher aries2"
+             "action":"Aries 2: full (Senacher)",
+             "tags":"full senacher aries"
           }
        ],
        [
           {
              "id":30,
-             "action":"Aries 3 rising: Siket / Sentacher",
-             "tags":"siket sentacher aries3"
+             "action":"Aries 3: full (Sentacher)",
+             "tags":"full sentacher aries"
           }
        ],
        [
           {
              "id":31,
-             "action":"Taurus 1 rising: Chôou / Suo",
-             "tags":"choou suo taurus1"
+             "action":"Taurus 1: full (Suo)",
+             "tags":"full suo taurus"
           }
        ],
        [
           {
              "id":32,
-             "action":"Taurus 2 rising: Erô / Aryo",
-             "tags":"ero aryo taurus2"
+             "action":"Taurus 2: full (Aryo)",
+             "tags":"full aryo taurus"
           }
        ],
        [
           {
              "id":33,
-             "action":"Taurus 3 rising: Hrombromare / Romanae",
-             "tags":"hrombromare romanae taurus3"
+             "action":"Taurus 3: full (Romanae)",
+             "tags":"full romanae taurus"
           }
        ],
        [
           {
              "id":34,
-             "action":"Gemini 1 rising: Thosolk / Thesogar",
-             "tags":"thosolk thesogar gemini1"
+             "action":"Gemini 1: full (Thesogar)",
+             "tags":"full thesogar gemini"
           }
        ],
        [
           {
              "id":35,
-             "action":"Gemini 2 rising: Ouare / Ver",
-             "tags":"ouare ver gemini2"
+             "action":"Gemini 2: full (Ver)",
+             "tags":"full ver gemini"
           }
        ],
        [
           {
              "id":36,
-             "action":"Gemini 3 rising: Phouori / Tepis",
-             "tags":"phouori tepis gemini3"
+             "action":"Gemini 3: full (Tepis)",
+             "tags":"full tepis gemini"
           }
        ],
        [
           {
              "id":1,
-             "action":"Cancer 1 rising: Sôthis / Sothis",
-             "tags":"sothis sothis cancer1"
+             "action":"Cancer 1: full (Sothis)",
+             "tags":"sothis sothis cancer"
           }
        ],
        [
           {
              "id":2,
-             "action":"Cancer 2 rising: Sit / Sith",
-             "tags":"sit sith cancer2"
+             "action":"Cancer 2: full (Sith)",
+             "tags":"full sith cancer"
           }
        ],
        [
           {
              "id":3,
-             "action":"Cancer 3 rising: Chnoumis / Thiumis",
-             "tags":"chnoumis thiumis cancer3"
+             "action":"Cancer 3: full (Thiumis)",
+             "tags":"full thiumis cancer"
           }
        ],
        [
           {
              "id":4,
-             "action":"Leo 1 rising: Charchnoumis / Craumonis",
-             "tags":"charchnoumis craumonis leo1"
+             "action":"Leo 1: full (Craumonis)",
+             "tags":"full craumonis leo"
           }
        ],
        [
           {
              "id":5,
-             "action":"Leo 2 rising: Êpê / Sic",
-             "tags":"epe sic leo2"
+             "action":"Leo 2: full (Sic)",
+             "tags":"full sic leo"
           }
        ],
        [
           {
              "id":6,
-             "action":"Leo 3 rising: Phoupê / Futile",
-             "tags":"phoupe futile leo3"
+             "action":"Leo 3: full (Futile)",
+             "tags":"full futile leo"
           }
        ],
        [
           {
              "id":7,
-             "action":"Virgo 1 rising: Tôm / Thumis",
-             "tags":"tom thumis virgo1"
+             "action":"Virgo 1: full (Thumis)",
+             "tags":"full thumis virgo"
           }
        ],
        [
           {
              "id":8,
-             "action":"Virgo 2 rising: Ouestebkôt / Tophicus",
-             "tags":"ouestebkot tophicus virgo2"
+             "action":"Virgo 2: full (Tophicus)",
+             "tags":"full tophicus virgo"
           }
        ],
        [
           {
              "id":9,
-             "action":"Virgo 3 rising: Aphoso / Afut",
-             "tags":"aphoso afut virgo3"
+             "action":"Virgo 3: full (Afut)",
+             "tags":"full afut virgo"
           }
        ],
        [
           {
              "id":10,
-             "action":"Libra 1 rising: Souchôe / Seuichut",
-             "tags":"souchoe seuichut libra1"
+             "action":"Libra 1: full (Seuichut)",
+             "tags":"full seuichut libra"
           }
        ],
        [
           {
              "id":11,
-             "action":"Libra 2 rising: Ptêchout / Sepisent",
-             "tags":"ptechout sepisent libra2"
+             "action":"Libra 2: full (Sepisent)",
+             "tags":"full sepisent libra"
           }
        ],
        [
           {
              "id":12,
-             "action":"Libra 3 rising: Chontare / Senta",
-             "tags":"chontare senta libra3"
+             "action":"Libra 3: full (Senta)",
+             "tags":"full senta libra"
           }
        ],
        [
           {
              "id":13,
-             "action":"Scorpio 1 rising: Stôchnêne / Sentacer",
-             "tags":"stochnene sentacer scorpio1"
+             "action":"Scorpio 1: full (Sentacer)",
+             "tags":"full sentacer scorpio"
           }
        ],
        [
           {
              "id":14,
-             "action":"Scorpio 2 rising: Sesme / Tepsisen",
-             "tags":"sesme tepsisen scorpio2"
+             "action":"Scorpio 2: full (Tepsisen)",
+             "tags":"full tepsisen scorpio"
           }
        ],
        [
           {
              "id":15,
-             "action":"Scorpio 3 rising: Sisieme / Sentineu",
-             "tags":"sisieme sentineu scorpio3"
+             "action":"Scorpio 3: full (Sentineu)",
+             "tags":"full sentineu scorpio"
           }
        ],
        [
           {
              "id":16,
-             "action":"Sagittarius 1 rising: Hrêouô / Eregbuo",
-             "tags":"hreouo eregbuo sagittarius1"
+             "action":"Sagittarius 1: full (Eregbuo)",
+             "tags":"full eregbuo sagittarius"
           }
        ],
        [
           {
              "id":17,
-             "action":"Sagittarius 2 rising: Sesme / Sagon",
-             "tags":"sesme sagon sagittarius2"
+             "action":"Sagittarius 2: full (Sagon)",
+             "tags":"full sagon sagittarius"
           }
        ],
        [
           {
              "id":18,
-             "action":"Sagittarius 3 rising: Komme / Chenene",
-             "tags":"komme chenene sagittarius3"
+             "action":"Sagittarius 3: full (Chenene)",
+             "tags":"full chenene sagittarius"
           }
        ],
        [
           {
              "id":19,
-             "action":"Capricorn 1 rising: Smat / Themeso",
-             "tags":"smat themeso capricorn1"
+             "action":"Capricorn 1: full (Themeso)",
+             "tags":"full themeso capricorn"
           }
        ],
        [
           {
              "id":20,
-             "action":"Capricorn 2 rising: Srô / Epiemu",
-             "tags":"sro epiemu capricorn2"
+             "action":"Capricorn 2: full (Epiemu)",
+             "tags":"full epiemu capricorn"
           }
        ],
        [
           {
              "id":21,
-             "action":"Capricorn 3 rising: Isrô / Omot",
-             "tags":"isro omot capricorn3"
+             "action":"Capricorn 3: full (Omot)",
+             "tags":"full omot capricorn"
           }
        ],
        [
           {
              "id":22,
-             "action":"Aquarius 1 rising: Ptiau / Oro",
-             "tags":"ptiau oro aquarius1"
+             "action":"Aquarius 1: full (Oro)",
+             "tags":"full oro aquarius"
           }
        ],
        [
           {
              "id":23,
-             "action":"Aquarius 2 rising: Aue / Cratero",
-             "tags":"aue cratero aquarius2"
+             "action":"Aquarius 2: full (Cratero)",
+             "tags":"full cratero aquarius"
           }
        ],
        [
           {
              "id":24,
-             "action":"Aquarius 3 rising: Ptêbuou / Tepis",
-             "tags":"ptebuou tepis aquarius3"
+             "action":"Aquarius 3: full (Tepis)",
+             "tags":"full tepis aquarius"
           }
        ],
        [
           {
              "id":25,
-             "action":"Pisces 1 rising: Biou / Acha",
-             "tags":"biou acha pisces1"
+             "action":"Pisces 1: full (Acha)",
+             "tags":"full acha pisces"
           }
        ],
        [
           {
              "id":26,
-             "action":"Pisces 2 rising: Chontare / Tepibui",
-             "tags":"chontare tepibui pisces2"
+             "action":"Pisces 2: full (Tepibui)",
+             "tags":"full tepibui pisces"
           }
        ],
        [
           {
              "id":27,
-             "action":"Pisces 3 rising: Ptibiou / Uiu",
-             "tags":"ptibiou uiu pisces3"
+             "action":"Pisces 3: full (Uiu)",
+             "tags":"full uiu pisces"
+          }
+       ],
+       [
+          {
+             "id":37,
+             "action":"Aries: empty",
+             "tags":"empty aries"
+          }
+       ],
+       [
+          {
+             "id":38,
+             "action":"Taurus: empty",
+             "tags":"empty taurus"
+          }
+       ],
+       [
+          {
+             "id":39,
+             "action":"Gemini: empty",
+             "tags":"empty gemini"
+          }
+       ],
+       [
+          {
+             "id":40,
+             "action":"Cancer: empty",
+             "tags":"empty cancer"
+          }
+       ],
+       [
+          {
+             "id":41,
+             "action":"Leo: empty",
+             "tags":"empty leo"
+          }
+       ],
+       [
+          {
+             "id":42,
+             "action":"Virgo: empty",
+             "tags":"empty virgo"
+          }
+       ],
+       [
+          {
+             "id":43,
+             "action":"Libra: empty",
+             "tags":"empty libra"
+          }
+       ],
+       [
+          {
+             "id":44,
+             "action":"Scorpio: empty",
+             "tags":"empty scorpio"
+          }
+       ],
+       [
+          {
+             "id":45,
+             "action":"Sagittarius: empty",
+             "tags":"empty sagittarius"
+          }
+       ],
+       [
+          {
+             "id":46,
+             "action":"Capricorn: empty",
+             "tags":"empty capricorn"
+          }
+       ],
+       [
+          {
+             "id":47,
+             "action":"Aquarius: empty",
+             "tags":"empty aquarius"
+          }
+       ],
+       [
+          {
+             "id":48,
+             "action":"Pisces: empty",
+             "tags":"empty pisces"
           }
        ]
     ]
   },
   property: function(m) {
-    return SL.Astro.Logy.getZodiac(m.ephemeris.asc.deg).decan;
+    return m.ephemeris.sun.deg;
   },
   calculate: function(definitions, property) {
-    return definitions.actions[property];
+    return definitions.actions[getFullDegrees(property)];
   }
 };
+
+//Defines Calendar Objects and Methods
+var module_decans_fulldegrees_rising = {
+
+  definitions: {
+    name: "Full + Empty Rising",
+    description: "Full and empty rising degrees of the Decans, according to Firmicus Maternus 'Ancient Astrology', Book 4, XXII",
+    group: {
+      id: "decans",
+      text: "Decans",
+      info: "true"
+    },
+    actions: module_decans_fulldegrees.definitions.actions
+  },
+  property: function(m) {
+    return m.ephemeris.asc.deg;
+  },
+  calculate: function(definitions, property) {
+    var a = definitions.actions[getFullDegrees(property)];
+    a[0].action += " rising";
+    return a;
+  }
+};
+
+function getFullDegrees(property) {
+
+  // Aries
+  if ( property <    3 )                   return 37;
+  if ( property >=   3 && property <   8 ) return 1;
+  if ( property >=   8 && property <  17 ) return 37;
+  if ( property >=  17 && property <  21 ) return 2;
+  if ( property >=  21 && property <  26 ) return 37;
+  if ( property >=  26 && property <  30 ) return 3;
+
+  // Taurus
+  if ( property >=  30 && property <  33 ) return 38;
+  if ( property >=  33 && property <  40 ) return 4;
+  if ( property >=  40 && property <  42 ) return 38;
+  if ( property >=  42 && property <  50 ) return 5;
+  if ( property >=  50 && property <  55 ) return 38;
+  if ( property >=  55 && property <  60 ) return 6;
+
+  // Gemini
+  if ( property >=  60 && property <  67 ) return 7;
+  if ( property >=  67 && property <  69 ) return 39;
+  if ( property >=  69 && property <  74 ) return 8;
+  if ( property >=  74 && property <  77 ) return 39;
+  if ( property >=  77 && property <  83 ) return 9;
+  if ( property >=  83 && property <  90 ) return 39;
+
+  // Cancer
+  if ( property >=  90 && property <  97 ) return 40;
+  if ( property >=  97 && property < 103 ) return 10;
+  if ( property >= 103 && property < 105 ) return 40;
+  if ( property >= 105 && property < 109 ) return 11;
+  if ( property >= 109 && property < 111 ) return 40;
+  if ( property >= 111 && property < 120 ) return 12;
+
+  // Leo
+  if ( property >= 120 && property < 127 ) return 13;
+  if ( property >= 127 && property < 131 ) return 41;
+  if ( property >= 131 && property < 134 ) return 14;
+  if ( property >= 134 && property < 140 ) return 41;
+  if ( property >= 140 && property < 150 ) return 15;
+
+  // Virgo
+  if ( property >= 150 && property < 155 ) return 42;
+  if ( property >= 155 && property < 160 ) return 16;
+  if ( property >= 160 && property < 162 ) return 42;
+  if ( property >= 162 && property < 168 ) return 17;
+  if ( property >= 168 && property < 174 ) return 42;
+  if ( property >= 174 && property < 178 ) return 18;
+  if ( property >= 178 && property < 180 ) return 42;
+
+  // Libra
+  if ( property >= 180 && property < 185 ) return 19;
+  if ( property >= 185 && property < 191 ) return 43;
+  if ( property >= 191 && property < 199 ) return 20;
+  if ( property >= 199 && property < 202 ) return 43;
+  if ( property >= 202 && property < 208 ) return 21;
+  if ( property >= 208 && property < 210 ) return 43;
+
+  // Scorpio
+  if ( property >= 210 && property < 213 ) return 44;
+  if ( property >= 213 && property < 218 ) return 22;
+  if ( property >= 218 && property < 224 ) return 44;
+  if ( property >= 224 && property < 230 ) return 23;
+  if ( property >= 230 && property < 232 ) return 44;
+  if ( property >= 232 && property < 237 ) return 24;
+  if ( property >= 237 && property < 240 ) return 44;
+
+  // Sagittarius
+  if ( property >= 240 && property < 249 ) return 25;
+  if ( property >= 249 && property < 252 ) return 45;
+  if ( property >= 252 && property < 259 ) return 26;
+  if ( property >= 259 && property < 263 ) return 45;
+  if ( property >= 263 && property < 270 ) return 27;
+
+  // Capricorn
+  if ( property >= 270 && property < 277 ) return 46;
+  if ( property >= 277 && property < 280 ) return 28;
+  if ( property >= 280 && property < 285 ) return 46;
+  if ( property >= 285 && property < 289 ) return 29;
+  if ( property >= 289 && property < 294 ) return 46;
+  if ( property >= 294 && property < 300 ) return 30;
+
+  // Aquarius
+  if ( property >= 300 && property < 304 ) return 47;
+  if ( property >= 304 && property < 309 ) return 31;
+  if ( property >= 309 && property < 313 ) return 47;
+  if ( property >= 313 && property < 319 ) return 32;
+  if ( property >= 319 && property < 322 ) return 47;
+  if ( property >= 322 && property < 330 ) return 33;
+
+  // Pisces
+  if ( property >= 330 && property < 336 ) return 48;
+  if ( property >= 336 && property < 342 ) return 34;
+  if ( property >= 342 && property < 345 ) return 48;
+  if ( property >= 345 && property < 350 ) return 35;
+  if ( property >= 350 && property < 356 ) return 48;
+  if ( property >= 356 && property < 358 ) return 36;
+  if ( property >= 358 && property < 360 ) return 48;
+
+}

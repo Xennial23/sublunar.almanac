@@ -134,10 +134,14 @@ SL.Calendar = (function() {
         alert("Sorry, the calculation is limited to 60 days at the moment! Calculating the first 60 out of your desired "+days+" days!");
         days = 60;
       }
-      $('#caption .stoke').html('calculating...please wait');
+      $('#caption .stoke').html('calculating ephemeris...please wait');
       $("#grid").empty();
       $('#download').remove();
       Filter.load();
+      // check if negative UTC offset will be before the beginning of UTC day and if yes, go back one day.
+      if ( moment.unix(ts).startOf('day') > moment.unix(ts).add( $("#offset").val(), 'hours') ) {
+        ts = moment.unix(ts).subtract(1, 'day').utc().unix();
+      }
       var files = document.getElementById('fileInput').files;
       // check if JSON file is loaded. If not, calculate...
       if (files.length <= 0) {
@@ -148,6 +152,7 @@ SL.Calendar = (function() {
           })
           .then(function(json) {
             Hours.moments = json.query;
+            $('#caption .stoke').html('generating planetary hours...please wait');
             for (var i = 0, len = Hours.moments.length; i < len; i++) {
               var everyday = setTimeout( Hour.make, 10, Hours.moments[i], i, Hours.moments.length, everyday);
               NProgress.set(i/Hours.moments.length);
@@ -168,6 +173,7 @@ SL.Calendar = (function() {
             return false;
           }
           Hours.moments = result.query;
+          $('#caption .stoke').html('generating planetary hours...please wait');
           if ( Hours.moments.length > 0 ) {
             for (var i = 0, len = Hours.moments.length; i < len; i++) {
               var everyday = setTimeout( Hour.make, 10, Hours.moments[i], i, Hours.moments.length, everyday);
@@ -483,6 +489,7 @@ SL.Calendar = (function() {
       mod.forEach(function(m) {
         extend(m, eval('module_'+m));
       });
+      $('[data-toggle="tooltip"]').tooltip();
     }
 
     /**
@@ -493,10 +500,14 @@ SL.Calendar = (function() {
     function extend(name,plugin) {
       modules[name] = plugin;
       var groupname = '';
+      var tooltip = '';
       var checked = '';
       if ( plugin.definitions.hasOwnProperty("core") && plugin.definitions.core == true ) checked = "checked";
       if ( plugin.definitions.hasOwnProperty("group") ) groupname = "<b>"+plugin.definitions.group.text+"</b> ";
-      $("#moduleSelect").append('<label class="col-md-6"><input class="module_'+name+'" type="checkbox" '+checked+'> '+groupname+plugin.definitions.name+'</label>');
+      if ( plugin.definitions.hasOwnProperty("description") ) {
+        tooltip = ' <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="'+plugin.definitions.description+'"></span">';
+      }
+      $("#moduleSelect").append('<label class="col-md-6"><input class="module_'+name+'" type="checkbox" '+checked+'> '+groupname+plugin.definitions.name+tooltip+'</label>');
     }
 
     /**

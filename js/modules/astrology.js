@@ -19,16 +19,16 @@ var module_moon = {
       [{
         "id": "1",
         "action": "Moon in Aries",
-        "tags": "moon aries",
+        "tags": "moon aries mars",
         "hide": "info"
       }], [{
         "id": "2",
         "action": "Moon in Taurus (Exalted)",
-        "tags": "moon taurus exalted"
+        "tags": "moon taurus venus exalted"
       }], [{
         "id": "3",
         "action": "Moon in Gemini",
-        "tags": "moon gemini",
+        "tags": "moon gemini mercury",
         "hide": "info"
       }], [{
         "id": "4",
@@ -37,40 +37,40 @@ var module_moon = {
       }], [{
         "id": "5",
         "action": "Moon in Leo",
-        "tags": "moon leo",
+        "tags": "moon leo sun",
         "hide": "info"
       }], [{
         "id": "6",
         "action": "Moon in Virgo",
-        "tags": "moon virgo",
+        "tags": "moon virgo mercury",
         "hide": "info"
       }], [{
         "id": "7",
         "action": "Moon in Libra",
-        "tags": "moon libra",
+        "tags": "moon libra venus",
         "hide": "info"
       }], [{
         "id": "8",
         "action": "Moon in Scorpio (Fall)",
-        "tags": "moon scorpio fall"
+        "tags": "moon scorpio mars fall"
       }], [{
         "id": "9",
         "action": "Moon in Sagittarius",
-        "tags": "moon sagittarius",
+        "tags": "moon sagittarius jupiter",
         "hide": "info"
       }], [{
         "id": "10",
         "action": "Moon in Capricorn (Detriment)",
-        "tags": "moon capricorn detriment"
+        "tags": "moon capricorn saturn detriment"
       }], [{
         "id": "11",
         "action": "Moon in Aquarius",
-        "tags": "moon aquarius",
+        "tags": "moon aquarius saturn",
         "hide": "info"
       }], [{
         "id": "12",
         "action": "Moon in Pisces",
-        "tags": "moon pisces",
+        "tags": "moon pisces jupiter",
         "hide": "info"
       }]
     ]
@@ -99,12 +99,12 @@ var module_mercury = {
       [{
         "id": "1",
         "action": "Mercury in Aries",
-        "tags": "mercury aries",
+        "tags": "mercury aries mars",
         "hide": "info"
       }], [{
         "id": "2",
         "action": "Mercury in Taurus",
-        "tags": "mercury taurus",
+        "tags": "mercury taurus venus",
         "hide": "info"
       }], [{
         "id": "3",
@@ -113,12 +113,12 @@ var module_mercury = {
       }], [{
         "id": "4",
         "action": "Mercury in Cancer",
-        "tags": "cancer mercury",
+        "tags": "cancer moon mercury",
         "hide": "info"
       }], [{
         "id": "5",
         "action": "Mercury in Leo",
-        "tags": "mercury leo",
+        "tags": "mercury leo sun",
         "hide": "info"
       }], [{
         "id": "6",
@@ -127,31 +127,31 @@ var module_mercury = {
       }], [{
         "id": "7",
         "action": "Mercury in Libra",
-        "tags": "mercury libra",
+        "tags": "mercury libra venus",
         "hide": "info"
       }], [{
         "id": "8",
         "action": "Mercury in Scorpio",
-        "tags": "mercury scorpio",
+        "tags": "mercury scorpio mars",
         "hide": "info"
       }], [{
         "id": "9",
         "action": "Mercury in Sagittarius (Detriment)",
-        "tags": "mercury sagittarius detriment"
+        "tags": "mercury sagittarius jupiter detriment"
       }], [{
         "id": "10",
         "action": "Mercury in Capricorn",
-        "tags": "mercury capricorn",
+        "tags": "mercury capricorn saturn",
         "hide": "info"
       }], [{
         "id": "11",
         "action": "Mercury in Aquarius",
-        "tags": "mercury aquarius",
+        "tags": "mercury aquarius saturn",
         "hide": "info"
       }], [{
         "id": "12",
         "action": "Mercury in Pisces (Fall)",
-        "tags": "mercury pisces fall"
+        "tags": "mercury pisces jupiter fall"
       }]
     ]
   },
@@ -179,7 +179,7 @@ var module_venus = {
       [{
         "id": "1",
         "action": "Venus in Aries (Detriment)",
-        "tags": "venus aries detriment"
+        "tags": "venus aries mars detriment"
       }], [{
         "id": "2",
         "action": "Venus in Taurus",
@@ -188,22 +188,22 @@ var module_venus = {
       }], [{
         "id": "3",
         "action": "Venus in Gemini",
-        "tags": "venus gemini",
+        "tags": "venus gemini mercury",
         "hide": "info"
       }], [{
         "id": "4",
         "action": "Venus in Cancer",
-        "tags": "cancer venus",
+        "tags": "cancer moon venus",
         "hide": "info"
       }], [{
         "id": "5",
         "action": "Venus in Leo",
-        "tags": "venus leo",
+        "tags": "venus leo sun",
         "hide": "info"
       }], [{
         "id": "6",
         "action": "Venus in Virgo (Fall)",
-        "tags": "venus virgo fall"
+        "tags": "venus virgo mercury fall"
       }], [{
         "id": "7",
         "action": "Venus in Libra (Domicile)",
@@ -211,26 +211,26 @@ var module_venus = {
       }], [{
         "id": "8",
         "action": "Venus in Scorpio (Detriment)",
-        "tags": "venus scorpio detriment"
+        "tags": "venus scorpio mars detriment"
       }], [{
         "id": "9",
         "action": "Venus in Sagittarius",
-        "tags": "venus sagittarius",
+        "tags": "venus sagittarius jupiter",
         "hide": "info"
       }], [{
         "id": "10",
         "action": "Venus in Capricorn",
-        "tags": "venus capricorn",
+        "tags": "venus capricorn saturn",
         "hide": "info"
       }], [{
         "id": "11",
         "action": "Venus in Aquarius",
-        "tags": "venus aquarius",
+        "tags": "venus aquarius saturn",
         "hide": "info"
       }], [{
         "id": "12",
         "action": "Venus in Pisces (Exaltation)",
-        "tags": "venus pisces exaltation"
+        "tags": "venus pisces jupiter exaltation"
       }]
     ]
   },
@@ -258,21 +258,21 @@ var module_sun = {
       [{
         "id": "1",
         "action": "Sun in Aries (Exaltation)",
-        "tags": "sun aries exaltation"
+        "tags": "sun aries mars exaltation"
       }], [{
         "id": "2",
         "action": "Sun in Taurus",
-        "tags": "sun taurus",
+        "tags": "sun taurus venus",
         "hide": "info"
       }], [{
         "id": "3",
         "action": "Sun in Gemini",
-        "tags": "sun gemini",
+        "tags": "sun gemini mercury",
         "hide": "info"
       }], [{
         "id": "4",
         "action": "Sun in Cancer",
-        "tags": "cancer sun",
+        "tags": "cancer moon sun",
         "hide": "info"
       }], [{
         "id": "5",
@@ -281,35 +281,35 @@ var module_sun = {
       }], [{
         "id": "6",
         "action": "Sun in Virgo",
-        "tags": "sun virgo",
+        "tags": "sun virgo mercury",
         "hide": "info"
       }], [{
         "id": "7",
         "action": "Sun in Libra (Fall)",
-        "tags": "sun libra fall"
+        "tags": "sun libra venus fall"
       }], [{
         "id": "8",
         "action": "Sun in Scorpio",
-        "tags": "sun scorpio",
+        "tags": "sun scorpio mars",
         "hide": "info"
       }], [{
         "id": "9",
         "action": "Sun in Sagittarius",
-        "tags": "sun sagittarius",
+        "tags": "sun sagittarius jupiter",
         "hide": "info"
       }], [{
         "id": "10",
         "action": "Sun in Capricorn",
-        "tags": "sun capricorn",
+        "tags": "sun capricorn saturn",
         "hide": "info"
       }], [{
         "id": "11",
         "action": "Sun in Aquarius (Detriment)",
-        "tags": "sun aquarius detriment"
+        "tags": "sun aquarius saturn detriment"
       }], [{
         "id": "12",
         "action": "Sun in Pisces",
-        "tags": "sun pisces",
+        "tags": "sun pisces jupiter",
         "hide": "info"
       }]
     ]
@@ -342,30 +342,30 @@ var module_mars = {
       }], [{
         "id": "2",
         "action": "Mars in Taurus (Detriment)",
-        "tags": "mars taurus detriment"
+        "tags": "mars taurus venus detriment"
       }], [{
         "id": "3",
         "action": "Mars in Gemini",
-        "tags": "mars gemini",
+        "tags": "mars gemini mercury",
         "hide": "info"
       }], [{
         "id": "4",
         "action": "Mars in Cancer (Fall)",
-        "tags": "cancer mars fall"
+        "tags": "cancer moon mars fall"
       }], [{
         "id": "5",
         "action": "Mars in Leo",
-        "tags": "mars leo",
+        "tags": "mars leo sun",
         "hide": "info"
       }], [{
         "id": "6",
         "action": "Mars in Virgo",
-        "tags": "mars virgo",
+        "tags": "mars virgo mercury",
         "hide": "info"
       }], [{
         "id": "7",
         "action": "Mars in Libra (Detriment)",
-        "tags": "mars libra detriment"
+        "tags": "mars libra venus detriment"
       }], [{
         "id": "8",
         "action": "Mars in Scorpio (Domicile)",
@@ -373,21 +373,21 @@ var module_mars = {
       }], [{
         "id": "9",
         "action": "Mars in Sagittarius",
-        "tags": "mars sagittarius",
+        "tags": "mars sagittarius jupiter",
         "hide": "info"
       }], [{
         "id": "10",
         "action": "Mars in Capricorn (Exalted)",
-        "tags": "mars capricorn exalted"
+        "tags": "mars capricorn saturn exalted"
       }], [{
         "id": "11",
         "action": "Mars in Aquarius",
-        "tags": "mars aquarius",
+        "tags": "mars aquarius saturn",
         "hide": "info"
       }], [{
         "id": "12",
         "action": "Mars in Pisces",
-        "tags": "mars pisces",
+        "tags": "mars pisces jupiter",
         "hide": "info"
       }]
     ]
@@ -416,39 +416,39 @@ var module_jupiter = {
       [{
         "id": "1",
         "action": "Jupiter in Aries",
-        "tags": "jupiter aries",
+        "tags": "jupiter aries mars",
         "hide": "info"
       }], [{
         "id": "2",
         "action": "Jupiter in Taurus",
-        "tags": "jupiter taurus",
+        "tags": "jupiter taurus venus",
         "hide": "info"
       }], [{
         "id": "3",
         "action": "Jupiter in Gemini (Detriment)",
-        "tags": "jupiter gemini detriment"
+        "tags": "jupiter gemini mercury detriment"
       }], [{
         "id": "4",
         "action": "Jupiter in Cancer (Exaltation)",
-        "tags": "cancer jupiter exaltation"
+        "tags": "cancer moon jupiter exaltation"
       }], [{
         "id": "5",
         "action": "Jupiter in Leo",
-        "tags": "jupiter leo",
+        "tags": "jupiter leo sun",
         "hide": "info"
       }], [{
         "id": "6",
         "action": "Jupiter in Virgo (Detriment)",
-        "tags": "jupiter virgo detriment"
+        "tags": "jupiter virgo mercury detriment"
       }], [{
         "id": "7",
         "action": "Jupiter in Libra",
-        "tags": "jupiter libra",
+        "tags": "jupiter libra venus",
         "hide": "info"
       }], [{
         "id": "8",
         "action": "Jupiter in Scorpio",
-        "tags": "jupiter scorpio",
+        "tags": "jupiter scorpio mars",
         "hide": "info"
       }], [{
         "id": "9",
@@ -457,11 +457,11 @@ var module_jupiter = {
       }], [{
         "id": "10",
         "action": "Jupiter in Capricorn (Fall)",
-        "tags": "jupiter capricorn fall"
+        "tags": "jupiter capricorn saturn fall"
       }], [{
         "id": "11",
         "action": "Jupiter in Aquarius",
-        "tags": "jupiter aquarius",
+        "tags": "jupiter aquarius saturn",
         "hide": "info"
       }], [{
         "id": "12",
@@ -494,43 +494,43 @@ var module_saturn = {
       [{
         "id": "1",
         "action": "Saturn in Aries (Fall)",
-        "tags": "saturn aries fall"
+        "tags": "saturn aries mars fall"
       }], [{
         "id": "2",
         "action": "Saturn in Taurus",
-        "tags": "saturn taurus",
+        "tags": "saturn taurus venus",
         "hide": "info"
       }], [{
         "id": "3",
         "action": "Saturn in Gemini)",
-        "tags": "saturn gemini",
+        "tags": "saturn gemini mercury",
         "hide": "info"
       }], [{
         "id": "4",
         "action": "Saturn in Cancer (Detriment)",
-        "tags": "cancer saturn detriment"
+        "tags": "cancer moon saturn detriment"
       }], [{
         "id": "5",
         "action": "Saturn in Leo (Detriment)",
-        "tags": "saturn leo detriment"
+        "tags": "saturn leo sun detriment"
       }], [{
         "id": "6",
         "action": "Saturn in Virgo",
-        "tags": "saturn virgo",
+        "tags": "saturn virgo mercury",
         "hide": "info"
       }], [{
         "id": "7",
         "action": "Saturn in Libra (Exaltation)",
-        "tags": "saturn libra exaltation"
+        "tags": "saturn libra venus exaltation"
       }], [{
         "id": "8",
         "action": "Saturn in Scorpio",
-        "tags": "saturn scorpio",
+        "tags": "saturn scorpio mars",
         "hide": "info"
       }], [{
         "id": "9",
         "action": "Saturn in Sagittarius",
-        "tags": "saturn sagittarius",
+        "tags": "saturn sagittarius jupiter",
         "hide": "info"
       }], [{
         "id": "10",
@@ -543,7 +543,7 @@ var module_saturn = {
       }], [{
         "id": "12",
         "action": "Saturn in Pisces",
-        "tags": "saturn pisces",
+        "tags": "saturn pisces jupiter",
         "hide": "info"
       }]
     ]
@@ -572,51 +572,51 @@ var module_ascendant = {
       [{
         "id": "1",
         "action": "Aries Rising",
-        "tags": "aries"
+        "tags": "aries mars"
       }], [{
         "id": "2",
         "action": "Taurus Rising",
-        "tags": "taurus"
+        "tags": "taurus venus"
       }], [{
         "id": "3",
         "action": "Gemini Rising",
-        "tags": "gemini"
+        "tags": "gemini mercury"
       }], [{
         "id": "4",
         "action": "Cancer Rising",
-        "tags": "cancer"
+        "tags": "cancer moon"
       }], [{
         "id": "5",
         "action": "Leo Rising",
-        "tags": "leo"
+        "tags": "leo sun"
       }], [{
         "id": "6",
         "action": "Virgo Rising",
-        "tags": "virgo"
+        "tags": "virgo mercury"
       }], [{
         "id": "7",
         "action": "Libra Rising",
-        "tags": "libra"
+        "tags": "libra venus"
       }], [{
         "id": "8",
         "action": "Scorpio Rising",
-        "tags": "scorpio"
+        "tags": "scorpio mars"
       }], [{
         "id": "9",
         "action": "Sagittarius Rising",
-        "tags": "sagittarius"
+        "tags": "sagittarius jupiter"
       }], [{
         "id": "10",
         "action": "Capricorn Rising",
-        "tags": "capricorn"
+        "tags": "capricorn saturn"
       }], [{
         "id": "11",
         "action": "Aquarius Rising",
-        "tags": "aquarius"
+        "tags": "aquarius saturn"
       }], [{
         "id": "12",
         "action": "Pisces Rising",
-        "tags": "pisces"
+        "tags": "pisces jupiter"
       }]
     ]
   },

@@ -198,6 +198,7 @@ var module_pgm_civildate = {
 
   definitions: {
     name: "Egyptian Civil Date + Unlucky Days",
+    description: "Calculation of the date according to the old 365 days Egyptian Civil Calendar. It was reformed to a 365.25 day calendar by Ptolemy III. and banned by Augustus but continuously used in secret by mages and astrologers until the 6th century. The unlucky days of PGM VII.272ff. are applied to this date.",
     group: {
       id: "pgm",
       text: "PGM",
