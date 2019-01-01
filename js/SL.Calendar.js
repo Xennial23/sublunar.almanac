@@ -281,8 +281,8 @@ SL.Calendar = (function() {
       var tags = [];
       var extData = Module.data(mom);
       Object.keys(extData).forEach(function(key) {
-        if (!extData[key].hasOwnProperty("hide") || (extData[key].hasOwnProperty("hide") && extData[key].hide != "info"))
-          tags.push(extData[key].tags);
+        //if (!extData[key].hasOwnProperty("hide") || (extData[key].hasOwnProperty("hide") && extData[key].hide != "info"))
+        //  tags.push(extData[key].tags);
         var appender = '#houractions .'+key+'-actions';
         if ( Module.modules[key].definitions.hasOwnProperty("group") && Module.modules[key].definitions.group.hasOwnProperty("info") ) {
           if ( !$('li.info-section-'+Module.modules[key].definitions.group.id).length ) {
@@ -297,10 +297,14 @@ SL.Calendar = (function() {
           appender = '#houractions .'+Module.modules[key].definitions.group.id+'-actions';
         }
         else {
+          var tooltip = '';
+          if ( Module.modules[key].definitions.hasOwnProperty("description") ) {
+            tooltip = ' <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="'+Module.modules[key].definitions.description+'"></span">';
+          }
           $('#houractions').append(
             $('<ul/>').append(
               '<li>&nbsp;</li>\n'+
-              '<li><b>'+Module.modules[key].definitions.name+'</b></li>\n'+
+              '<li><b>'+Module.modules[key].definitions.name+'</b>'+tooltip+'</li>\n'+
               '<li><ul class="'+key+'-actions"></ul>\n</li>\n'
             )
           );
@@ -311,8 +315,8 @@ SL.Calendar = (function() {
             $(appender).append('<li>'+el.action+'</li>\n');
         });
       });
-      var tagcloud = tags.join(" ").split(' ').sort();
-      $('#houractions').append( '<br /><b>Tags</b><br />\n'+unik( tagcloud ).join(" "));
+      //var tagcloud = tags.join(" ").split(' ').sort();
+      //$('#houractions').append( '<br /><b>Tags</b><br />\n'+unik( tagcloud ).join(" "));
       var title = SL.Astro.Logy.planet.day[mom.planetary.day.no+1]+"+Hour+"+(mom.planetary.hour.no+1);
       var desc = $('#hourinfos').html()+'\n\n'+$('#houractions').text();
       $('<a/>').attr('role', 'button').attr('target', '_blank').attr('href',
