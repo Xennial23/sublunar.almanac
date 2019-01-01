@@ -310,9 +310,9 @@ SL.Calendar = (function() {
           if (!el.hasOwnProperty("hide") || (el.hasOwnProperty("hide") && el.hide != "info")) {
             var tooltip = '';
             if ( Module.modules[key].definitions.hasOwnProperty("description") ) {
-              tooltip = ' <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="'+Module.modules[key].definitions.description+'"></span">';
+              tooltip = ' data-toggle="tooltip" title="'+Module.modules[key].definitions.description+'"';
             }
-            $(appender).append('<li>'+el.action+tooltip+'</li>\n');
+            $(appender).append('<li'+tooltip+'>'+el.action+'</li>\n');
           }
         });
       });

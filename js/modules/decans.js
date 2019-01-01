@@ -12,258 +12,259 @@ var module_decans_solar = {
     group: {
       id: "decans",
       text: "Decans",
+      info: "true"
     },
     actions: [
        [0],
        [
           {
              "id":28,
-             "action":"Aries 1: Chontare",
+             "action":"Sun in Aries 1: Chontare",
              "tags":"chontare senator aries1 aries"
           }
        ],
        [
           {
              "id":29,
-             "action":"Aries 2: Chontachre",
+             "action":"Sun in Aries 2: Chontachre",
              "tags":"chontachre senacher aries2 aries"
           }
        ],
        [
           {
              "id":30,
-             "action":"Aries 3: Siket",
+             "action":"Sun in Aries 3: Siket",
              "tags":"siket sentacher aries3 aries"
           }
        ],
        [
           {
              "id":31,
-             "action":"Taurus 1: Chôou",
+             "action":"Sun in Taurus 1: Chôou",
              "tags":"choou suo taurus1 taurus"
           }
        ],
        [
           {
              "id":32,
-             "action":"Taurus 2: Erô",
+             "action":"Sun in Taurus 2: Erô",
              "tags":"ero aryo taurus2 taurus"
           }
        ],
        [
           {
              "id":33,
-             "action":"Taurus 3: Hrombromare",
+             "action":"Sun in Taurus 3: Hrombromare",
              "tags":"hrombromare romanae taurus3 taurus"
           }
        ],
        [
           {
              "id":34,
-             "action":"Gemini 1: Thosolk",
+             "action":"Sun in Gemini 1: Thosolk",
              "tags":"thosolk thesogar gemini1 gemini"
           }
        ],
        [
           {
              "id":35,
-             "action":"Gemini 2: Ouare",
+             "action":"Sun in Gemini 2: Ouare",
              "tags":"ouare ver gemini2 gemini"
           }
        ],
        [
           {
              "id":36,
-             "action":"Gemini 3: Phouori",
+             "action":"Sun in Gemini 3: Phouori",
              "tags":"phouori tepis gemini3 gemini"
           }
        ],
        [
           {
              "id":1,
-             "action":"Cancer 1: Sôthis",
+             "action":"Sun in Cancer 1: Sôthis",
              "tags":"sothis sothis cancer1 cancer"
           }
        ],
        [
           {
              "id":2,
-             "action":"Cancer 2: Sit",
+             "action":"Sun in Cancer 2: Sit",
              "tags":"sit sith cancer2 cancer"
           }
        ],
        [
           {
              "id":3,
-             "action":"Cancer 3: Chnoumis",
+             "action":"Sun in Cancer 3: Chnoumis",
              "tags":"chnoumis thiumis cancer3 cancer"
           }
        ],
        [
           {
              "id":4,
-             "action":"Leo 1: Charchnoumis",
+             "action":"Sun in Leo 1: Charchnoumis",
              "tags":"charchnoumis craumonis leo1 leo"
           }
        ],
        [
           {
              "id":5,
-             "action":"Leo 2: Êpê",
+             "action":"Sun in Leo 2: Êpê",
              "tags":"epe sic leo2 leo"
           }
        ],
        [
           {
              "id":6,
-             "action":"Leo 3: Phoupê",
+             "action":"Sun in Leo 3: Phoupê",
              "tags":"phoupe futile leo3 leo"
           }
        ],
        [
           {
              "id":7,
-             "action":"Virgo 1: Tôm",
+             "action":"Sun in Virgo 1: Tôm",
              "tags":"tom thumis virgo1 virgo"
           }
        ],
        [
           {
              "id":8,
-             "action":"Virgo 2: Ouestebkôt",
+             "action":"Sun in Virgo 2: Ouestebkôt",
              "tags":"ouestebkot tophicus virgo2 virgo"
           }
        ],
        [
           {
              "id":9,
-             "action":"Virgo 3: Aphoso",
+             "action":"Sun in Virgo 3: Aphoso",
              "tags":"aphoso afut virgo3 virgo"
           }
        ],
        [
           {
              "id":10,
-             "action":"Libra 1: Souchôe",
+             "action":"Sun in Libra 1: Souchôe",
              "tags":"souchoe seuichut libra1 libra"
           }
        ],
        [
           {
              "id":11,
-             "action":"Libra 2: Ptêchout",
+             "action":"Sun in Libra 2: Ptêchout",
              "tags":"ptechout sepisent libra2 libra"
           }
        ],
        [
           {
              "id":12,
-             "action":"Libra 3: Chontare",
+             "action":"Sun in Libra 3: Chontare",
              "tags":"chontare senta libra3 libra"
           }
        ],
        [
           {
              "id":13,
-             "action":"Scorpio 1: Stôchnêne",
+             "action":"Sun in Scorpio 1: Stôchnêne",
              "tags":"stochnene sentacer scorpio1 scorpio"
           }
        ],
        [
           {
              "id":14,
-             "action":"Scorpio 2: Sesme",
+             "action":"Sun in Scorpio 2: Sesme",
              "tags":"sesme tepsisen scorpio2 scorpio"
           }
        ],
        [
           {
              "id":15,
-             "action":"Scorpio 3: Sisieme",
+             "action":"Sun in Scorpio 3: Sisieme",
              "tags":"sisieme sentineu scorpio3 scorpio"
           }
        ],
        [
           {
              "id":16,
-             "action":"Sagittarius 1: Hrêouô",
+             "action":"Sun in Sagittarius 1: Hrêouô",
              "tags":"hreouo eregbuo sagittarius1 sagittarius"
           }
        ],
        [
           {
              "id":17,
-             "action":"Sagittarius 2: Sesme",
+             "action":"Sun in Sagittarius 2: Sesme",
              "tags":"sesme sagon sagittarius2 sagittarius"
           }
        ],
        [
           {
              "id":18,
-             "action":"Sagittarius 3: Komme",
+             "action":"Sun in Sagittarius 3: Komme",
              "tags":"komme chenene sagittarius3 sagittarius"
           }
        ],
        [
           {
              "id":19,
-             "action":"Capricorn 1: Smat",
+             "action":"Sun in Capricorn 1: Smat",
              "tags":"smat themeso capricorn1 capricorn"
           }
        ],
        [
           {
              "id":20,
-             "action":"Capricorn 2: Srô",
+             "action":"Sun in Capricorn 2: Srô",
              "tags":"sro epiemu capricorn2 capricorn"
           }
        ],
        [
           {
              "id":21,
-             "action":"Capricorn 3: Isrô",
+             "action":"Sun in Capricorn 3: Isrô",
              "tags":"isro omot capricorn3 capricorn"
           }
        ],
        [
           {
              "id":22,
-             "action":"Aquarius 1: Ptiau",
+             "action":"Sun in Aquarius 1: Ptiau",
              "tags":"ptiau oro aquarius1 aquarius"
           }
        ],
        [
           {
              "id":23,
-             "action":"Aquarius 2: Aue",
+             "action":"Sun in Aquarius 2: Aue",
              "tags":"aue cratero aquarius2 aquarius"
           }
        ],
        [
           {
              "id":24,
-             "action":"Aquarius 3: Ptêbuou",
+             "action":"Sun in Aquarius 3: Ptêbuou",
              "tags":"ptebuou tepis aquarius3 aquarius"
           }
        ],
        [
           {
              "id":25,
-             "action":"Pisces 1: Biou",
+             "action":"Sun in Pisces 1: Biou",
              "tags":"biou acha pisces1 pisces"
           }
        ],
        [
           {
              "id":26,
-             "action":"Pisces 2: Chontare",
+             "action":"Sun in Pisces 2: Chontare",
              "tags":"chontare tepibui pisces2 pisces"
           }
        ],
        [
           {
              "id":27,
-             "action":"Pisces 3: Ptibiou",
+             "action":"Sun in Pisces 3: Ptibiou",
              "tags":"ptibiou uiu pisces3 pisces"
           }
        ]
@@ -286,8 +287,263 @@ var module_decans_rising = {
     group: {
       id: "decans",
       text: "Decans",
+      info: "true"
     },
-    actions: module_decans_solar.definitions.actions
+    actions: [
+       [0],
+       [
+          {
+             "id":28,
+             "action":"Rising Aries 1: Chontare",
+             "tags":"chontare senator aries1 aries"
+          }
+       ],
+       [
+          {
+             "id":29,
+             "action":"Rising Aries 2: Chontachre",
+             "tags":"chontachre senacher aries2 aries"
+          }
+       ],
+       [
+          {
+             "id":30,
+             "action":"Rising Aries 3: Siket",
+             "tags":"siket sentacher aries3 aries"
+          }
+       ],
+       [
+          {
+             "id":31,
+             "action":"Rising Taurus 1: Chôou",
+             "tags":"choou suo taurus1 taurus"
+          }
+       ],
+       [
+          {
+             "id":32,
+             "action":"Rising Taurus 2: Erô",
+             "tags":"ero aryo taurus2 taurus"
+          }
+       ],
+       [
+          {
+             "id":33,
+             "action":"Rising Taurus 3: Hrombromare",
+             "tags":"hrombromare romanae taurus3 taurus"
+          }
+       ],
+       [
+          {
+             "id":34,
+             "action":"Rising Gemini 1: Thosolk",
+             "tags":"thosolk thesogar gemini1 gemini"
+          }
+       ],
+       [
+          {
+             "id":35,
+             "action":"Rising Gemini 2: Ouare",
+             "tags":"ouare ver gemini2 gemini"
+          }
+       ],
+       [
+          {
+             "id":36,
+             "action":"Rising Gemini 3: Phouori",
+             "tags":"phouori tepis gemini3 gemini"
+          }
+       ],
+       [
+          {
+             "id":1,
+             "action":"Rising Cancer 1: Sôthis",
+             "tags":"sothis sothis cancer1 cancer"
+          }
+       ],
+       [
+          {
+             "id":2,
+             "action":"Rising Cancer 2: Sit",
+             "tags":"sit sith cancer2 cancer"
+          }
+       ],
+       [
+          {
+             "id":3,
+             "action":"Rising Cancer 3: Chnoumis",
+             "tags":"chnoumis thiumis cancer3 cancer"
+          }
+       ],
+       [
+          {
+             "id":4,
+             "action":"Rising Leo 1: Charchnoumis",
+             "tags":"charchnoumis craumonis leo1 leo"
+          }
+       ],
+       [
+          {
+             "id":5,
+             "action":"Rising Leo 2: Êpê",
+             "tags":"epe sic leo2 leo"
+          }
+       ],
+       [
+          {
+             "id":6,
+             "action":"Rising Leo 3: Phoupê",
+             "tags":"phoupe futile leo3 leo"
+          }
+       ],
+       [
+          {
+             "id":7,
+             "action":"Rising Virgo 1: Tôm",
+             "tags":"tom thumis virgo1 virgo"
+          }
+       ],
+       [
+          {
+             "id":8,
+             "action":"Rising Virgo 2: Ouestebkôt",
+             "tags":"ouestebkot tophicus virgo2 virgo"
+          }
+       ],
+       [
+          {
+             "id":9,
+             "action":"Rising Virgo 3: Aphoso",
+             "tags":"aphoso afut virgo3 virgo"
+          }
+       ],
+       [
+          {
+             "id":10,
+             "action":"Rising Libra 1: Souchôe",
+             "tags":"souchoe seuichut libra1 libra"
+          }
+       ],
+       [
+          {
+             "id":11,
+             "action":"Rising Libra 2: Ptêchout",
+             "tags":"ptechout sepisent libra2 libra"
+          }
+       ],
+       [
+          {
+             "id":12,
+             "action":"Rising Libra 3: Chontare",
+             "tags":"chontare senta libra3 libra"
+          }
+       ],
+       [
+          {
+             "id":13,
+             "action":"Rising Scorpio 1: Stôchnêne",
+             "tags":"stochnene sentacer scorpio1 scorpio"
+          }
+       ],
+       [
+          {
+             "id":14,
+             "action":"Rising Scorpio 2: Sesme",
+             "tags":"sesme tepsisen scorpio2 scorpio"
+          }
+       ],
+       [
+          {
+             "id":15,
+             "action":"Rising Scorpio 3: Sisieme",
+             "tags":"sisieme sentineu scorpio3 scorpio"
+          }
+       ],
+       [
+          {
+             "id":16,
+             "action":"Rising Sagittarius 1: Hrêouô",
+             "tags":"hreouo eregbuo sagittarius1 sagittarius"
+          }
+       ],
+       [
+          {
+             "id":17,
+             "action":"Rising Sagittarius 2: Sesme",
+             "tags":"sesme sagon sagittarius2 sagittarius"
+          }
+       ],
+       [
+          {
+             "id":18,
+             "action":"Rising Sagittarius 3: Komme",
+             "tags":"komme chenene sagittarius3 sagittarius"
+          }
+       ],
+       [
+          {
+             "id":19,
+             "action":"Rising Capricorn 1: Smat",
+             "tags":"smat themeso capricorn1 capricorn"
+          }
+       ],
+       [
+          {
+             "id":20,
+             "action":"Rising Capricorn 2: Srô",
+             "tags":"sro epiemu capricorn2 capricorn"
+          }
+       ],
+       [
+          {
+             "id":21,
+             "action":"Rising Capricorn 3: Isrô",
+             "tags":"isro omot capricorn3 capricorn"
+          }
+       ],
+       [
+          {
+             "id":22,
+             "action":"Rising Aquarius 1: Ptiau",
+             "tags":"ptiau oro aquarius1 aquarius"
+          }
+       ],
+       [
+          {
+             "id":23,
+             "action":"Rising Aquarius 2: Aue",
+             "tags":"aue cratero aquarius2 aquarius"
+          }
+       ],
+       [
+          {
+             "id":24,
+             "action":"Rising Aquarius 3: Ptêbuou",
+             "tags":"ptebuou tepis aquarius3 aquarius"
+          }
+       ],
+       [
+          {
+             "id":25,
+             "action":"Rising Pisces 1: Biou",
+             "tags":"biou acha pisces1 pisces"
+          }
+       ],
+       [
+          {
+             "id":26,
+             "action":"Rising Pisces 2: Chontare",
+             "tags":"chontare tepibui pisces2 pisces"
+          }
+       ],
+       [
+          {
+             "id":27,
+             "action":"Rising Pisces 3: Ptibiou",
+             "tags":"ptibiou uiu pisces3 pisces"
+          }
+       ]
+    ]
   },
   property: function(m) {
     return SL.Astro.Logy.getZodiac(m.ephemeris.asc.deg).decan;
@@ -306,251 +562,252 @@ var module_decans_fulldegrees = {
     group: {
       id: "decans",
       text: "Decans",
+      info: "true"
     },
     actions: [
        [0],
        [
           {
              "id":28,
-             "action":"Aries 1: full (Senator)",
+             "action":"Sun in Aries 1: full (Senator)",
              "tags":"full senator aries"
           }
        ],
        [
           {
              "id":29,
-             "action":"Aries 2: full (Senacher)",
+             "action":"Sun in Aries 2: full (Senacher)",
              "tags":"full senacher aries"
           }
        ],
        [
           {
              "id":30,
-             "action":"Aries 3: full (Sentacher)",
+             "action":"Sun in Aries 3: full (Sentacher)",
              "tags":"full sentacher aries"
           }
        ],
        [
           {
              "id":31,
-             "action":"Taurus 1: full (Suo)",
+             "action":"Sun in Taurus 1: full (Suo)",
              "tags":"full suo taurus"
           }
        ],
        [
           {
              "id":32,
-             "action":"Taurus 2: full (Aryo)",
+             "action":"Sun in Taurus 2: full (Aryo)",
              "tags":"full aryo taurus"
           }
        ],
        [
           {
              "id":33,
-             "action":"Taurus 3: full (Romanae)",
+             "action":"Sun in Taurus 3: full (Romanae)",
              "tags":"full romanae taurus"
           }
        ],
        [
           {
              "id":34,
-             "action":"Gemini 1: full (Thesogar)",
+             "action":"Sun in Gemini 1: full (Thesogar)",
              "tags":"full thesogar gemini"
           }
        ],
        [
           {
              "id":35,
-             "action":"Gemini 2: full (Ver)",
+             "action":"Sun in Gemini 2: full (Ver)",
              "tags":"full ver gemini"
           }
        ],
        [
           {
              "id":36,
-             "action":"Gemini 3: full (Tepis)",
+             "action":"Sun in Gemini 3: full (Tepis)",
              "tags":"full tepis gemini"
           }
        ],
        [
           {
              "id":1,
-             "action":"Cancer 1: full (Sothis)",
+             "action":"Sun in Cancer 1: full (Sothis)",
              "tags":"sothis sothis cancer"
           }
        ],
        [
           {
              "id":2,
-             "action":"Cancer 2: full (Sith)",
+             "action":"Sun in Cancer 2: full (Sith)",
              "tags":"full sith cancer"
           }
        ],
        [
           {
              "id":3,
-             "action":"Cancer 3: full (Thiumis)",
+             "action":"Sun in Cancer 3: full (Thiumis)",
              "tags":"full thiumis cancer"
           }
        ],
        [
           {
              "id":4,
-             "action":"Leo 1: full (Craumonis)",
+             "action":"Sun in Leo 1: full (Craumonis)",
              "tags":"full craumonis leo"
           }
        ],
        [
           {
              "id":5,
-             "action":"Leo 2: full (Sic)",
+             "action":"Sun in Leo 2: full (Sic)",
              "tags":"full sic leo"
           }
        ],
        [
           {
              "id":6,
-             "action":"Leo 3: full (Futile)",
+             "action":"Sun in Leo 3: full (Futile)",
              "tags":"full futile leo"
           }
        ],
        [
           {
              "id":7,
-             "action":"Virgo 1: full (Thumis)",
+             "action":"Sun in Virgo 1: full (Thumis)",
              "tags":"full thumis virgo"
           }
        ],
        [
           {
              "id":8,
-             "action":"Virgo 2: full (Tophicus)",
+             "action":"Sun in Virgo 2: full (Tophicus)",
              "tags":"full tophicus virgo"
           }
        ],
        [
           {
              "id":9,
-             "action":"Virgo 3: full (Afut)",
+             "action":"Sun in Virgo 3: full (Afut)",
              "tags":"full afut virgo"
           }
        ],
        [
           {
              "id":10,
-             "action":"Libra 1: full (Seuichut)",
+             "action":"Sun in Libra 1: full (Seuichut)",
              "tags":"full seuichut libra"
           }
        ],
        [
           {
              "id":11,
-             "action":"Libra 2: full (Sepisent)",
+             "action":"Sun in Libra 2: full (Sepisent)",
              "tags":"full sepisent libra"
           }
        ],
        [
           {
              "id":12,
-             "action":"Libra 3: full (Senta)",
+             "action":"Sun in Libra 3: full (Senta)",
              "tags":"full senta libra"
           }
        ],
        [
           {
              "id":13,
-             "action":"Scorpio 1: full (Sentacer)",
+             "action":"Sun in Scorpio 1: full (Sentacer)",
              "tags":"full sentacer scorpio"
           }
        ],
        [
           {
              "id":14,
-             "action":"Scorpio 2: full (Tepsisen)",
+             "action":"Sun in Scorpio 2: full (Tepsisen)",
              "tags":"full tepsisen scorpio"
           }
        ],
        [
           {
              "id":15,
-             "action":"Scorpio 3: full (Sentineu)",
+             "action":"Sun in Scorpio 3: full (Sentineu)",
              "tags":"full sentineu scorpio"
           }
        ],
        [
           {
              "id":16,
-             "action":"Sagittarius 1: full (Eregbuo)",
+             "action":"Sun in Sagittarius 1: full (Eregbuo)",
              "tags":"full eregbuo sagittarius"
           }
        ],
        [
           {
              "id":17,
-             "action":"Sagittarius 2: full (Sagon)",
+             "action":"Sun in Sagittarius 2: full (Sagon)",
              "tags":"full sagon sagittarius"
           }
        ],
        [
           {
              "id":18,
-             "action":"Sagittarius 3: full (Chenene)",
+             "action":"Sun in Sagittarius 3: full (Chenene)",
              "tags":"full chenene sagittarius"
           }
        ],
        [
           {
              "id":19,
-             "action":"Capricorn 1: full (Themeso)",
+             "action":"Sun in Capricorn 1: full (Themeso)",
              "tags":"full themeso capricorn"
           }
        ],
        [
           {
              "id":20,
-             "action":"Capricorn 2: full (Epiemu)",
+             "action":"Sun in Capricorn 2: full (Epiemu)",
              "tags":"full epiemu capricorn"
           }
        ],
        [
           {
              "id":21,
-             "action":"Capricorn 3: full (Omot)",
+             "action":"Sun in Capricorn 3: full (Omot)",
              "tags":"full omot capricorn"
           }
        ],
        [
           {
              "id":22,
-             "action":"Aquarius 1: full (Oro)",
+             "action":"Sun in Aquarius 1: full (Oro)",
              "tags":"full oro aquarius"
           }
        ],
        [
           {
              "id":23,
-             "action":"Aquarius 2: full (Cratero)",
+             "action":"Sun in Aquarius 2: full (Cratero)",
              "tags":"full cratero aquarius"
           }
        ],
        [
           {
              "id":24,
-             "action":"Aquarius 3: full (Tepis)",
+             "action":"Sun in Aquarius 3: full (Tepis)",
              "tags":"full tepis aquarius"
           }
        ],
        [
           {
              "id":25,
-             "action":"Pisces 1: full (Acha)",
+             "action":"Sun in Pisces 1: full (Acha)",
              "tags":"full acha pisces"
           }
        ],
        [
           {
              "id":26,
-             "action":"Pisces 2: full (Tepibui)",
+             "action":"Sun in Pisces 2: full (Tepibui)",
              "tags":"full tepibui pisces"
           }
        ],
@@ -564,84 +821,84 @@ var module_decans_fulldegrees = {
        [
           {
              "id":37,
-             "action":"Aries: empty",
+             "action":"Sun in Aries: empty",
              "tags":"empty aries"
           }
        ],
        [
           {
              "id":38,
-             "action":"Taurus: empty",
+             "action":"Sun in Taurus: empty",
              "tags":"empty taurus"
           }
        ],
        [
           {
              "id":39,
-             "action":"Gemini: empty",
+             "action":"Sun in Gemini: empty",
              "tags":"empty gemini"
           }
        ],
        [
           {
              "id":40,
-             "action":"Cancer: empty",
+             "action":"Sun in Cancer: empty",
              "tags":"empty cancer"
           }
        ],
        [
           {
              "id":41,
-             "action":"Leo: empty",
+             "action":"Sun in Leo: empty",
              "tags":"empty leo"
           }
        ],
        [
           {
              "id":42,
-             "action":"Virgo: empty",
+             "action":"Sun in Virgo: empty",
              "tags":"empty virgo"
           }
        ],
        [
           {
              "id":43,
-             "action":"Libra: empty",
+             "action":"Sun in Libra: empty",
              "tags":"empty libra"
           }
        ],
        [
           {
              "id":44,
-             "action":"Scorpio: empty",
+             "action":"Sun in Scorpio: empty",
              "tags":"empty scorpio"
           }
        ],
        [
           {
              "id":45,
-             "action":"Sagittarius: empty",
+             "action":"Sun in Sagittarius: empty",
              "tags":"empty sagittarius"
           }
        ],
        [
           {
              "id":46,
-             "action":"Capricorn: empty",
+             "action":"Sun in Capricorn: empty",
              "tags":"empty capricorn"
           }
        ],
        [
           {
              "id":47,
-             "action":"Aquarius: empty",
+             "action":"Sun in Aquarius: empty",
              "tags":"empty aquarius"
           }
        ],
        [
           {
              "id":48,
-             "action":"Pisces: empty",
+             "action":"Sun in Pisces: empty",
              "tags":"empty pisces"
           }
        ]
@@ -663,9 +920,348 @@ var module_decans_fulldegrees_rising = {
     description: "Full and empty rising degrees of the Decans, according to Firmicus Maternus 'Ancient Astrology', Book 4, XXII",
     group: {
       id: "decans",
-      text: "Decans"
+      text: "Decans",
+      info: "true"
     },
-    actions: module_decans_fulldegrees.definitions.actions
+    actions: [
+       [0],
+       [
+          {
+             "id":28,
+             "action":"Rising Aries 1: full (Senator)",
+             "tags":"full senator aries"
+          }
+       ],
+       [
+          {
+             "id":29,
+             "action":"Rising Aries 2: full (Senacher)",
+             "tags":"full senacher aries"
+          }
+       ],
+       [
+          {
+             "id":30,
+             "action":"Rising Aries 3: full (Sentacher)",
+             "tags":"full sentacher aries"
+          }
+       ],
+       [
+          {
+             "id":31,
+             "action":"Rising Taurus 1: full (Suo)",
+             "tags":"full suo taurus"
+          }
+       ],
+       [
+          {
+             "id":32,
+             "action":"Rising Taurus 2: full (Aryo)",
+             "tags":"full aryo taurus"
+          }
+       ],
+       [
+          {
+             "id":33,
+             "action":"Rising Taurus 3: full (Romanae)",
+             "tags":"full romanae taurus"
+          }
+       ],
+       [
+          {
+             "id":34,
+             "action":"Rising Gemini 1: full (Thesogar)",
+             "tags":"full thesogar gemini"
+          }
+       ],
+       [
+          {
+             "id":35,
+             "action":"Rising Gemini 2: full (Ver)",
+             "tags":"full ver gemini"
+          }
+       ],
+       [
+          {
+             "id":36,
+             "action":"Rising Gemini 3: full (Tepis)",
+             "tags":"full tepis gemini"
+          }
+       ],
+       [
+          {
+             "id":1,
+             "action":"Rising Cancer 1: full (Sothis)",
+             "tags":"sothis sothis cancer"
+          }
+       ],
+       [
+          {
+             "id":2,
+             "action":"Rising Cancer 2: full (Sith)",
+             "tags":"full sith cancer"
+          }
+       ],
+       [
+          {
+             "id":3,
+             "action":"Rising Cancer 3: full (Thiumis)",
+             "tags":"full thiumis cancer"
+          }
+       ],
+       [
+          {
+             "id":4,
+             "action":"Rising Leo 1: full (Craumonis)",
+             "tags":"full craumonis leo"
+          }
+       ],
+       [
+          {
+             "id":5,
+             "action":"Rising Leo 2: full (Sic)",
+             "tags":"full sic leo"
+          }
+       ],
+       [
+          {
+             "id":6,
+             "action":"Rising Leo 3: full (Futile)",
+             "tags":"full futile leo"
+          }
+       ],
+       [
+          {
+             "id":7,
+             "action":"Rising Virgo 1: full (Thumis)",
+             "tags":"full thumis virgo"
+          }
+       ],
+       [
+          {
+             "id":8,
+             "action":"Rising Virgo 2: full (Tophicus)",
+             "tags":"full tophicus virgo"
+          }
+       ],
+       [
+          {
+             "id":9,
+             "action":"Rising Virgo 3: full (Afut)",
+             "tags":"full afut virgo"
+          }
+       ],
+       [
+          {
+             "id":10,
+             "action":"Rising Libra 1: full (Seuichut)",
+             "tags":"full seuichut libra"
+          }
+       ],
+       [
+          {
+             "id":11,
+             "action":"Rising Libra 2: full (Sepisent)",
+             "tags":"full sepisent libra"
+          }
+       ],
+       [
+          {
+             "id":12,
+             "action":"Rising Libra 3: full (Senta)",
+             "tags":"full senta libra"
+          }
+       ],
+       [
+          {
+             "id":13,
+             "action":"Rising Scorpio 1: full (Sentacer)",
+             "tags":"full sentacer scorpio"
+          }
+       ],
+       [
+          {
+             "id":14,
+             "action":"Rising Scorpio 2: full (Tepsisen)",
+             "tags":"full tepsisen scorpio"
+          }
+       ],
+       [
+          {
+             "id":15,
+             "action":"Rising Scorpio 3: full (Sentineu)",
+             "tags":"full sentineu scorpio"
+          }
+       ],
+       [
+          {
+             "id":16,
+             "action":"Rising Sagittarius 1: full (Eregbuo)",
+             "tags":"full eregbuo sagittarius"
+          }
+       ],
+       [
+          {
+             "id":17,
+             "action":"Rising Sagittarius 2: full (Sagon)",
+             "tags":"full sagon sagittarius"
+          }
+       ],
+       [
+          {
+             "id":18,
+             "action":"Rising Sagittarius 3: full (Chenene)",
+             "tags":"full chenene sagittarius"
+          }
+       ],
+       [
+          {
+             "id":19,
+             "action":"Rising Capricorn 1: full (Themeso)",
+             "tags":"full themeso capricorn"
+          }
+       ],
+       [
+          {
+             "id":20,
+             "action":"Rising Capricorn 2: full (Epiemu)",
+             "tags":"full epiemu capricorn"
+          }
+       ],
+       [
+          {
+             "id":21,
+             "action":"Rising Capricorn 3: full (Omot)",
+             "tags":"full omot capricorn"
+          }
+       ],
+       [
+          {
+             "id":22,
+             "action":"Rising Aquarius 1: full (Oro)",
+             "tags":"full oro aquarius"
+          }
+       ],
+       [
+          {
+             "id":23,
+             "action":"Rising Aquarius 2: full (Cratero)",
+             "tags":"full cratero aquarius"
+          }
+       ],
+       [
+          {
+             "id":24,
+             "action":"Rising Aquarius 3: full (Tepis)",
+             "tags":"full tepis aquarius"
+          }
+       ],
+       [
+          {
+             "id":25,
+             "action":"Rising Pisces 1: full (Acha)",
+             "tags":"full acha pisces"
+          }
+       ],
+       [
+          {
+             "id":26,
+             "action":"Rising Pisces 2: full (Tepibui)",
+             "tags":"full tepibui pisces"
+          }
+       ],
+       [
+          {
+             "id":27,
+             "action":"Rising Pisces 3: full (Uiu)",
+             "tags":"full uiu pisces"
+          }
+       ],
+       [
+          {
+             "id":37,
+             "action":"Rising Aries: empty",
+             "tags":"empty aries"
+          }
+       ],
+       [
+          {
+             "id":38,
+             "action":"Rising Taurus: empty",
+             "tags":"empty taurus"
+          }
+       ],
+       [
+          {
+             "id":39,
+             "action":"Rising Gemini: empty",
+             "tags":"empty gemini"
+          }
+       ],
+       [
+          {
+             "id":40,
+             "action":"Rising Cancer: empty",
+             "tags":"empty cancer"
+          }
+       ],
+       [
+          {
+             "id":41,
+             "action":"Rising Leo: empty",
+             "tags":"empty leo"
+          }
+       ],
+       [
+          {
+             "id":42,
+             "action":"Rising Virgo: empty",
+             "tags":"empty virgo"
+          }
+       ],
+       [
+          {
+             "id":43,
+             "action":"Rising Libra: empty",
+             "tags":"empty libra"
+          }
+       ],
+       [
+          {
+             "id":44,
+             "action":"Rising Scorpio: empty",
+             "tags":"empty scorpio"
+          }
+       ],
+       [
+          {
+             "id":45,
+             "action":"Rising Sagittarius: empty",
+             "tags":"empty sagittarius"
+          }
+       ],
+       [
+          {
+             "id":46,
+             "action":"Rising Capricorn: empty",
+             "tags":"empty capricorn"
+          }
+       ],
+       [
+          {
+             "id":47,
+             "action":"Rising Aquarius: empty",
+             "tags":"empty aquarius"
+          }
+       ],
+       [
+          {
+             "id":48,
+             "action":"Rising Pisces: empty",
+             "tags":"empty pisces"
+          }
+       ]
+    ]
   },
   property: function(m) {
     return m.ephemeris.asc.deg;
