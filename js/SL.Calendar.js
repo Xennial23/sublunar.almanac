@@ -137,14 +137,14 @@ SL.Calendar = (function() {
      * @param {float} lon - decimal degrees longitude of place on Earth
      */
     function make(days, ts, lat, lon ) {
-      if ( days > 60 ) {
+      if ( days > 60 && $("body").attr("use") == "online" ) {
         alert("Sorry, the calculation is limited to 60 days at the moment! Calculating the first 60 out of your desired "+days+" days!");
         days = 60;
       }
       $('#caption .stoke').html('calculating ephemeris...please wait');
       $("#grid").empty();
       $('#download').remove();
-      if ( $("body").attr("use") == "offline" ) $("#grid").css({"visibility":"hidden"});
+      if ( $("body").attr("use") == "download" ) $("#grid").css({"visibility":"hidden"});
       Filter.load();
       // check if negative UTC offset will be before the beginning of UTC day and if yes, go back one day.
       if ( moment.unix(ts).startOf('day') > moment.unix(ts).add( $("#offset").val(), 'hours') ) {
@@ -153,19 +153,26 @@ SL.Calendar = (function() {
       var files = document.getElementById('fileInput').files;
       // check if JSON file is loaded. If not, calculate...
       if (files.length <= 0) {
-        var url = "pmom.php?days="+days+"&ts="+ts+"&lat="+lat+"&lon="+lon;
-        fetch(url)
-        .then(function(response) {
-            return response.json();
-          })
-          .then(function(json) {
-            Hours.moments = json.query;
-            $('#caption .stoke').html('generating planetary hours...please wait');
-            for (var i = 0, len = Hours.moments.length; i < len; i++) {
-              var everyday = setTimeout( Hour.make, 10, Hours.moments[i], i, Hours.moments.length, everyday);
-              NProgress.set(i/Hours.moments.length);
+        // checks if usecase is offline, then uses WebAssembly
+        if ( $("body").attr("use") != "online" ) {
+            var astrologer = new Worker('js/sweph.js');
+            astrologer.postMessage([days, ts, lat, lon]);
+            astrologer.onmessage = function(response) {
+                Hours.moments = response.data;
+                maker();
             }
-          });
+        // checks if usecase is online, then uses server based calculation
+        } else {
+            var url = "pmom.php?days="+days+"&ts="+ts+"&lat="+lat+"&lon="+lon;
+            fetch(url)
+            .then(function(response) {
+                return response.json();
+              })
+              .then(function(json) {
+                Hours.moments = json.query;
+                maker();
+              });
+        }
       } else {
         // display calendar data from JSON file
         var fr = new FileReader();
@@ -181,16 +188,20 @@ SL.Calendar = (function() {
             return false;
           }
           Hours.moments = result.query;
-          $('#caption .stoke').html('generating planetary hours...please wait');
-          if ( Hours.moments.length > 0 ) {
+          maker();
+        }
+        fr.readAsText(files.item(0));
+      }
+    }
+
+    function maker() {
+        if ( Hours.moments.length > 0 ) {
+            $('#caption .stoke').html('generating planetary hours...please wait');
             for (var i = 0, len = Hours.moments.length; i < len; i++) {
               var everyday = setTimeout( Hour.make, 10, Hours.moments[i], i, Hours.moments.length, everyday);
               NProgress.set(i/Hours.moments.length);
             }
-          }
         }
-        fr.readAsText(files.item(0));
-      }
     }
 
     return {
@@ -247,11 +258,11 @@ SL.Calendar = (function() {
         }
         SL.Calendar.resetFileInput();
         $('.planetaryhour').on('click', SL.Calendar.hourInfo);
-        $('#calendar').isotope('destroy');
+        if ( $('#calendar').data('isotope') ) $('#calendar').isotope('destroy');
         NProgress.done();
         clearTimeout(timeout);
         $('#caption .stoke').empty();
-        if ( $("body").attr("use") == "offline" )
+        if ( $("body").attr("use") == "download" )
             SL.Calendar.download( $("#grid").html(), fname, "skip", "html", "text/html; charset=utf-8");
       }
     }

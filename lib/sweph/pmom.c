@@ -3,11 +3,22 @@
 * License MIT: http://www.opensource.org/licenses/MIT
 */
 
+#define ONLINE 1
+#define OFFLINE 2
+
+#ifndef VARIANT
+#error "VARIANT needs to be set"
+#endif
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
 #include <math.h>
 #include "swephexp.h"
+
+#if VARIANT == OFFLINE
+#include <emscripten.h>
+#endif
 
 /**
  * converts Julian Day to UNIX epoch
@@ -254,34 +265,19 @@ int * solar_moment(double lat, double lon, unsigned long unixtime, unsigned long
 /**
  * calculates JSON Ephemeris Object
  */
-int main(int argc,char* argv[]) // days, timestamp, latitude, longitude
+const char * pmom(int days, long epoch, double latitude, double longitude, int buflen) // days, timestamp, latitude, longitude
 {
-    double        latitude = 0.0;
-    double        longitude = 0.0;
-    unsigned long epoch = 0, queryday;
+    unsigned long queryday;
     struct tm     *tmp;
     time_t        timestamp = 0;
-    int32         year, month, day, hour, minute, second, j, h, m, interval, start, days = 1, hm;
+    int32         year, month, day, hour, minute, second, j, h, m, interval, start, hm;
     double        hours;
     unsigned long solar[9] = {0};
     double        lunar[3] = {0.0}, planet[16] = {0.0};
+    char*         Buffer = malloc(buflen);
+    int           length = 0;
 
-    // read and assign commandline arguments
-    if ( argc > 1 ) {
-      days = atof(argv[1]);
-    }
-    if ( argc > 3 ) {
-      latitude = atof(argv[3]);
-      longitude = atof(argv[4]);
-    }
-    if ( argc > 2 ) {
-      sscanf(argv[2], "%lu", &epoch);
-      timestamp = epoch;
-    }
-    else {
-      time(&timestamp);
-      epoch = (int) timestamp;
-    }
+    timestamp = epoch;
 
     // take timestamp, convert it to year, month, day, decimal hour
     tmp = gmtime(&timestamp);
@@ -296,7 +292,7 @@ int main(int argc,char* argv[]) // days, timestamp, latitude, longitude
     // start of Almanac
     queryday = time_to_epoch(year, month, day, 0, 0, 0);
     j = 0;
-    printf("{ \"query\":[");
+    length += snprintf(Buffer+length, buflen-length, "{ \"query\":[");
 
     // calculate all hours for all days
     while ( j <= days ) {
@@ -316,18 +312,65 @@ int main(int argc,char* argv[]) // days, timestamp, latitude, longitude
 
         planetary_moment(latitude, longitude, hm, lunar, planet);
 
-        printf(
+        length += snprintf(Buffer+length, buflen-length,
           "{ \"ts\": %d, \"lunar\": { \"day\": %d, \"angle\": %f, \"phase\": %f }, \"planetary\": { \"day\": { \"no\": %d, \"start\": %d, \"end\": %d }, \"night\": { \"start\": %d, \"end\": %d }, \"hour\": { \"no\": %d, \"start\": %d, \"end\": %d, \"length\": { \"day\": %d, \"night\": %d } } }, \"ephemeris\": { \"sun\": { \"deg\": %f, \"speed\": %f }, \"moon\": { \"deg\": %f, \"speed\": %f }, \"mercury\": { \"deg\": %f, \"speed\": %f }, \"venus\": { \"deg\": %f, \"speed\": %f }, \"mars\": { \"deg\": %f, \"speed\": %f }, \"jupiter\": { \"deg\": %f, \"speed\": %f }, \"saturn\": { \"deg\": %f, \"speed\": %f }, \"asc\": { \"deg\": %f }, \"mc\": { \"deg\": %f } } }",
               hm, (int) lunar[0], lunar[1], lunar[2], solar[7], solar[1], solar[2]-1, solar[2], solar[3]-1, h, hm, hm+interval-1, solar[5], solar[6], planet[0], planet[7], planet[1], planet[8], planet[2], planet[9], planet[3], planet[10], planet[4], planet[11], planet[5], planet[12], planet[6], planet[13], planet[14], planet[15]
         );
 
-        if(j == days && h == 23) printf("");
-        else printf(", ");
+        if(j == days && h == 23) length += snprintf(Buffer+length, buflen-length, "");
+        else length += snprintf(Buffer+length, buflen-length, ", ");
 
         h++;
       }
       queryday = solar[3];
       j++;
     };
-    printf("]}");
+    length += snprintf(Buffer+length, buflen-length, "]}");
+    return Buffer;
 }
+
+#if VARIANT == ONLINE
+int main(int argc,char* argv[]) // days, timestamp, latitude, longitude
+{
+    double        latitude = 0.0;
+    double        longitude = 0.0;
+    unsigned long epoch = 0;
+    time_t        timestamp = 0;
+    int32         days = 1, buflen;
+
+    // read and assign commandline arguments
+    if ( argc > 1 ) {
+      days = atof(argv[1]);
+    }
+    if ( argc > 3 ) {
+      latitude = atof(argv[3]);
+      longitude = atof(argv[4]);
+    }
+    if ( argc > 2 ) {
+      sscanf(argv[2], "%lu", &epoch);
+      timestamp = epoch;
+    }
+    else {
+      time(&timestamp);
+      epoch = (int) timestamp;
+    }
+
+    timestamp = epoch;
+    buflen = days * 100000;
+    printf(pmom( days, epoch, latitude, longitude, buflen));
+
+}
+#endif
+
+#if VARIANT == OFFLINE
+EMSCRIPTEN_KEEPALIVE
+const char * get(int days, long epoch, double latitude, double longitude) // days, timestamp, latitude, longitude
+{
+    time_t        timestamp = 0;
+    int32         buflen;
+
+    timestamp = epoch;
+    buflen = days * 100000;
+    return pmom( days, epoch, latitude, longitude, buflen);
+}
+#endif
