@@ -104,93 +104,94 @@
     </div>
     <a id="downloadAnchorElem" style="display:none"></a>
 
+
+    <!--
+     * Settings Modal
+     *-->
+    <div class="modal fade" id="settings" tabindex="-1" role="dialog">
+       <div class="modal-dialog" role="document">
+          <div class="modal-content">
+             <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><span class="glyphicon glyphicon-globe"></span> Settings</h4>
+             </div>
+             <div class="modal-body">
+                <div class="row">
+                   <div class="form-group col-md-6">
+                      <label for="offset">Automatic Geolocation</label><br />
+                      <button id="locate" class="btn btn-default"><span class="glyphicon glyphicon-map-marker"></span> Locate Me</button>
+                   </div>
+                   <div class="form-group col-md-6">
+                      <label for="lon">Manual Geolocation</label>
+                      <input type="text" autocomplete="off" id="search" class="address form-control args" placeholder="City"/>
+                   </div>
+                </div>
+                <div class="row">
+                   <div class="form-group col-md-6">
+                      <label for="datetime">Date and Time</label>
+                      <input type="text" class="form-control" id="datetime" />
+                   </div>
+                   <div class="form-group col-md-6">
+                      <label for="offset">UTC Offset</label>
+                      <input type="text" class="coords form-control args" id="offset" placeholder="3"/>
+                   </div>
+                </div>
+                <div class="row">
+                   <div class="form-group col-md-6">
+                      <label for="lat">Latitude</label>
+                      <input type="text" class="coords form-control args" id="lat" placeholder="37.2204674515" />
+                   </div>
+                   <div class="form-group col-md-6">
+                      <label for="lon">Longitude</label>
+                      <input type="text" class="coords form-control args" id="lon" placeholder="38.9200813197"/>
+                   </div>
+                </div>
+                <div class="row">
+                   <div class="form-group col-md-4">
+                      <label for="lon">Generate Days</label>
+                      <input type="text" id="days" class="form-control" value="7">
+                   </div>
+                   <div class="form-group col-md-4">
+                      <label for="lon">Filter Hours</label>
+                      <div class="checkbox">
+                         <label>
+                         <input id="future" type="checkbox"> Hide Past
+                         </label>
+                      </div>
+                   </div>
+                   <div class="form-group col-md-4">
+                      <label for="lon">Zodiac System</label>
+                      <div class="checkbox">
+                         <label>
+                         <input id="zodiac" type="checkbox"> Sidereal
+                         </label>
+                      </div>
+                   </div>
+                   <div class="form-group col-md-12">
+                      <label for="lon">Modules to Use</label>
+                      <p><a id="allModules">All</a> <a id="noModules">None</a></p>
+                      <div id="moduleSelect" class="checkbox form-check form-check-inline">
+                      </div>
+                   </div>
+                </div>
+                <div class="modal-footer">
+                   <label class="btn btn-default pull-left" id="fileInputLabel" for="fileInput">
+                   <input id="fileInput" type="file" style="display:none"
+                      onchange="$('#fileInputLabel').removeClass('btn-default').addClass('btn-success').find('span').html(this.files[0].name)">
+                   <span>Select File</span>
+                   </label>
+                   <button type="button" class="btn btn-primary" id="generate" >Generate</button>
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+
     <!--
      * DOM object with all modal templates
      *-->
-    <div id="modals">
-
-      <!--
-       * Settings Modal
-       *-->
-      <div class="modal fade" id="settings" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><span class="glyphicon glyphicon-globe"></span> Settings</h4>
-            </div>
-            <div class="modal-body">
-              <div class="row">
-                <div class="form-group col-md-6">
-                    <label for="offset">Automatic Geolocation</label><br />
-                    <button id="locate" class="btn btn-default"><span class="glyphicon glyphicon-map-marker"></span> Locate Me</button>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="lon">Manual Geolocation</label>
-                  <input type="text" autocomplete="off" id="search" class="address form-control args" placeholder="City"/>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="datetime">Date and Time</label>
-                  <input type="text" class="form-control" id="datetime" />
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="offset">UTC Offset</label>
-                  <input type="text" class="coords form-control args" id="offset" placeholder="3"/>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="lat">Latitude</label>
-                  <input type="text" class="coords form-control args" id="lat" placeholder="37.2204674515" />
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="lon">Longitude</label>
-                  <input type="text" class="coords form-control args" id="lon" placeholder="38.9200813197"/>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group col-md-4">
-                  <label for="lon">Generate Days</label>
-                  <input type="text" id="days" class="form-control" value="7">
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="lon">Filter Hours</label>
-                  <div class="checkbox">
-                    <label>
-                      <input id="future" type="checkbox"> Hide Past
-                    </label>
-                  </div>
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="lon">Zodiac System</label>
-                  <div class="checkbox">
-                    <label>
-                      <input id="zodiac" type="checkbox"> Sidereal
-                    </label>
-                  </div>
-                </div>
-                <div class="form-group col-md-12">
-                  <label for="lon">Modules to Use</label>
-                  <div id="moduleSelect" class="checkbox form-check form-check-inline">
-                  </div>
-                </div>
-              </div>
-
-            <div class="modal-footer">
-              <label class="btn btn-default pull-left" id="fileInputLabel" for="fileInput">
-                  <input id="fileInput" type="file" style="display:none"
-                  onchange="$('#fileInputLabel').removeClass('btn-default').addClass('btn-success').find('span').html(this.files[0].name)">
-                <span>Select File</span>
-              </label>
-              <button type="button" class="btn btn-primary" id="generate" >Generate</button>
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div id="modals"></div>
 
 <!--
  * jQuery.loadTemplate templates
@@ -296,6 +297,14 @@
             }
         });
 
+        $("#allModules").on("click", function() {
+            $('#moduleSelect input:checkbox').prop('checked', true);
+        });
+
+        $("#noModules").on("click", function() {
+            $('#moduleSelect input:checkbox').prop('checked', false);
+        });
+
         // OSMNAmes OsmNamesAutocomplete
         var autocomplete = new kt.OsmNamesAutocomplete('search', 'https://geocoder.tilehosting.com/', 'kqIwOXlhKKgBoR5zVAnm');
         autocomplete.registerCallback(function(item) {
@@ -328,6 +337,18 @@
 
         // "Reset" button in navbar menu bar
         $('#filterreset').on('click', function() {
+            if ( $("body").attr("use") == "offline" ) {
+                $("#grid").empty();
+                $('#caption .stoke').html("resetting...please wait.");
+                $.get("presets/grid.html").done(function(html) {
+                    $("#grid").append(html);
+                    $('#caption .stoke').empty();
+                    $('#moduleSelect input:checkbox').prop('checked', true);
+                    $('.planetaryhour').on('click', SL.Calendar.hourInfo);
+                    if ( $('#calendar').data('isotope') ) $('#calendar').isotope('destroy');
+                });
+            }
+          $('.actionlistfilter input').prop('checked', false);
           $('.filteroptions input').prop('checked', false);
           filters = {};
           $('#calendar').isotope({ filter: '*' });

@@ -263,7 +263,8 @@ SL.Calendar = (function() {
         clearTimeout(timeout);
         $('#caption .stoke').empty();
         if ( $("body").attr("use") == "download" )
-            SL.Calendar.download( $("#grid").html(), fname, "skip", "html", "text/html; charset=utf-8");
+            SL.Calendar.download( $("#grid").html(), "grid.html", "skip", "html", "text/html; charset=utf-8");
+            SL.Calendar.download(Hours.moments, "ephemeris");
       }
     }
 
@@ -384,6 +385,9 @@ SL.Calendar = (function() {
           modal(plugin, definitions);
         }
       });
+      if ( $("body").attr("use") == "download" )
+      SL.Calendar.download( $("#filterList").html(), "filtermenu.html", "skip", "html", "text/html; charset=utf-8");
+      SL.Calendar.download( $("#modals").html(), "modals.html", "skip", "html", "text/html; charset=utf-8");
     }
 
     /**
@@ -518,6 +522,20 @@ SL.Calendar = (function() {
         extend(m, eval('module_'+m));
       });
       $('[data-toggle="tooltip"]').tooltip();
+      if ( $("body").attr("use") == "offline" ) {
+          $('#caption .stoke').html("loading preset...please wait.");
+          $.get("presets/filtermenu.html").done(function(html) {$("#filterList").append(html);});
+          $.get("presets/modals.html").done(function(html) {$("#modals").append(html);});
+          $.get("presets/grid.html").done(function(html) {
+              $("#grid").append(html);
+              $('#caption .stoke').empty();
+              $('#moduleSelect input:checkbox').prop('checked', true);
+              $('.planetaryhour').on('click', SL.Calendar.hourInfo);
+          });
+          $.getJSON("presets/ephemeris.json", function(json) {
+              Hours.moments = json.query;
+          });
+      }
     }
 
     /**
