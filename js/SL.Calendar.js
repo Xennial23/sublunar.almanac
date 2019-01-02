@@ -64,14 +64,21 @@ SL.Calendar = (function() {
    * @param {string} exportName - file name for the JSON Object to be downloaded
    * found here: https://stackoverflow.com/questions/19721439/download-json-object-as-a-file-from-browser
    */
-  function download(exportObj, exportName, query = "query"){
-    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent('{"'+query+'":'+JSON.stringify(exportObj)+'}');
-    var downloadAnchorNode = document.createElement('a');
-    downloadAnchorNode.setAttribute("href",     dataStr);
-    downloadAnchorNode.setAttribute("download", exportName + ".json");
-    document.body.appendChild(downloadAnchorNode); // required for firefox
-    downloadAnchorNode.click();
-    downloadAnchorNode.remove();
+  function download(exportObj, exportName, query = "query", dataType = "json", type = "text/plain;charset=utf-8"){
+      if ( dataType == "json") {
+          var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent('{"'+query+'":'+JSON.stringify(exportObj)+'}');
+          var downloadAnchorNode = document.createElement('a');
+          downloadAnchorNode.setAttribute("href",     dataStr);
+          downloadAnchorNode.setAttribute("download", exportName + ".json");
+          document.body.appendChild(downloadAnchorNode); // required for firefox
+          downloadAnchorNode.click();
+          downloadAnchorNode.remove();
+      } else {
+          var text = exportObj;
+          var filename = exportName;
+          var blob = new Blob([text], {type: type});
+          saveAs(blob, filename);
+      }
   }
 
   /**
@@ -137,6 +144,7 @@ SL.Calendar = (function() {
       $('#caption .stoke').html('calculating ephemeris...please wait');
       $("#grid").empty();
       $('#download').remove();
+      if ( $("body").attr("use") == "offline" ) $("#grid").css({"visibility":"hidden"});
       Filter.load();
       // check if negative UTC offset will be before the beginning of UTC day and if yes, go back one day.
       if ( moment.unix(ts).startOf('day') > moment.unix(ts).add( $("#offset").val(), 'hours') ) {
@@ -230,10 +238,11 @@ SL.Calendar = (function() {
         $('#moment_'+j).addClass('night-hour');
       }
       if ( j == all-1 ) {
+        var fname = $('#search').val().split(' ').join('_')+'_'+new moment.unix(Hours.moments[0].ts).utc().format('DDMMMYYYY')+'-'+new moment.unix(Hours.moments[0].ts).utc().add($('#days').val(), 'days').format('DDMMMYYYY');
         if ( $('#search').val() != '' && $('#fileInput').val() == '') {
           $('<button/>').attr('role', 'button').attr('target', '_blank').attr('id', 'download').html('Download File').addClass('btn btn-default pull-left').prependTo('#settings .modal-footer');
           $('#download').on('click', function() {
-            SL.Calendar.download(Hours.moments, $('#search').val().split(' ').join('_')+'_'+new moment.unix(Hours.moments[0].ts).utc().format('DDMMMYYYY')+'-'+new moment.unix(Hours.moments[0].ts).utc().add($('#days').val(), 'days').format('DDMMMYYYY'));
+            SL.Calendar.download(Hours.moments, fname);
           });
         }
         SL.Calendar.resetFileInput();
@@ -242,6 +251,8 @@ SL.Calendar = (function() {
         NProgress.done();
         clearTimeout(timeout);
         $('#caption .stoke').empty();
+        if ( $("body").attr("use") == "offline" )
+            SL.Calendar.download( $("#grid").html(), fname, "skip", "html", "text/html; charset=utf-8");
       }
     }
 
