@@ -339,14 +339,7 @@
         $('#filterreset').on('click', function() {
             if ( $("body").attr("use") == "offline" ) {
                 $("#grid").empty();
-                $('#caption .stoke').html("resetting...please wait.");
-                $.get("presets/grid.html").done(function(html) {
-                    $("#grid").append(html);
-                    $('#caption .stoke').empty();
-                    $('#moduleSelect input:checkbox').prop('checked', true);
-                    $('.planetaryhour').on('click', SL.Calendar.hourInfo);
-                    if ( $('#calendar').data('isotope') ) $('#calendar').isotope('destroy');
-                });
+                if ( $('#calendar').data('isotope') ) $('#calendar').isotope('destroy');
             }
           $('.actionlistfilter input').prop('checked', false);
           $('.filteroptions input').prop('checked', false);
