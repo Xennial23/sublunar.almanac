@@ -19,6 +19,7 @@ var SL = SL || {};
  * @public {function} reset() - simulates a resizing of the browser window. Needed hack for a display glitch in the modals.
  * @public {function} resetFileInput() - resets the file selection button in Settings
  * @public {function} download() - download a JSON object as a file
+ * @public {function} update() - updates the offline app
  */
 SL.Calendar = (function() {
 
@@ -28,7 +29,7 @@ SL.Calendar = (function() {
   function about() {
     $('<div/>').loadTemplate($("#tpl-modal"), {
         title : '<center><h1 class="stoke">SUBLUNAR ALMANAC</h1></center>',
-        right : '<center><p>If you like this tool, please <a href="https://ko-fi.com/U7U4NQ0Q" target="_blank">Buy Me a Coffee</a>.<br />For updates, feedback and discussions, please visit our <a href="" target="_blank">Facebook Group</a>.<br />If you are interested in contributing, please check out our <a href="https://github.com/sublunarspace/sublunar.almanac" target="_blank">GitHub Repo</a></p><p><a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a> © 2018 T. F. Raaion / <a href="http://sublunar.space">sublunar space</a><br />contact: <a href=\'mailto:&#105;&#110;&#102;&#111;&#64;&#115;&#117;&#98;&#108;&#117;&#110;&#97;&#114;&#46;&#115;&#112;&#97;&#99;&#101;\'>&#105;&#110;&#102;&#111;&#64;&#115;&#117;&#98;&#108;&#117;&#110;&#97;&#114;&#46;&#115;&#112;&#97;&#99;&#101;</a></p></center><hr /><center><p>Astronomical calculations are based on <br /><a href="http://www.astro.com/swisseph/swephinfo_e.htm" target="_blank">Swiss Ephemeris API</a>, © 1997-2016 Astrodienst AG, <a href="https://opensource.org/licenses/GPL-2.0" target="_blank">(GPLv2.0+)</a><br />and the <a href="http://www.moshier.net/#Astronomy" target="_blank">Table of New Moon Dates</a> by Steve Moshier.</p><p>The front-end relies on the following Javascript Libraries:<br /><a href="https://jquery.com/" target="_blank">jQuery 3.2.1</a>, © JS Foundation, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /><a href="https://getbootstrap.com/" target="_blank">Bootstrap 3.3.7</a>, © Twitter, Inc., <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /><a href="https://github.com/codepb/jquery-template/" target="_blank">jQuery.loadTemplate</a>, © 2013 Paul Burgess and other contributors, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /><a href="http://momentjs.com" target="_blank">MomentJS 2.18.1</a>, © Tim Wood, Iskren Chernev, Moment.js contributors, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /><a href="http://isotope.metafizzy.co" target="_blank">Isotope 3.0.4</a>, © 2017 Metafizzy, <a href="https://opensource.org/licenses/GPL-3.0" target="_blank">(GPLv3)</a><br /><a href="http://defiantjs.com" target="_blank">DefiantJS 1.4.1</a>, © 2013-2017, Hakan Bilgin, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /><a href="http://ricostacruz.com/nprogress" target="_blank">NProgress</a>, © 2013, 2014 Rico Sta. Cruz, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /><a href="https://github.com/klokantech/javascript" target="_blank">OsmNamesAutocomplete</a>, © 2016 Klokan Technologies GmbH, <a href="https://opensource.org/licenses/GPL-3.0" target="_blank">(GPLv3)</a><br /><a href="https://github.com/darkskyapp/tz-lookup" target="_blank">tzlookup</a>, by The Dark Sky, LLC, <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">(CC0 1.0 Universal)</a><br /><a href="https://github.com/nwcell/ics.js/" target="_blank">ics.js</a>, © 2018 Travis Krause, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a></p><p>The design is based on<br /><a href="http://bootswatch.com" target="_blank">bootswatch v3.3.7</a>, © 2012-2017 Thomas Park, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a>.</center><script async defer src="https://buttons.github.io/buttons.js"></script>'
+        right : $("#about-modal").html()
     })
     .appendTo('#modals')
     .attr('id', 'aboutSLC')
@@ -38,34 +39,10 @@ SL.Calendar = (function() {
     .find('.col-sm-4').closest('.row')
     .find('.col-sm-8').attr('class', 'col-sm-12').closest('.row')
     .find('.col-sm-4').remove();
-  }
-
-  /**
-   * loadPreset loads precalculated menubar, modals and hour grid
-   */
-  function loadPreset() {
-      if ( $("body").attr("use") == "offline" ) {
-          $('#caption .stoke').html("loading preset...please wait.");
-          $.get("presets/filtermenu.html").done(function(html) {
-              $("#filterList").empty();
-              $("#filterList").append(html);
-          });
-          $.get("presets/modals.html").done(function(html) {
-              $("#modals").empty();
-              $("#modals").append(html);
-          });
-          $.get("presets/grid.html").done(function(html) {
-              $("#grid").empty();
-              $("#grid").append(html);
-              $('#caption .stoke').empty();
-              $('#moduleSelect input:checkbox').prop('checked', true);
-              $('.planetaryhour').on('click', SL.Calendar.hourInfo);
-          });
-          $.getJSON("presets/ephemeris.json", function(json) {
-              Hours.moments = json.query;
-          });
-          if ( $('#calendar').data('isotope') ) $('#calendar').isotope('destroy');
-      }
+    if ( $("body").attr("use") == "offline" ) {
+        $('<button/>').attr('role', 'button').attr('target', '_blank').attr('onClick', 'SL.App.reset();').html('Reset App').addClass('btn btn-default pull-left').prependTo('#aboutSLC .modal-footer');
+        $('#3rdparty').append('<p>The desktop application relies on<br /><a href="http://chromium.org" target="_blank">Google Chromium</a>, © 2015 The Chromium Authors <a href="https://chromium.googlesource.com/chromium/src/+/master/LICENSE" target="_blank">(BSD)</a><br /><a href="http://nwjs.io" target="_blank">node.js</a>, © Node.js Foundation, © Joyent, Inc. <a href="https://github.com/nodejs/node/blob/master/LICENSE" target="_blank">(C)</a><br /><a href="http://nwjs.io" target="_blank">NW.js</a>, © 2015-2019 NW.js community, Intel Corp, The Chromium Authors <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /><a href="https://github.com/kripken/emscripten" target="_blank">emscripten</a>, © 2010-2014 Emscripten authors <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /><a href="https://github.com/automation-stack/node-machine-id" target="_blank">node-machine-id</a>, © 2016 Aleksandr Komlev <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /><a href="https://github.com/dsheiko/nw-autoupdater" target="_blank">nw-autoupdater</a>, © 2018 Dmitry Sheiko <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br /></p>');
+    }
   }
 
   /**
@@ -222,7 +199,14 @@ SL.Calendar = (function() {
       }
     }
 
+    function load(moments) {
+        Hours.moments = moments;
+    }
+
     function maker() {
+        if ( $("body").attr("use") == "offline" ) {
+            SL.App.place.set($('#search').val());
+        }
         if ( Hours.moments.length > 0 ) {
             $('#caption .stoke').html('generating planetary hours...please wait');
             for (var i = 0, len = Hours.moments.length; i < len; i++) {
@@ -235,6 +219,7 @@ SL.Calendar = (function() {
     return {
       make: make,
       moments : moments,
+      load : load
     }
 
   }());
@@ -277,12 +262,14 @@ SL.Calendar = (function() {
         $('#moment_'+j).addClass('night-hour');
       }
       if ( j == all-1 ) {
-        var fname = $('#search').val().split(' ').join('_')+'_'+new moment.unix(Hours.moments[0].ts).utc().format('DDMMMYYYY')+'-'+new moment.unix(Hours.moments[0].ts).utc().add($('#days').val(), 'days').format('DDMMMYYYY');
-        if ( $('#search').val() != '' && $('#fileInput').val() == '') {
-          $('<button/>').attr('role', 'button').attr('target', '_blank').attr('id', 'download').html('Download File').addClass('btn btn-default pull-left').prependTo('#settings .modal-footer');
-          $('#download').on('click', function() {
-            SL.Calendar.download(Hours.moments, fname);
-          });
+        if ( $("body").attr("use") == "online" ) {
+            var fname = $('#search').val().split(' ').join('_')+'_'+new moment.unix(Hours.moments[0].ts).utc().format('DDMMMYYYY')+'-'+new moment.unix(Hours.moments[0].ts).utc().add($('#days').val(), 'days').format('DDMMMYYYY');
+            if ( $('#search').val() != '' && $('#fileInput').val() == '') {
+              $('<button/>').attr('role', 'button').attr('target', '_blank').attr('id', 'download').html('Download File').addClass('btn btn-default pull-left').prependTo('#settings .modal-footer');
+              $('#download').on('click', function() {
+                SL.Calendar.download(Hours.moments, fname);
+              });
+            }
         }
         SL.Calendar.resetFileInput();
         $('.planetaryhour').on('click', SL.Calendar.hourInfo);
@@ -552,9 +539,6 @@ SL.Calendar = (function() {
         extend(m, eval('module_'+m));
       });
       $('[data-toggle="tooltip"]').tooltip();
-      loadPreset();
-      if ( $("body").attr("use") == "offline" )
-        $("#filterreset").closest('li').before('<li><p class="navbar-btn"><a class="btn btn-default" id="preset" onClick="SL.Calendar.preset()" href="#"><span class="glyphicon glyphicon-open"></span> Load Preset</a></p></li>');
     }
 
     /**
@@ -661,14 +645,14 @@ SL.Calendar = (function() {
     about               : about,
     getGeoCode          : getGeoCode,
     reset               : resetWindow,
-    preset              : loadPreset,
     modules             : Module.load,
     comboFilter         : Filter.comboFilter,
     hourInfo            : Hour.info,
     make                : Hours.make,
     moments             : Hours.moments,
+    load                : Hours.load,
     resetFileInput      : resetFileInput,
-    download            : download,
+    download            : download
   }
 
 }());

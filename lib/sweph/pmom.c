@@ -23,7 +23,7 @@
 /**
  * converts Julian Day to UNIX epoch
  */
-unsigned long jul_to_epoch(double jd)
+long jul_to_epoch(double jd)
 {
   struct tm   ts;
   int32       year, month, day, hour, minute, second;
@@ -48,13 +48,13 @@ unsigned long jul_to_epoch(double jd)
   ts.tm_isdst = -1;
   epoch = timegm(&ts);
 
-  return (unsigned long) epoch;
+  return (long) epoch;
 }
 
 /**
  * converts year, month, day, hour, minute, second to UNIX epoch
  */
-unsigned long time_to_epoch(int32 year, int32 month, int32 day, int32 hour, int32 minute, int32 second)
+long time_to_epoch(int32 year, int32 month, int32 day, int32 hour, int32 minute, int32 second)
 {
   struct tm   ts;
   time_t      epoch;
@@ -69,13 +69,13 @@ unsigned long time_to_epoch(int32 year, int32 month, int32 day, int32 hour, int3
   ts.tm_isdst = -1;
   epoch = timegm(&ts);
 
-  return (unsigned long) epoch;
+  return (long) epoch;
 }
 
 /**
  * converts UNIX epoch to JD
  */
-double epoch_to_jul(unsigned long ts)
+double epoch_to_jul(long ts)
 {
     time_t        timestamp;
     struct tm     *tmp;
@@ -102,7 +102,7 @@ double epoch_to_jul(unsigned long ts)
 /**
  * calculates planetary ephemeris data for a moment and loads it into arrays
  */
-int * planetary_moment(double lat, double lon, unsigned long unixtime, double *lunar, double *planets) {
+int * planetary_moment(double lat, double lon, long unixtime, double *lunar, double *planets) {
 
     // double lunar[0] = lunar day
     // double lunar[1] = lunar phase angle
@@ -117,7 +117,7 @@ int * planetary_moment(double lat, double lon, unsigned long unixtime, double *l
 
     double        latitude = 0.0;
     double        longitude = 0.0;
-    unsigned long epoch = 0;
+    long          epoch = 0;
     struct tm     *tmp;
     time_t        timestamp = 0;
     int32         year, month, day, hour, minute, second, iflag, iflgret;
@@ -200,9 +200,9 @@ int * planetary_moment(double lat, double lon, unsigned long unixtime, double *l
 /**
  * calculates sunrise and sunset times to determine planetary day and hour
  */
-int * solar_moment(double lat, double lon, unsigned long unixtime, unsigned long *solar) {
+int * solar_moment(double lat, double lon, long unixtime, long *solar) {
 
-    unsigned long epoch = 0;
+    long          epoch = 0;
     struct tm     *tmp;
     time_t        timestamp = 0;
     int32         year, month, day, hour, minute, second, iflag, pday = 0;
@@ -237,7 +237,6 @@ int * solar_moment(double lat, double lon, unsigned long unixtime, unsigned long
     // calculate sunrise and sunset of the day and the days before and after tomorrow
     ipl = SE_SUN;
     rsmi = SE_CALC_RISE;
-    swe_rise_trans(tjd-1, ipl, starname, iflag, rsmi, geopos, datm[0], datm[1], &sunyesterday[0], serr);
     swe_rise_trans(tjd, ipl, starname, iflag, rsmi, geopos, datm[0], datm[1], &suntoday[0], serr);
     swe_rise_trans(tjd+1, ipl, starname, iflag, rsmi, geopos, datm[0], datm[1], &suntomorrow[0], serr);
     rsmi = SE_CALC_SET;
@@ -247,6 +246,7 @@ int * solar_moment(double lat, double lon, unsigned long unixtime, unsigned long
 
     hourlength[0] = (jul_to_epoch(suntoday[0]) - jul_to_epoch(sunyesterday[1])) / 12; // length of night hours yesterday
     hourlength[1] = (jul_to_epoch(suntoday[1]) - jul_to_epoch(suntoday[0])) / 12; // length of day hours today
+    if ( hourlength[1] < 0 ) hourlength[1] = (jul_to_epoch(suntomorrow[1]) - jul_to_epoch(suntoday[0])) / 12;
     hourlength[2] = (jul_to_epoch(suntomorrow[0]) - jul_to_epoch(suntoday[1])) / 12; // length of night hours today
 
     // calculate planetary hour
@@ -267,12 +267,12 @@ int * solar_moment(double lat, double lon, unsigned long unixtime, unsigned long
  */
 const char * pmom(int days, long epoch, double latitude, double longitude, int buflen) // days, timestamp, latitude, longitude
 {
-    unsigned long queryday;
+    long          queryday;
     struct tm     *tmp;
     time_t        timestamp = 0;
     int32         year, month, day, hour, minute, second, j, h, m, interval, start, hm;
     double        hours;
-    unsigned long solar[9] = {0};
+    long          solar[9] = {0};
     double        lunar[3] = {0.0}, planet[16] = {0.0};
     char*         Buffer = malloc(buflen);
     int           length = 0;
@@ -317,6 +317,8 @@ const char * pmom(int days, long epoch, double latitude, double longitude, int b
               hm, (int) lunar[0], lunar[1], lunar[2], solar[7], solar[1], solar[2]-1, solar[2], solar[3]-1, h, hm, hm+interval-1, solar[5], solar[6], planet[0], planet[7], planet[1], planet[8], planet[2], planet[9], planet[3], planet[10], planet[4], planet[11], planet[5], planet[12], planet[6], planet[13], planet[14], planet[15]
         );
 
+        //length += snprintf(Buffer+length, buflen-length, "%d setyes %d risetod %d settod %d risetom %d nhly %d dhlt %d nhlt %d pday %d\n", hm, solar[0], solar[1], solar[2], solar[3], solar[4], solar[5], solar[6], solar[7]);
+
         if(j == days && h == 23) length += snprintf(Buffer+length, buflen-length, "");
         else length += snprintf(Buffer+length, buflen-length, ", ");
 
@@ -334,7 +336,7 @@ int main(int argc,char* argv[]) // days, timestamp, latitude, longitude
 {
     double        latitude = 0.0;
     double        longitude = 0.0;
-    unsigned long epoch = 0;
+    long          epoch = 0;
     time_t        timestamp = 0;
     int32         days = 1, buflen;
 

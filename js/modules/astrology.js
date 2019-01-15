@@ -643,735 +643,735 @@ var module_aspects = {
       [
         {
           "id": 1,
-          "action": "Moon ☌ Mercury",
+          "action": "Moon &#9740; Mercury",
           "tags": "moon conjunction mercury"
         }
       ],
       [
         {
           "id": 2,
-          "action": "Moon ☌ Venus",
+          "action": "Moon &#9740; Venus",
           "tags": "moon conjunction venus"
         }
       ],
       [
         {
           "id": 3,
-          "action": "Moon ☌ Sun",
+          "action": "Moon &#9740; Sun",
           "tags": "moon conjunction sun"
         }
       ],
       [
         {
           "id": 4,
-          "action": "Moon ☌ Mars",
+          "action": "Moon &#9740; Mars",
           "tags": "moon conjunction mars"
         }
       ],
       [
         {
           "id": 5,
-          "action": "Moon ☌ Jupiter",
+          "action": "Moon &#9740; Jupiter",
           "tags": "moon conjunction jupiter"
         }
       ],
       [
         {
           "id": 6,
-          "action": "Moon ☌ Saturn",
+          "action": "Moon &#9740; Saturn",
           "tags": "moon conjunction saturn"
         }
       ],
       [
         {
           "id": 7,
-          "action": "Mercury ☌ Venus",
+          "action": "Mercury &#9740; Venus",
           "tags": "mercury conjunction venus"
         }
       ],
       [
         {
           "id": 8,
-          "action": "Mercury ☌ Sun",
+          "action": "Mercury &#9740; Sun",
           "tags": "mercury conjunction sun"
         }
       ],
       [
         {
           "id": 9,
-          "action": "Mercury ☌ Mars",
+          "action": "Mercury &#9740; Mars",
           "tags": "mercury conjunction mars"
         }
       ],
       [
         {
           "id": 10,
-          "action": "Mercury ☌ Jupiter",
+          "action": "Mercury &#9740; Jupiter",
           "tags": "mercury conjunction jupiter"
         }
       ],
       [
         {
           "id": 11,
-          "action": "Mercury ☌ Saturn",
+          "action": "Mercury &#9740; Saturn",
           "tags": "mercury conjunction saturn"
         }
       ],
       [
         {
           "id": 12,
-          "action": "Venus ☌ Sun",
+          "action": "Venus &#9740; Sun",
           "tags": "venus conjunction sun"
         }
       ],
       [
         {
           "id": 13,
-          "action": "Venus ☌ Mars",
+          "action": "Venus &#9740; Mars",
           "tags": "venus conjunction mars"
         }
       ],
       [
         {
           "id": 14,
-          "action": "Venus ☌ Jupiter",
+          "action": "Venus &#9740; Jupiter",
           "tags": "venus conjunction jupiter"
         }
       ],
       [
         {
           "id": 15,
-          "action": "Venus ☌ Saturn",
+          "action": "Venus &#9740; Saturn",
           "tags": "venus conjunction saturn"
         }
       ],
       [
         {
           "id": 16,
-          "action": "Sun ☌ Mars",
+          "action": "Sun &#9740; Mars",
           "tags": "sun conjunction mars"
         }
       ],
       [
         {
           "id": 17,
-          "action": "Sun ☌ Jupiter",
+          "action": "Sun &#9740; Jupiter",
           "tags": "sun conjunction jupiter"
         }
       ],
       [
         {
           "id": 18,
-          "action": "Sun ☌ Saturn",
+          "action": "Sun &#9740; Saturn",
           "tags": "sun conjunction saturn"
         }
       ],
       [
         {
           "id": 19,
-          "action": "Mars ☌ Jupiter",
+          "action": "Mars &#9740; Jupiter",
           "tags": "mars conjunction jupiter"
         }
       ],
       [
         {
           "id": 20,
-          "action": "Mars ☌ Saturn",
+          "action": "Mars &#9740; Saturn",
           "tags": "mars conjunction saturn"
         }
       ],
       [
         {
           "id": 21,
-          "action": "Jupiter ☌ Saturn",
+          "action": "Jupiter &#9740; Saturn",
           "tags": "jupiter conjunction saturn"
         }
       ],
       [
         {
           "id": 22,
-          "action": "Moon ⚹ Mercury",
+          "action": "Moon &#9914; Mercury",
           "tags": "moon sextile mercury"
         }
       ],
       [
         {
           "id": 23,
-          "action": "Moon ⚹ Venus",
+          "action": "Moon &#9914; Venus",
           "tags": "moon sextile venus"
         }
       ],
       [
         {
           "id": 24,
-          "action": "Moon ⚹ Sun",
+          "action": "Moon &#9914; Sun",
           "tags": "moon sextile sun"
         }
       ],
       [
         {
           "id": 25,
-          "action": "Moon ⚹ Mars",
+          "action": "Moon &#9914; Mars",
           "tags": "moon sextile mars"
         }
       ],
       [
         {
           "id": 26,
-          "action": "Moon ⚹ Jupiter",
+          "action": "Moon &#9914; Jupiter",
           "tags": "moon sextile jupiter"
         }
       ],
       [
         {
           "id": 27,
-          "action": "Moon ⚹ Saturn",
+          "action": "Moon &#9914; Saturn",
           "tags": "moon sextile saturn"
         }
       ],
       [
         {
           "id": 28,
-          "action": "Mercury ⚹ Venus",
+          "action": "Mercury &#9914; Venus",
           "tags": "mercury sextile venus"
         }
       ],
       [
         {
           "id": 29,
-          "action": "Mercury ⚹ Sun",
+          "action": "Mercury &#9914; Sun",
           "tags": "mercury sextile sun"
         }
       ],
       [
         {
           "id": 30,
-          "action": "Mercury ⚹ Mars",
+          "action": "Mercury &#9914; Mars",
           "tags": "mercury sextile mars"
         }
       ],
       [
         {
           "id": 31,
-          "action": "Mercury ⚹ Jupiter",
+          "action": "Mercury &#9914; Jupiter",
           "tags": "mercury sextile jupiter"
         }
       ],
       [
         {
           "id": 32,
-          "action": "Mercury ⚹ Saturn",
+          "action": "Mercury &#9914; Saturn",
           "tags": "mercury sextile saturn"
         }
       ],
       [
         {
           "id": 33,
-          "action": "Venus ⚹ Sun",
+          "action": "Venus &#9914; Sun",
           "tags": "venus sextile sun"
         }
       ],
       [
         {
           "id": 34,
-          "action": "Venus ⚹ Mars",
+          "action": "Venus &#9914; Mars",
           "tags": "venus sextile mars"
         }
       ],
       [
         {
           "id": 35,
-          "action": "Venus ⚹ Jupiter",
+          "action": "Venus &#9914; Jupiter",
           "tags": "venus sextile jupiter"
         }
       ],
       [
         {
           "id": 36,
-          "action": "Venus ⚹ Saturn",
+          "action": "Venus &#9914; Saturn",
           "tags": "venus sextile saturn"
         }
       ],
       [
         {
           "id": 37,
-          "action": "Sun ⚹ Mars",
+          "action": "Sun &#9914; Mars",
           "tags": "sun sextile mars"
         }
       ],
       [
         {
           "id": 38,
-          "action": "Sun ⚹ Jupiter",
+          "action": "Sun &#9914; Jupiter",
           "tags": "sun sextile jupiter"
         }
       ],
       [
         {
           "id": 39,
-          "action": "Sun ⚹ Saturn",
+          "action": "Sun &#9914; Saturn",
           "tags": "sun sextile saturn"
         }
       ],
       [
         {
           "id": 40,
-          "action": "Mars ⚹ Jupiter",
+          "action": "Mars &#9914; Jupiter",
           "tags": "mars sextile jupiter"
         }
       ],
       [
         {
           "id": 41,
-          "action": "Mars ⚹ Saturn",
+          "action": "Mars &#9914; Saturn",
           "tags": "mars sextile saturn"
         }
       ],
       [
         {
           "id": 42,
-          "action": "Jupiter ⚹ Saturn",
+          "action": "Jupiter &#9914; Saturn",
           "tags": "jupiter sextile saturn"
         }
       ],
       [
         {
           "id": 43,
-          "action": "Moon □ Mercury",
+          "action": "Moon &#9633; Mercury",
           "tags": "moon square mercury"
         }
       ],
       [
         {
           "id": 44,
-          "action": "Moon □ Venus",
+          "action": "Moon &#9633; Venus",
           "tags": "moon square venus"
         }
       ],
       [
         {
           "id": 45,
-          "action": "Moon □ Sun",
+          "action": "Moon &#9633; Sun",
           "tags": "moon square sun"
         }
       ],
       [
         {
           "id": 46,
-          "action": "Moon □ Mars",
+          "action": "Moon &#9633; Mars",
           "tags": "moon square mars"
         }
       ],
       [
         {
           "id": 47,
-          "action": "Moon □ Jupiter",
+          "action": "Moon &#9633; Jupiter",
           "tags": "moon square jupiter"
         }
       ],
       [
         {
           "id": 48,
-          "action": "Moon □ Saturn",
+          "action": "Moon &#9633; Saturn",
           "tags": "moon square saturn"
         }
       ],
       [
         {
           "id": 49,
-          "action": "Mercury □ Venus",
+          "action": "Mercury &#9633; Venus",
           "tags": "mercury square venus"
         }
       ],
       [
         {
           "id": 50,
-          "action": "Mercury □ Sun",
+          "action": "Mercury &#9633; Sun",
           "tags": "mercury square sun"
         }
       ],
       [
         {
           "id": 51,
-          "action": "Mercury □ Mars",
+          "action": "Mercury &#9633; Mars",
           "tags": "mercury square mars"
         }
       ],
       [
         {
           "id": 52,
-          "action": "Mercury □ Jupiter",
+          "action": "Mercury &#9633; Jupiter",
           "tags": "mercury square jupiter"
         }
       ],
       [
         {
           "id": 53,
-          "action": "Mercury □ Saturn",
+          "action": "Mercury &#9633; Saturn",
           "tags": "mercury square saturn"
         }
       ],
       [
         {
           "id": 54,
-          "action": "Venus □ Sun",
+          "action": "Venus &#9633; Sun",
           "tags": "venus square sun"
         }
       ],
       [
         {
           "id": 55,
-          "action": "Venus □ Mars",
+          "action": "Venus &#9633; Mars",
           "tags": "venus square mars"
         }
       ],
       [
         {
           "id": 56,
-          "action": "Venus □ Jupiter",
+          "action": "Venus &#9633; Jupiter",
           "tags": "venus square jupiter"
         }
       ],
       [
         {
           "id": 57,
-          "action": "Venus □ Saturn",
+          "action": "Venus &#9633; Saturn",
           "tags": "venus square saturn"
         }
       ],
       [
         {
           "id": 58,
-          "action": "Sun □ Mars",
+          "action": "Sun &#9633; Mars",
           "tags": "sun square mars"
         }
       ],
       [
         {
           "id": 59,
-          "action": "Sun □ Jupiter",
+          "action": "Sun &#9633; Jupiter",
           "tags": "sun square jupiter"
         }
       ],
       [
         {
           "id": 60,
-          "action": "Sun □ Saturn",
+          "action": "Sun &#9633; Saturn",
           "tags": "sun square saturn"
         }
       ],
       [
         {
           "id": 61,
-          "action": "Mars □ Jupiter",
+          "action": "Mars &#9633; Jupiter",
           "tags": "mars square jupiter"
         }
       ],
       [
         {
           "id": 62,
-          "action": "Mars □ Saturn",
+          "action": "Mars &#9633; Saturn",
           "tags": "mars square saturn"
         }
       ],
       [
         {
           "id": 63,
-          "action": "Jupiter □ Saturn",
+          "action": "Jupiter &#9633; Saturn",
           "tags": "jupiter square saturn"
         }
       ],
       [
         {
           "id": 64,
-          "action": "Moon △ Mercury",
+          "action": "Moon &#9651; Mercury",
           "tags": "moon trine mercury"
         }
       ],
       [
         {
           "id": 65,
-          "action": "Moon △ Venus",
+          "action": "Moon &#9651; Venus",
           "tags": "moon trine venus"
         }
       ],
       [
         {
           "id": 66,
-          "action": "Moon △ Sun",
+          "action": "Moon &#9651; Sun",
           "tags": "moon trine sun"
         }
       ],
       [
         {
           "id": 67,
-          "action": "Moon △ Mars",
+          "action": "Moon &#9651; Mars",
           "tags": "moon trine mars"
         }
       ],
       [
         {
           "id": 68,
-          "action": "Moon △ Jupiter",
+          "action": "Moon &#9651; Jupiter",
           "tags": "moon trine jupiter"
         }
       ],
       [
         {
           "id": 69,
-          "action": "Moon △ Saturn",
+          "action": "Moon &#9651; Saturn",
           "tags": "moon trine saturn"
         }
       ],
       [
         {
           "id": 70,
-          "action": "Mercury △ Venus",
+          "action": "Mercury &#9651; Venus",
           "tags": "mercury trine venus"
         }
       ],
       [
         {
           "id": 71,
-          "action": "Mercury △ Sun",
+          "action": "Mercury &#9651; Sun",
           "tags": "mercury trine sun"
         }
       ],
       [
         {
           "id": 72,
-          "action": "Mercury △ Mars",
+          "action": "Mercury &#9651; Mars",
           "tags": "mercury trine mars"
         }
       ],
       [
         {
           "id": 73,
-          "action": "Mercury △ Jupiter",
+          "action": "Mercury &#9651; Jupiter",
           "tags": "mercury trine jupiter"
         }
       ],
       [
         {
           "id": 74,
-          "action": "Mercury △ Saturn",
+          "action": "Mercury &#9651; Saturn",
           "tags": "mercury trine saturn"
         }
       ],
       [
         {
           "id": 75,
-          "action": "Venus △ Sun",
+          "action": "Venus &#9651; Sun",
           "tags": "venus trine sun"
         }
       ],
       [
         {
           "id": 76,
-          "action": "Venus △ Mars",
+          "action": "Venus &#9651; Mars",
           "tags": "venus trine mars"
         }
       ],
       [
         {
           "id": 77,
-          "action": "Venus △ Jupiter",
+          "action": "Venus &#9651; Jupiter",
           "tags": "venus trine jupiter"
         }
       ],
       [
         {
           "id": 78,
-          "action": "Venus △ Saturn",
+          "action": "Venus &#9651; Saturn",
           "tags": "venus trine saturn"
         }
       ],
       [
         {
           "id": 79,
-          "action": "Sun △ Mars",
+          "action": "Sun &#9651; Mars",
           "tags": "sun trine mars"
         }
       ],
       [
         {
           "id": 80,
-          "action": "Sun △ Jupiter",
+          "action": "Sun &#9651; Jupiter",
           "tags": "sun trine jupiter"
         }
       ],
       [
         {
           "id": 81,
-          "action": "Sun △ Saturn",
+          "action": "Sun &#9651; Saturn",
           "tags": "sun trine saturn"
         }
       ],
       [
         {
           "id": 82,
-          "action": "Mars △ Jupiter",
+          "action": "Mars &#9651; Jupiter",
           "tags": "mars trine jupiter"
         }
       ],
       [
         {
           "id": 83,
-          "action": "Mars △ Saturn",
+          "action": "Mars &#9651; Saturn",
           "tags": "mars trine saturn"
         }
       ],
       [
         {
           "id": 84,
-          "action": "Jupiter △ Saturn",
+          "action": "Jupiter &#9651; Saturn",
           "tags": "jupiter trine saturn"
         }
       ],
       [
         {
           "id": 85,
-          "action": "Moon ☍ Mercury",
+          "action": "Moon &#9741; Mercury",
           "tags": "moon opposition mercury"
         }
       ],
       [
         {
           "id": 86,
-          "action": "Moon ☍ Venus",
+          "action": "Moon &#9741; Venus",
           "tags": "moon opposition venus"
         }
       ],
       [
         {
           "id": 87,
-          "action": "Moon ☍ Sun",
+          "action": "Moon &#9741; Sun",
           "tags": "moon opposition sun"
         }
       ],
       [
         {
           "id": 88,
-          "action": "Moon ☍ Mars",
+          "action": "Moon &#9741; Mars",
           "tags": "moon opposition mars"
         }
       ],
       [
         {
           "id": 89,
-          "action": "Moon ☍ Jupiter",
+          "action": "Moon &#9741; Jupiter",
           "tags": "moon opposition jupiter"
         }
       ],
       [
         {
           "id": 90,
-          "action": "Moon ☍ Saturn",
+          "action": "Moon &#9741; Saturn",
           "tags": "moon opposition saturn"
         }
       ],
       [
         {
           "id": 91,
-          "action": "Mercury ☍ Venus",
+          "action": "Mercury &#9741; Venus",
           "tags": "mercury opposition venus"
         }
       ],
       [
         {
           "id": 92,
-          "action": "Mercury ☍ Sun",
+          "action": "Mercury &#9741; Sun",
           "tags": "mercury opposition sun"
         }
       ],
       [
         {
           "id": 93,
-          "action": "Mercury ☍ Mars",
+          "action": "Mercury &#9741; Mars",
           "tags": "mercury opposition mars"
         }
       ],
       [
         {
           "id": 94,
-          "action": "Mercury ☍ Jupiter",
+          "action": "Mercury &#9741; Jupiter",
           "tags": "mercury opposition jupiter"
         }
       ],
       [
         {
           "id": 95,
-          "action": "Mercury ☍ Saturn",
+          "action": "Mercury &#9741; Saturn",
           "tags": "mercury opposition saturn"
         }
       ],
       [
         {
           "id": 96,
-          "action": "Venus ☍ Sun",
+          "action": "Venus &#9741; Sun",
           "tags": "venus opposition sun"
         }
       ],
       [
         {
           "id": 97,
-          "action": "Venus ☍ Mars",
+          "action": "Venus &#9741; Mars",
           "tags": "venus opposition mars"
         }
       ],
       [
         {
           "id": 98,
-          "action": "Venus ☍ Jupiter",
+          "action": "Venus &#9741; Jupiter",
           "tags": "venus opposition jupiter"
         }
       ],
       [
         {
           "id": 99,
-          "action": "Venus ☍ Saturn",
+          "action": "Venus &#9741; Saturn",
           "tags": "venus opposition saturn"
         }
       ],
       [
         {
           "id": 100,
-          "action": "Sun ☍ Mars",
+          "action": "Sun &#9741; Mars",
           "tags": "sun opposition mars"
         }
       ],
       [
         {
           "id": 101,
-          "action": "Sun ☍ Jupiter",
+          "action": "Sun &#9741; Jupiter",
           "tags": "sun opposition jupiter"
         }
       ],
       [
         {
           "id": 102,
-          "action": "Sun ☍ Saturn",
+          "action": "Sun &#9741; Saturn",
           "tags": "sun opposition saturn"
         }
       ],
       [
         {
           "id": 103,
-          "action": "Mars ☍ Jupiter",
+          "action": "Mars &#9741; Jupiter",
           "tags": "mars opposition jupiter"
         }
       ],
       [
         {
           "id": 104,
-          "action": "Mars ☍ Saturn",
+          "action": "Mars &#9741; Saturn",
           "tags": "mars opposition saturn"
         }
       ],
       [
         {
           "id": 105,
-          "action": "Jupiter ☍ Saturn",
+          "action": "Jupiter &#9741; Saturn",
           "tags": "jupiter opposition saturn"
         }
       ]

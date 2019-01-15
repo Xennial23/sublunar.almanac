@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <!--
- * SUBLUNAR ALMANAC v.1.1b "Yeshua"
+ * SUBLUNAR ALMANAC v.1.0.0 "Yeshua"
  *-->
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="js/SL.Astro.js"></script>
     <script type="text/javascript" src="js/SL.Calendar.js"></script>
+    <script type="text/javascript" src="js/SL.App.js"></script>
 
     <!--
      * load SUBLUNAR ALMANAC plugin modules
@@ -92,7 +93,7 @@
           <div id="calendar">
             <div id="caption">
               <center>
-                <h3 class="stoke">How does this work? <a href="http://sublunar.space/2018-12-sublunar-almanac.html#doc">Read!</a></h3>
+                <h3 class="stoke">How does this work? <a href="http://sublunar.space/2018-12-sublunar-almanac.html#doc" target="_blank">Read!</a></h3>
               </center>
             </div>
             <div id="grid">
@@ -117,11 +118,11 @@
              </div>
              <div class="modal-body">
                 <div class="row">
-                   <div class="form-group col-md-6">
+                   <div class="form-group col-md-6 autolocate">
                       <label for="offset">Automatic Geolocation</label><br />
                       <button id="locate" class="btn btn-default"><span class="glyphicon glyphicon-map-marker"></span> Locate Me</button>
                    </div>
-                   <div class="form-group col-md-6">
+                   <div class="form-group col-md-6 manuallocate">
                       <label for="lon">Manual Geolocation</label>
                       <input type="text" autocomplete="off" id="search" class="address form-control args" placeholder="City"/>
                    </div>
@@ -240,6 +241,48 @@
       </div>
     </script>
 
+    <!--
+     * template for about modal
+     *-->
+    <script type="text/html" id="about-modal">
+        <center>
+            <p>
+                If you like this this project and want it to stay alive, please support the author by <a href="https://ko-fi.com/U7U4NQ0Q" target="_blank">buying some coffees</a>.<br />
+                For updates, feedback and discussions, please visit our <a href="" target="_blank">Facebook Group</a>.<br />
+                If you are interested in contributing, please check out our <a href="https://github.com/sublunarspace/sublunar.almanac" target="_blank">GitHub Repo</a>
+            </p>
+            <p>
+                <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a> © 2018 T. F. Raaion / <a href="http://sublunar.space">sublunar space</a><br />
+                contact: <a href=\'mailto:&#105;&#110;&#102;&#111;&#64;&#115;&#117;&#98;&#108;&#117;&#110;&#97;&#114;&#46;&#115;&#112;&#97;&#99;&#101;\'>&#105;&#110;&#102;&#111;&#64;&#115;&#117;&#98;&#108;&#117;&#110;&#97;&#114;&#46;&#115;&#112;&#97;&#99;&#101;</a>
+            </p>
+        </center>
+        <hr />
+        <center id="3rdparty">
+            <p>
+                Astronomical calculations are based on<br />
+                <a href="http://www.astro.com/swisseph/swephinfo_e.htm" target="_blank">Swiss Ephemeris API</a>, © 1997-2016 Astrodienst AG, <a href="https://opensource.org/licenses/GPL-2.0" target="_blank">(GPLv2.0+)</a><br />
+                and the <a href="http://www.moshier.net/#Astronomy" target="_blank">Table of New Moon Dates</a> by Steve Moshier.
+            </p>
+            <p>
+                The front-end relies on the following Javascript Libraries:<br />
+                <a href="https://jquery.com/" target="_blank">jQuery 3.2.1</a>, © JS Foundation, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br />
+                <a href="https://getbootstrap.com/" target="_blank">Bootstrap 3.3.7</a>, © Twitter, Inc., <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br />
+                <a href="https://github.com/codepb/jquery-template/" target="_blank">jQuery.loadTemplate</a>, © 2013 Paul Burgess and other contributors, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br />
+                <a href="http://momentjs.com" target="_blank">MomentJS 2.18.1</a>, © Tim Wood, Iskren Chernev, Moment.js contributors, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br />
+                <a href="http://isotope.metafizzy.co" target="_blank">Isotope 3.0.4</a>, © 2017 Metafizzy, <a href="https://opensource.org/licenses/GPL-3.0" target="_blank">(GPLv3)</a><br />
+                <a href="http://defiantjs.com" target="_blank">DefiantJS 1.4.1</a>, © 2013-2017, Hakan Bilgin, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br />
+                <a href="http://ricostacruz.com/nprogress" target="_blank">NProgress</a>, © 2013, 2014 Rico Sta. Cruz, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a><br />
+                <a href="https://github.com/klokantech/javascript" target="_blank">OsmNamesAutocomplete</a>, © 2016 Klokan Technologies GmbH, <a href="https://opensource.org/licenses/GPL-3.0" target="_blank">(GPLv3)</a><br />
+                <a href="https://github.com/darkskyapp/tz-lookup" target="_blank">tzlookup</a>, by The Dark Sky, LLC, <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">(CC0 1.0 Universal)</a><br />
+                <a href="https://github.com/nwcell/ics.js/" target="_blank">ics.js</a>, © 2018 Travis Krause, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a>
+            </p>
+            <p>
+                The design is based on<br />
+                <a href="http://bootswatch.com" target="_blank">bootswatch v3.3.7</a>, © 2012-2017 Thomas Park, <a href="https://opensource.org/licenses/MIT" target="_blank">(MIT)</a>.
+            </p>
+        </center>
+    </script>
+
 <!--
  * main SUBLUNAR ALMANAC Javascript
  *-->
@@ -284,16 +327,20 @@
 
         // get browser location when button "locate" is clicked
         $("#locate").on("click", function() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position) {
-                    var item = {
-                        lat: position.coords.latitude,
-                        lon: position.coords.longitude
-                    }
-                    SL.Calendar.getGeoCode(item);
-                });
+            if ( $("body").attr("use") == "offline" ) {
+                SL.App.geoLocate();
             } else {
-                alert("Geolocation is not supported by this browser.");
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        var item = {
+                            lat: position.coords.latitude,
+                            lon: position.coords.longitude
+                        }
+                        SL.Calendar.getGeoCode(item);
+                    });
+                } else {
+                    alert("Geolocation is not supported by this browser.");
+                }
             }
         });
 
@@ -312,7 +359,7 @@
         });
 
         // "About" modal
-        $('#about').on('click', SL.Calendar.about);
+        SL.Calendar.about();
 
         // "Generate" button in Settings
         $('#generate').on("click", function(e) {
@@ -337,14 +384,14 @@
 
         // "Reset" button in navbar menu bar
         $('#filterreset').on('click', function() {
-            if ( $("body").attr("use") == "offline" ) {
+            if ( $("body").attr("use") == "offline" && document.getElementById("loadpreset") != null ) {
                 $("#grid").empty();
-                if ( $('#calendar').data('isotope') ) $('#calendar').isotope('destroy');
             }
           $('.actionlistfilter input').prop('checked', false);
           $('.filteroptions input').prop('checked', false);
           filters = {};
           $('#calendar').isotope({ filter: '*' });
+          if ( $('#calendar').data('isotope') ) $('#calendar').isotope('destroy');
         });
 
         /*--
@@ -402,6 +449,10 @@
             filter: SL.Calendar.comboFilter()
           });
         });
+
+        if ( $("body").attr("use") == "offline" ) {
+            SL.App.authorize();
+        }
 
     </script>
   </body>
