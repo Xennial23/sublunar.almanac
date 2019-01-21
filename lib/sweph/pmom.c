@@ -6,8 +6,8 @@
 #define ONLINE 1
 #define OFFLINE 2
 
-#ifndef VARIANT
-#error "VARIANT needs to be set"
+#ifndef USECASE
+#error "USECASE needs to be set"
 #endif
 
 #include <stdlib.h>
@@ -16,7 +16,7 @@
 #include <math.h>
 #include "swephexp.h"
 
-#if VARIANT == OFFLINE
+#if USECASE == OFFLINE
 #include <emscripten.h>
 #endif
 
@@ -73,30 +73,41 @@ long time_to_epoch(int32 year, int32 month, int32 day, int32 hour, int32 minute,
 }
 
 /**
- * converts UNIX epoch to JD
+ * converts UNIX epoch to time array
  */
-double epoch_to_jul(long ts)
+int * epoch_to_time(long ts, int *time)
 {
     time_t        timestamp;
     struct tm     *tmp;
-    int32         year, month, day, hour, minute, second;
-    double         hours;
 
     // convert timestamp to tm struct
     timestamp = ts;
     tmp = gmtime(&timestamp);
 
     // read the data
-    year = tmp->tm_year+1900;
-    month = tmp->tm_mon+1;
-    day = tmp->tm_mday;
-    hour = tmp->tm_hour;
-    minute = tmp->tm_min;
-    second = tmp->tm_sec;
-    hours = (double) hour + (double) minute / 60 + (double) second / 3600;
+    time[0] = tmp->tm_year+1900;
+    time[1] = tmp->tm_mon+1;
+    time[2] = tmp->tm_mday;
+    time[3] = tmp->tm_hour;
+    time[4] = tmp->tm_min;
+    time[5] = tmp->tm_sec;
+
+    return 0;
+}
+
+/**
+ * converts UNIX epoch to JD
+ */
+double epoch_to_jul(long ts)
+{
+    int32         time[6];
+    double        hours;
+
+    epoch_to_time(ts, time);
+    hours = (double) time[3] + (double) time[4] / 60 + (double) time[5] / 3600;
 
     // return JD
-    return swe_julday(year,month,day,hours,SE_GREG_CAL);
+    return swe_julday(time[0],time[1],time[2],hours,SE_GREG_CAL);
 }
 
 /**
@@ -150,7 +161,7 @@ int * planetary_moment(double lat, double lon, long unixtime, double *lunar, dou
     hours = (double) hour + (double) minute / 60 + (double) second / 3600;
 
     // set ephemeris path and flags
-    swe_set_ephe_path("lib");
+    swe_set_ephe_path("");
     iflag = SEFLG_SPEED;
     ipl = SE_MOON;
     rsmi = SE_CALC_RISE;
@@ -208,7 +219,7 @@ int * solar_moment(double lat, double lon, long unixtime, long *solar) {
     int32         year, month, day, hour, minute, second, iflag, pday = 0;
     int           ipl, rsmi, hourlength[3];
     double        hours, tjd, td;
-    double        datm[2], geopos[3], sunyesterday[2], suntoday[2], suntomorrow[2];
+    double        datm[2], geopos[3], lastset, lastrise, nextset, nextrise, onextrise, onextset;
     char          serr[AS_MAXCH], starname[255], pds[80];
 
     datm[0] = 1013.25; // atmospheric pressure
@@ -232,28 +243,40 @@ int * solar_moment(double lat, double lon, long unixtime, long *solar) {
     geopos[1] = lat;
     geopos[2] = 0;
     swe_set_topo(geopos[0], geopos[1], geopos[2]);
-    tjd = swe_julday(year,month,day,0,SE_GREG_CAL);
+    tjd = swe_julday(year,month,day,0.0,SE_GREG_CAL);
+
+    if ( lon > 70.0 ) tjd = tjd - 1;
 
     // calculate sunrise and sunset of the day and the days before and after tomorrow
     ipl = SE_SUN;
-    rsmi = SE_CALC_RISE;
-    swe_rise_trans(tjd, ipl, starname, iflag, rsmi, geopos, datm[0], datm[1], &suntoday[0], serr);
-    swe_rise_trans(tjd+1, ipl, starname, iflag, rsmi, geopos, datm[0], datm[1], &suntomorrow[0], serr);
-    rsmi = SE_CALC_SET;
-    swe_rise_trans(tjd-1, ipl, starname, iflag, rsmi, geopos, datm[0], datm[1], &sunyesterday[1], serr);
-    swe_rise_trans(tjd, ipl, starname, iflag, rsmi, geopos, datm[0], datm[1], &suntoday[1], serr);
-    swe_rise_trans(tjd+1, ipl, starname, iflag, rsmi, geopos, datm[0], datm[1], &suntomorrow[1], serr);
 
-    hourlength[0] = (jul_to_epoch(suntoday[0]) - jul_to_epoch(sunyesterday[1])) / 12; // length of night hours yesterday
-    hourlength[1] = (jul_to_epoch(suntoday[1]) - jul_to_epoch(suntoday[0])) / 12; // length of day hours today
-    if ( hourlength[1] < 0 ) hourlength[1] = (jul_to_epoch(suntomorrow[1]) - jul_to_epoch(suntoday[0])) / 12;
-    hourlength[2] = (jul_to_epoch(suntomorrow[0]) - jul_to_epoch(suntoday[1])) / 12; // length of night hours today
+    // next rise and set
+    swe_rise_trans(tjd, ipl, starname, iflag, SE_CALC_RISE, geopos, datm[0], datm[1], &nextrise, serr);
+    swe_rise_trans(tjd, ipl, starname, iflag, SE_CALC_SET, geopos, datm[0], datm[1], &nextset, serr);
+
+    // previous rise and set
+    swe_rise_trans(tjd-1, ipl, starname, iflag, SE_CALC_RISE, geopos, datm[0], datm[1], &lastrise, serr);
+    swe_rise_trans(tjd-1, ipl, starname, iflag, SE_CALC_SET, geopos, datm[0], datm[1], &lastset, serr);
+
+    // next rise after next rise
+    swe_rise_trans(tjd+1, ipl, starname, iflag, SE_CALC_RISE, geopos, datm[0], datm[1], &onextrise, serr);
+    swe_rise_trans(tjd+1, ipl, starname, iflag, SE_CALC_SET, geopos, datm[0], datm[1], &onextset, serr);
+
+
+    if ( nextset < nextrise ) {
+        lastset = nextset;
+        nextset = onextset;
+    }
+
+    hourlength[0] = (jul_to_epoch(nextrise) - jul_to_epoch(lastset)) / 12; // length of night hours yesterday
+    hourlength[1] = (jul_to_epoch(nextset) - jul_to_epoch(nextrise)) / 12; // length of day hours today
+    hourlength[2] = (jul_to_epoch(onextrise) - jul_to_epoch(nextset)) / 12; // length of night hours today
 
     // calculate planetary hour
-    solar[0] = jul_to_epoch(sunyesterday[1]); // set yesterday
-    solar[1] = jul_to_epoch(suntoday[0]); // rise today
-    solar[2] = jul_to_epoch(suntoday[1]); // set today
-    solar[3] = jul_to_epoch(suntomorrow[0]); // rise tomorrow
+    solar[0] = jul_to_epoch(lastset); // set yesterday
+    solar[1] = jul_to_epoch(nextrise); // rise today
+    solar[2] = jul_to_epoch(nextset); // set today
+    solar[3] = jul_to_epoch(onextrise); // rise tomorrow
     solar[4] = hourlength[0]; // night hour length yesterday
     solar[5] = hourlength[1]; // day hour length today
     solar[6] = hourlength[2]; // night hour length today
@@ -270,7 +293,7 @@ const char * pmom(int days, long epoch, double latitude, double longitude, int b
     long          queryday;
     struct tm     *tmp;
     time_t        timestamp = 0;
-    int32         year, month, day, hour, minute, second, j, h, m, interval, start, hm;
+    int32         year, month, day, hour, minute, second, j, h, m, interval, start, hm, time[6];
     double        hours;
     long          solar[9] = {0};
     double        lunar[3] = {0.0}, planet[16] = {0.0};
@@ -312,10 +335,7 @@ const char * pmom(int days, long epoch, double latitude, double longitude, int b
 
         planetary_moment(latitude, longitude, hm, lunar, planet);
 
-        length += snprintf(Buffer+length, buflen-length,
-          "{ \"ts\": %d, \"lunar\": { \"day\": %d, \"angle\": %f, \"phase\": %f }, \"planetary\": { \"day\": { \"no\": %d, \"start\": %d, \"end\": %d }, \"night\": { \"start\": %d, \"end\": %d }, \"hour\": { \"no\": %d, \"start\": %d, \"end\": %d, \"length\": { \"day\": %d, \"night\": %d } } }, \"ephemeris\": { \"sun\": { \"deg\": %f, \"speed\": %f }, \"moon\": { \"deg\": %f, \"speed\": %f }, \"mercury\": { \"deg\": %f, \"speed\": %f }, \"venus\": { \"deg\": %f, \"speed\": %f }, \"mars\": { \"deg\": %f, \"speed\": %f }, \"jupiter\": { \"deg\": %f, \"speed\": %f }, \"saturn\": { \"deg\": %f, \"speed\": %f }, \"asc\": { \"deg\": %f }, \"mc\": { \"deg\": %f } } }",
-              hm, (int) lunar[0], lunar[1], lunar[2], solar[7], solar[1], solar[2]-1, solar[2], solar[3]-1, h, hm, hm+interval-1, solar[5], solar[6], planet[0], planet[7], planet[1], planet[8], planet[2], planet[9], planet[3], planet[10], planet[4], planet[11], planet[5], planet[12], planet[6], planet[13], planet[14], planet[15]
-        );
+        length += snprintf(Buffer+length, buflen-length, "{ \"ts\": %d, \"lunar\": { \"day\": %d, \"angle\": %f, \"phase\": %f }, \"planetary\": { \"day\": { \"no\": %d, \"start\": %d, \"end\": %d }, \"night\": { \"start\": %d, \"end\": %d }, \"hour\": { \"no\": %d, \"start\": %d, \"end\": %d, \"length\": { \"day\": %d, \"night\": %d } } }, \"ephemeris\": { \"sun\": { \"deg\": %f, \"speed\": %f }, \"moon\": { \"deg\": %f, \"speed\": %f }, \"mercury\": { \"deg\": %f, \"speed\": %f }, \"venus\": { \"deg\": %f, \"speed\": %f }, \"mars\": { \"deg\": %f, \"speed\": %f }, \"jupiter\": { \"deg\": %f, \"speed\": %f }, \"saturn\": { \"deg\": %f, \"speed\": %f }, \"asc\": { \"deg\": %f }, \"mc\": { \"deg\": %f } } }", hm, (int) lunar[0], lunar[1], lunar[2], solar[7], solar[1], solar[2]-1, solar[2], solar[3]-1, h, hm, hm+interval-1, solar[5], solar[6], planet[0], planet[7], planet[1], planet[8], planet[2], planet[9], planet[3], planet[10], planet[4], planet[11], planet[5], planet[12], planet[6], planet[13], planet[14], planet[15] );
 
         //length += snprintf(Buffer+length, buflen-length, "%d setyes %d risetod %d settod %d risetom %d nhly %d dhlt %d nhlt %d pday %d\n", hm, solar[0], solar[1], solar[2], solar[3], solar[4], solar[5], solar[6], solar[7]);
 
@@ -324,14 +344,14 @@ const char * pmom(int days, long epoch, double latitude, double longitude, int b
 
         h++;
       }
-      queryday = solar[3];
+      queryday = hm;
       j++;
     };
     length += snprintf(Buffer+length, buflen-length, "]}");
     return Buffer;
 }
 
-#if VARIANT == ONLINE
+#if USECASE == ONLINE
 int main(int argc,char* argv[]) // days, timestamp, latitude, longitude
 {
     double        latitude = 0.0;
@@ -364,7 +384,7 @@ int main(int argc,char* argv[]) // days, timestamp, latitude, longitude
 }
 #endif
 
-#if VARIANT == OFFLINE
+#if USECASE == OFFLINE
 EMSCRIPTEN_KEEPALIVE
 const char * get(int days, long epoch, double latitude, double longitude) // days, timestamp, latitude, longitude
 {

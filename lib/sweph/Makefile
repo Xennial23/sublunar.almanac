@@ -13,7 +13,7 @@
 # send email to the Swiss Ephemeris mailing list.
 #
 
-CFLAGS = -g -Wall -fPIC -O2 -DVARIANT=1 	# for Linux and other gcc systems
+CFLAGS = -g -Wall -fPIC -O2 -DUSECASE=1 	# for Linux and other gcc systems
 OP=$(CFLAGS)
 CC=cc	#for Linux
 
