@@ -19,58 +19,58 @@ var module_moon = {
       [{
         "id": "1",
         "action": "Moon in Aries",
-        "tags": "moon aries mars",
+        "tags": "moon aries fire mars",
         "hide": "info"
       }], [{
         "id": "2",
         "action": "Moon in Taurus (Exalted)",
-        "tags": "moon taurus venus exalted"
+        "tags": "moon taurus earth venus exalted"
       }], [{
         "id": "3",
         "action": "Moon in Gemini",
-        "tags": "moon gemini mercury",
+        "tags": "moon gemini air mercury",
         "hide": "info"
       }], [{
         "id": "4",
         "action": "Moon in Cancer (Domicile)",
-        "tags": "cancer moon domicile"
+        "tags": "cancer water moon domicile"
       }], [{
         "id": "5",
         "action": "Moon in Leo",
-        "tags": "moon leo sun",
+        "tags": "moon leo fire sun",
         "hide": "info"
       }], [{
         "id": "6",
         "action": "Moon in Virgo",
-        "tags": "moon virgo mercury",
+        "tags": "moon virgo earth mercury",
         "hide": "info"
       }], [{
         "id": "7",
         "action": "Moon in Libra",
-        "tags": "moon libra venus",
+        "tags": "moon libra air venus",
         "hide": "info"
       }], [{
         "id": "8",
         "action": "Moon in Scorpio (Fall)",
-        "tags": "moon scorpio mars fall"
+        "tags": "moon scorpio water mars fall"
       }], [{
         "id": "9",
         "action": "Moon in Sagittarius",
-        "tags": "moon sagittarius jupiter",
+        "tags": "moon sagittarius fire jupiter",
         "hide": "info"
       }], [{
         "id": "10",
         "action": "Moon in Capricorn (Detriment)",
-        "tags": "moon capricorn saturn detriment"
+        "tags": "moon capricorn earth saturn detriment"
       }], [{
         "id": "11",
         "action": "Moon in Aquarius",
-        "tags": "moon aquarius saturn",
+        "tags": "moon aquarius air saturn",
         "hide": "info"
       }], [{
         "id": "12",
         "action": "Moon in Pisces",
-        "tags": "moon pisces jupiter",
+        "tags": "moon pisces water jupiter",
         "hide": "info"
       }]
     ]
@@ -99,59 +99,59 @@ var module_mercury = {
       [{
         "id": "1",
         "action": "Mercury in Aries",
-        "tags": "mercury aries mars",
+        "tags": "mercury aries fire mars",
         "hide": "info"
       }], [{
         "id": "2",
         "action": "Mercury in Taurus",
-        "tags": "mercury taurus venus",
+        "tags": "mercury taurus earth venus",
         "hide": "info"
       }], [{
         "id": "3",
         "action": "Mercury in Gemini (Domicile)",
-        "tags": "mercury gemini domicile"
+        "tags": "mercury gemini air domicile"
       }], [{
         "id": "4",
         "action": "Mercury in Cancer",
-        "tags": "cancer moon mercury",
+        "tags": "cancer water moon mercury",
         "hide": "info"
       }], [{
         "id": "5",
         "action": "Mercury in Leo",
-        "tags": "mercury leo sun",
+        "tags": "mercury leo fire sun",
         "hide": "info"
       }], [{
         "id": "6",
         "action": "Mercury in Virgo (Domicile/Exaltation)",
-        "tags": "mercury virgo domicile exaltation"
+        "tags": "mercury virgo earth domicile exaltation"
       }], [{
         "id": "7",
         "action": "Mercury in Libra",
-        "tags": "mercury libra venus",
+        "tags": "mercury libra air venus",
         "hide": "info"
       }], [{
         "id": "8",
         "action": "Mercury in Scorpio",
-        "tags": "mercury scorpio mars",
+        "tags": "mercury scorpio water mars",
         "hide": "info"
       }], [{
         "id": "9",
         "action": "Mercury in Sagittarius (Detriment)",
-        "tags": "mercury sagittarius jupiter detriment"
+        "tags": "mercury sagittarius fire jupiter detriment"
       }], [{
         "id": "10",
         "action": "Mercury in Capricorn",
-        "tags": "mercury capricorn saturn",
+        "tags": "mercury capricorn earth saturn",
         "hide": "info"
       }], [{
         "id": "11",
         "action": "Mercury in Aquarius",
-        "tags": "mercury aquarius saturn",
+        "tags": "mercury aquarius air saturn",
         "hide": "info"
       }], [{
         "id": "12",
         "action": "Mercury in Pisces (Fall)",
-        "tags": "mercury pisces jupiter fall"
+        "tags": "mercury pisces water jupiter fall"
       }]
     ]
   },
@@ -179,58 +179,58 @@ var module_venus = {
       [{
         "id": "1",
         "action": "Venus in Aries (Detriment)",
-        "tags": "venus aries mars detriment"
+        "tags": "venus aries fire mars detriment"
       }], [{
         "id": "2",
         "action": "Venus in Taurus",
-        "tags": "venus taurus",
+        "tags": "venus taurus earth",
         "hide": "info"
       }], [{
         "id": "3",
         "action": "Venus in Gemini",
-        "tags": "venus gemini mercury",
+        "tags": "venus gemini air mercury",
         "hide": "info"
       }], [{
         "id": "4",
         "action": "Venus in Cancer",
-        "tags": "cancer moon venus",
+        "tags": "cancer water moon venus",
         "hide": "info"
       }], [{
         "id": "5",
         "action": "Venus in Leo",
-        "tags": "venus leo sun",
+        "tags": "venus leo fire sun",
         "hide": "info"
       }], [{
         "id": "6",
         "action": "Venus in Virgo (Fall)",
-        "tags": "venus virgo mercury fall"
+        "tags": "venus virgo earth mercury fall"
       }], [{
         "id": "7",
         "action": "Venus in Libra (Domicile)",
-        "tags": "venus libra domicile"
+        "tags": "venus libra air domicile"
       }], [{
         "id": "8",
         "action": "Venus in Scorpio (Detriment)",
-        "tags": "venus scorpio mars detriment"
+        "tags": "venus scorpio water mars detriment"
       }], [{
         "id": "9",
         "action": "Venus in Sagittarius",
-        "tags": "venus sagittarius jupiter",
+        "tags": "venus sagittarius fire jupiter",
         "hide": "info"
       }], [{
         "id": "10",
         "action": "Venus in Capricorn",
-        "tags": "venus capricorn saturn",
+        "tags": "venus capricorn earth saturn",
         "hide": "info"
       }], [{
         "id": "11",
         "action": "Venus in Aquarius",
-        "tags": "venus aquarius saturn",
+        "tags": "venus aquarius air saturn",
         "hide": "info"
       }], [{
         "id": "12",
         "action": "Venus in Pisces (Exaltation)",
-        "tags": "venus pisces jupiter exaltation"
+        "tags": "venus pisces water jupiter exaltation"
       }]
     ]
   },
@@ -258,58 +258,58 @@ var module_sun = {
       [{
         "id": "1",
         "action": "Sun in Aries (Exaltation)",
-        "tags": "sun aries mars exaltation"
+        "tags": "sun aries fire mars exaltation"
       }], [{
         "id": "2",
         "action": "Sun in Taurus",
-        "tags": "sun taurus venus",
+        "tags": "sun taurus earth venus",
         "hide": "info"
       }], [{
         "id": "3",
         "action": "Sun in Gemini",
-        "tags": "sun gemini mercury",
+        "tags": "sun gemini air mercury",
         "hide": "info"
       }], [{
         "id": "4",
         "action": "Sun in Cancer",
-        "tags": "cancer moon sun",
+        "tags": "cancer water moon sun",
         "hide": "info"
       }], [{
         "id": "5",
         "action": "Sun in Leo (Domicile)",
-        "tags": "sun leo domicile"
+        "tags": "sun leo fire domicile"
       }], [{
         "id": "6",
         "action": "Sun in Virgo",
-        "tags": "sun virgo mercury",
+        "tags": "sun virgo earth mercury",
         "hide": "info"
       }], [{
         "id": "7",
         "action": "Sun in Libra (Fall)",
-        "tags": "sun libra venus fall"
+        "tags": "sun libra air venus fall"
       }], [{
         "id": "8",
         "action": "Sun in Scorpio",
-        "tags": "sun scorpio mars",
+        "tags": "sun scorpio water mars",
         "hide": "info"
       }], [{
         "id": "9",
         "action": "Sun in Sagittarius",
-        "tags": "sun sagittarius jupiter",
+        "tags": "sun sagittarius fire jupiter",
         "hide": "info"
       }], [{
         "id": "10",
         "action": "Sun in Capricorn",
-        "tags": "sun capricorn saturn",
+        "tags": "sun capricorn earth saturn",
         "hide": "info"
       }], [{
         "id": "11",
         "action": "Sun in Aquarius (Detriment)",
-        "tags": "sun aquarius saturn detriment"
+        "tags": "sun aquarius air saturn detriment"
       }], [{
         "id": "12",
         "action": "Sun in Pisces",
-        "tags": "sun pisces jupiter",
+        "tags": "sun pisces water jupiter",
         "hide": "info"
       }]
     ]
@@ -338,56 +338,56 @@ var module_mars = {
       [{
         "id": "1",
         "action": "Mars in Aries (Domicile)",
-        "tags": "mars aries domicile"
+        "tags": "mars aries fire domicile"
       }], [{
         "id": "2",
         "action": "Mars in Taurus (Detriment)",
-        "tags": "mars taurus venus detriment"
+        "tags": "mars taurus earth venus detriment"
       }], [{
         "id": "3",
         "action": "Mars in Gemini",
-        "tags": "mars gemini mercury",
+        "tags": "mars gemini air mercury",
         "hide": "info"
       }], [{
         "id": "4",
         "action": "Mars in Cancer (Fall)",
-        "tags": "cancer moon mars fall"
+        "tags": "cancer water moon mars fall"
       }], [{
         "id": "5",
         "action": "Mars in Leo",
-        "tags": "mars leo sun",
+        "tags": "mars leo fire sun",
         "hide": "info"
       }], [{
         "id": "6",
         "action": "Mars in Virgo",
-        "tags": "mars virgo mercury",
+        "tags": "mars virgo earth mercury",
         "hide": "info"
       }], [{
         "id": "7",
         "action": "Mars in Libra (Detriment)",
-        "tags": "mars libra venus detriment"
+        "tags": "mars libra air venus detriment"
       }], [{
         "id": "8",
         "action": "Mars in Scorpio (Domicile)",
-        "tags": "mars scorpio domicile"
+        "tags": "mars scorpio water domicile"
       }], [{
         "id": "9",
         "action": "Mars in Sagittarius",
-        "tags": "mars sagittarius jupiter",
+        "tags": "mars sagittarius fire jupiter",
         "hide": "info"
       }], [{
         "id": "10",
         "action": "Mars in Capricorn (Exalted)",
-        "tags": "mars capricorn saturn exalted"
+        "tags": "mars capricorn earth saturn exalted"
       }], [{
         "id": "11",
         "action": "Mars in Aquarius",
-        "tags": "mars aquarius saturn",
+        "tags": "mars aquarius air saturn",
         "hide": "info"
       }], [{
         "id": "12",
         "action": "Mars in Pisces",
-        "tags": "mars pisces jupiter",
+        "tags": "mars pisces water jupiter",
         "hide": "info"
       }]
     ]
@@ -416,57 +416,57 @@ var module_jupiter = {
       [{
         "id": "1",
         "action": "Jupiter in Aries",
-        "tags": "jupiter aries mars",
+        "tags": "jupiter aries fire mars",
         "hide": "info"
       }], [{
         "id": "2",
         "action": "Jupiter in Taurus",
-        "tags": "jupiter taurus venus",
+        "tags": "jupiter taurus earth venus",
         "hide": "info"
       }], [{
         "id": "3",
         "action": "Jupiter in Gemini (Detriment)",
-        "tags": "jupiter gemini mercury detriment"
+        "tags": "jupiter gemini air mercury detriment"
       }], [{
         "id": "4",
         "action": "Jupiter in Cancer (Exaltation)",
-        "tags": "cancer moon jupiter exaltation"
+        "tags": "cancer water moon jupiter exaltation"
       }], [{
         "id": "5",
         "action": "Jupiter in Leo",
-        "tags": "jupiter leo sun",
+        "tags": "jupiter leo fire sun",
         "hide": "info"
       }], [{
         "id": "6",
         "action": "Jupiter in Virgo (Detriment)",
-        "tags": "jupiter virgo mercury detriment"
+        "tags": "jupiter virgo earth mercury detriment"
       }], [{
         "id": "7",
         "action": "Jupiter in Libra",
-        "tags": "jupiter libra venus",
+        "tags": "jupiter libra air venus",
         "hide": "info"
       }], [{
         "id": "8",
         "action": "Jupiter in Scorpio",
-        "tags": "jupiter scorpio mars",
+        "tags": "jupiter scorpio water mars",
         "hide": "info"
       }], [{
         "id": "9",
         "action": "Jupiter in Sagittarius (Domicile)",
-        "tags": "jupiter sagittarius domicile"
+        "tags": "jupiter sagittarius fire domicile"
       }], [{
         "id": "10",
         "action": "Jupiter in Capricorn (Fall)",
-        "tags": "jupiter capricorn saturn fall"
+        "tags": "jupiter capricorn earth saturn fall"
       }], [{
         "id": "11",
         "action": "Jupiter in Aquarius",
-        "tags": "jupiter aquarius saturn",
+        "tags": "jupiter aquarius air saturn",
         "hide": "info"
       }], [{
         "id": "12",
         "action": "Jupiter in Pisces (Domicile)",
-        "tags": "jupiter pisces domicile"
+        "tags": "jupiter pisces water domicile"
       }]
     ]
   },
@@ -494,56 +494,56 @@ var module_saturn = {
       [{
         "id": "1",
         "action": "Saturn in Aries (Fall)",
-        "tags": "saturn aries mars fall"
+        "tags": "saturn aries fire mars fall"
       }], [{
         "id": "2",
         "action": "Saturn in Taurus",
-        "tags": "saturn taurus venus",
+        "tags": "saturn taurus earth venus",
         "hide": "info"
       }], [{
         "id": "3",
         "action": "Saturn in Gemini)",
-        "tags": "saturn gemini mercury",
+        "tags": "saturn gemini air mercury",
         "hide": "info"
       }], [{
         "id": "4",
         "action": "Saturn in Cancer (Detriment)",
-        "tags": "cancer moon saturn detriment"
+        "tags": "cancer water moon saturn detriment"
       }], [{
         "id": "5",
         "action": "Saturn in Leo (Detriment)",
-        "tags": "saturn leo sun detriment"
+        "tags": "saturn leo fire sun detriment"
       }], [{
         "id": "6",
         "action": "Saturn in Virgo",
-        "tags": "saturn virgo mercury",
+        "tags": "saturn virgo earth mercury",
         "hide": "info"
       }], [{
         "id": "7",
         "action": "Saturn in Libra (Exaltation)",
-        "tags": "saturn libra venus exaltation"
+        "tags": "saturn libra air venus exaltation"
       }], [{
         "id": "8",
         "action": "Saturn in Scorpio",
-        "tags": "saturn scorpio mars",
+        "tags": "saturn scorpio water mars",
         "hide": "info"
       }], [{
         "id": "9",
         "action": "Saturn in Sagittarius",
-        "tags": "saturn sagittarius jupiter",
+        "tags": "saturn sagittarius fire jupiter",
         "hide": "info"
       }], [{
         "id": "10",
         "action": "Saturn in Capricorn (Domicile)",
-        "tags": "saturn capricorn domicile"
+        "tags": "saturn capricorn earth domicile"
       }], [{
         "id": "11",
         "action": "Saturn in Aquarius (Domicile)",
-        "tags": "saturn aquarius domicile"
+        "tags": "saturn aquarius air domicile"
       }], [{
         "id": "12",
         "action": "Saturn in Pisces",
-        "tags": "saturn pisces jupiter",
+        "tags": "saturn pisces water jupiter",
         "hide": "info"
       }]
     ]
@@ -572,51 +572,51 @@ var module_ascendant = {
       [{
         "id": "1",
         "action": "Aries Rising",
-        "tags": "aries mars"
+        "tags": "aries fire mars"
       }], [{
         "id": "2",
         "action": "Taurus Rising",
-        "tags": "taurus venus"
+        "tags": "taurus earth venus"
       }], [{
         "id": "3",
         "action": "Gemini Rising",
-        "tags": "gemini mercury"
+        "tags": "gemini air mercury"
       }], [{
         "id": "4",
         "action": "Cancer Rising",
-        "tags": "cancer moon"
+        "tags": "cancer water moon"
       }], [{
         "id": "5",
         "action": "Leo Rising",
-        "tags": "leo sun"
+        "tags": "leo fire sun"
       }], [{
         "id": "6",
         "action": "Virgo Rising",
-        "tags": "virgo mercury"
+        "tags": "virgo earth mercury"
       }], [{
         "id": "7",
         "action": "Libra Rising",
-        "tags": "libra venus"
+        "tags": "libra air venus"
       }], [{
         "id": "8",
         "action": "Scorpio Rising",
-        "tags": "scorpio mars"
+        "tags": "scorpio water mars"
       }], [{
         "id": "9",
         "action": "Sagittarius Rising",
-        "tags": "sagittarius jupiter"
+        "tags": "sagittarius fire jupiter"
       }], [{
         "id": "10",
         "action": "Capricorn Rising",
-        "tags": "capricorn saturn"
+        "tags": "capricorn earth saturn"
       }], [{
         "id": "11",
         "action": "Aquarius Rising",
-        "tags": "aquarius saturn"
+        "tags": "aquarius air saturn"
       }], [{
         "id": "12",
         "action": "Pisces Rising",
-        "tags": "pisces jupiter"
+        "tags": "pisces water jupiter"
       }]
     ]
   },

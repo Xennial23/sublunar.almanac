@@ -161,7 +161,7 @@ int * planetary_moment(double lat, double lon, long unixtime, double *lunar, dou
     hours = (double) hour + (double) minute / 60 + (double) second / 3600;
 
     // set ephemeris path and flags
-    swe_set_ephe_path("");
+    swe_set_ephe_path("lib");
     iflag = SEFLG_SPEED;
     ipl = SE_MOON;
     rsmi = SE_CALC_RISE;

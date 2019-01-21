@@ -276,10 +276,10 @@ var module_kos_phour = {
     actions: module_kos_pday.definitions.actions
   },
   property: function(m) {
-    return m.planetary.hour.no;
+    return m.planetary;
   },
   calculate: function(definitions, property) {
-    var hourruler = SL.Astro.Logy.planet.order[((property+1+(property*24) - 1) % 7 ) + 1];
+    var hourruler = SL.Astro.Logy.planet.order[((property.hour.no+1+(property.day.no*24) - 1) % 7 ) + 1];
     return definitions.actions[hourruler-1];
   }
 };
@@ -344,7 +344,7 @@ var module_kos_astro = {
   },
   calculate: function(definitions, property) {
     var array = [];
-    var hourruler = SL.Astro.Logy.planet.order[((property.planetary.day.no+1+(property.planetary.day.no*24) - 1) % 7 ) + 1];
+    var hourruler = SL.Astro.Logy.planet.order[((property.planetary.hour.no+1+(property.planetary.day.no*24) - 1) % 7 ) + 1];
     var chaldean = ["void", "moon", "mercury", "venus", "sun", "mars", "jupiter", "saturn"];
     var sunsign = SL.Astro.Logy.getZodiac(property.ephemeris.sun.deg).sign;
     var moonsign = SL.Astro.Logy.getZodiac(property.ephemeris.moon.deg).sign;
@@ -377,25 +377,24 @@ var module_kos_astro = {
 
     // Moon in Earth sign
     if ( moonsign == 2 || moonsign == 6 || moonsign == 10 )
-      array.push(array.push(definitions.actions[0][0]));
+      array.push(definitions.actions[0][0]);
 
     // Moon in fiery sign
     if ( moonsign == 1 || moonsign == 5 || moonsign == 9 )
-      array.push(array.push(definitions.actions[1][0]));
+      array.push(definitions.actions[1][0]);
 
     // Moon in watery sign
     if ( moonsign == 4 || moonsign == 8 || moonsign == 12 )
-      array.push(array.push(definitions.actions[2][0]));
+      array.push(definitions.actions[2][0]);
 
     // Moon in airy sign
     if ( moonsign == 3 || moonsign == 7 || moonsign == 11 )
-      array.push(array.push(definitions.actions[3][0]));
+      array.push(definitions.actions[3][0]);
 
     // Moon and Sun in airy sign
-    if ( ( moonsign == 3 || moonsign == 7 || moonsign == 11 ) && ( sunsign == 3 || sunsign == 7 || sunsign == 11) && property.planetary.day.no == 4 && hourruler == 4 ) {
-      array.push(array.push(definitions.actions[5][0]));
+    if ( ( moonsign == 3 || moonsign == 7 || moonsign == 11 ) && ( sunsign == 3 || sunsign == 7 || sunsign == 11) && property.planetary.day.no == 3 && hourruler == 4 ) {
+      array.push(definitions.actions[5][0]);
     }
-
     return array;
   }
 };
